@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Player
+
+  Created by zhuhao on 2022/7/25.
+  
+*/
+
+"CFBundleDisplayName" = "秒播";
+"UILaunchStoryboardName" = "LaunchScreen-China";

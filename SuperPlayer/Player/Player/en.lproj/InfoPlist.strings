@@ -1,0 +1,13 @@
+/* 
+  InfoPlist.strings
+  Player
+
+  Created by zhuhao on 2022/7/25.
+  
+*/
+
+"NSCameraUsageDescription" = "So that you can upload videos from your photos to the app";
+"NSPhotoLibraryAddUsageDescription" = "So that you can upload videos from your photos to the app";
+"CFBundleDisplayName" = "X-Player";
+"NSLocationWhenInUseUsageDescription" = "So that you can record your location when taking pictures";
+"UILaunchStoryboardName" = "LaunchScreen-En";
