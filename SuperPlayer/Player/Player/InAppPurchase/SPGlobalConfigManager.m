@@ -2,8 +2,8 @@
 //  GlobalStatusManager.m
 //  ZHProject
 //
-//  Created by zh on 2019/8/21.
-//  Copyright © 2019 autohome. All rights reserved.
+//  Created by zhxxxx  ondfasd 2019/8/21.
+//  Copyright © 2023 zhssssx. 
 //
 
 #import "SPGlobalConfigManager.h"
@@ -52,17 +52,17 @@ static SPGlobalConfigManager *_mgr = nil;
     return _mgr;
 }
 
-- (BOOL)unlockAllFunc {
+- (BOOL)hadUnlockAllFunc {
 //#ifdef DEBUG
 //    return YES;
 //#endif
-    return _unlockAllFunc;
+    return _hadUnlockAllFunc;
 }
 
 - (instancetype)init {
     if (self = [super init]) {
 
-        self.unlockAllFuncForeverStatus = [[NSUserDefaults standardUserDefaults] boolForKey:kUnlockAllFuncForeverKey];
+        self.hadUnlockAllFunctionForeverStatus = [[NSUserDefaults standardUserDefaults] boolForKey:khadUnlockAllFuncForeverKey];
         self.openAllScreenLockStatus = [[NSUserDefaults standardUserDefaults] boolForKey:kAllScreenLockKey];
         self.speedupStatus = [[NSUserDefaults standardUserDefaults] boolForKey:kSpeedupStatusKey];
 
@@ -72,8 +72,8 @@ static SPGlobalConfigManager *_mgr = nil;
         BOOL subscribed = (crtTs<=self.iapExpireTs);
 
         // 订阅或者永久购买
-        if (self.unlockAllFuncForeverStatus || subscribed) {
-            _unlockAllFunc = YES;
+        if (self.hadUnlockAllFunctionForeverStatus || subscribed) {
+            _hadUnlockAllFunc = YES;
         }
         
         self.hadHideVipVideos = [[NSUserDefaults standardUserDefaults] boolForKey:kHadHideVipVideos];
@@ -134,17 +134,17 @@ static SPGlobalConfigManager *_mgr = nil;
     BOOL subscribed = (crtTs<=self.iapExpireTs);
 
     // 订阅或者永久购买
-    if (self.unlockAllFuncForeverStatus || subscribed) {
-        _unlockAllFunc = YES;
+    if (self.hadUnlockAllFunctionForeverStatus || subscribed) {
+        _hadUnlockAllFunc = YES;
     }
 }
 
 
-- (void)setUnlockAllFuncForeverStatus:(BOOL)unlockAllFuncForeverStatus {
-    _unlockAllFuncForeverStatus = unlockAllFuncForeverStatus;
-    if (unlockAllFuncForeverStatus) {
-        _unlockAllFunc = YES;
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUnlockAllFuncForeverKey];
+- (void)sethadUnlockAllFunctionForeverStatus:(BOOL)hadUnlockAllFunctionForeverStatus {
+    _hadUnlockAllFunctionForeverStatus = hadUnlockAllFunctionForeverStatus;
+    if (hadUnlockAllFunctionForeverStatus) {
+        _hadUnlockAllFunc = YES;
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:khadUnlockAllFuncForeverKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
@@ -168,7 +168,7 @@ static NSString *kRandomVideoDateKey = @"kRandomVideoDateKey";
 }
 
 - (BOOL)shouldShowIAPAlertWhilePlayOnlineVideos {
-    if (self.unlockAllFunc) return NO;
+    if (self.hadUnlockAllFunc) return NO;
     NSInteger count = [[NSUserDefaults standardUserDefaults] integerForKey:kRandomFreeGirlVideoMaxCountKey];
     // 允许播放记录下播放的时间,
     if (count < kRandomFreeGirlVideoMaxCount) {

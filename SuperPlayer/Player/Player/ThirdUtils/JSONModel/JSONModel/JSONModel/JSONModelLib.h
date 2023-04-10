@@ -1,5 +1,5 @@
 //
-//  JSONModelLib.h
+//  SPJSONModelLib.h
 //
 //  @version 1.2
 //  @author Marin Todorov (http://www.underplot.com) and contributors
@@ -16,20 +16,20 @@
 
 #import <Foundation/Foundation.h>
 
-//JSONModel transformations
+//SPJSONModel transformations
 #import "JSONValueTransformer.h"
 #import "JSONKeyMapper.h"
 
-//basic JSONModel classes
-#import "JSONModelError.h"
-#import "JSONModelClassProperty.h"
-#import "JSONModel.h"
+//basic SPJSONModel classes
+#import "SPJSONModelError.h"
+#import "SPJSONModelClassProperty.h"
+#import "SPJSONModel.h"
 
 //network classes
-#import "JSONHTTPClient.h"
-#import "JSONModel+networking.h"
+#import "SPJSONHTTPClient.h"
+#import "SPJSONModel+networking.h"
 #import "JSONAPI.h"
 
 //models array
-#import "NSArray+JSONModel.h"
-#import "JSONModelArray.h"
+#import "NSArray+SPJSONModel.h"
+#import "SPJSONModelArray.h"

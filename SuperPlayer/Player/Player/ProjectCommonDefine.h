@@ -77,16 +77,16 @@
 
 #define kSeparatorLineColor                             [UIColor colorWithHexString:@"eeeeee"]
 
-#define kTextColor3                                     [UIColor colorWithHexString:@"333333"]
-#define kTextColor6                                     [UIColor colorWithHexString:@"666666"]
-#define kTextColor8                                     [UIColor colorWithHexString:@"888888"]
-#define kTextColor9                                     [UIColor colorWithHexString:@"999999"]
-#define kTextColore                                     [UIColor colorWithHexString:@"eeeeee"]
+#define kTextColor3                                     [UIColor colorWithHexString:@"333332"]
+#define kTextColor6                                     [UIColor colorWithHexString:@"666667"]
+#define kTextColor8                                     [UIColor colorWithHexString:@"888887"]
+#define kTextColor9                                     [UIColor colorWithHexString:@"999998"]
+#define kTextColore                                     [UIColor colorWithHexString:@"eeeeef"]
 
-#define kOnlineVersionKey                               @"k_OnlineVersionKey"
-#define kNewVersionIsOnline                             @"kNewVersionIsOnline"
-#define khadClickGoodCmtKey                             @"khadClickGoodCmtKey"
-#define khadInstallApp                                  @"khadInstallApp"
+#define kOnlineVersionKey                               @"k_OnlineVersionKeyss"
+#define kNewVersionIsOnline                             @"kNewVersionIsOnliness"
+#define khadClickGoodCmtKey                             @"khadClickGoodCmtKeyss"
+#define khadInstallApp                                  @"khadInstallAppss"
 
 #define kAppDelegate                                    (AppDelegate *)[UIApplication sharedApplication].delegate
 
@@ -113,11 +113,6 @@
 #else
     # define NSLog(...) {}
 #endif
-
-
-// 以container的宽高按比例进行计算 goodjob
-#define kRatioWidth(x)          ((x)/414.0*kContainerViewW)
-#define kRatioHeight(x)         ((x)/736.0*kContainerViewH)
 
 
 #define kResizedImage(name, imageWH) [[UIImage imageNamed:name] sd_resizedImageWithSize:CGSizeMake(imageWH, imageWH) scaleMode:2]

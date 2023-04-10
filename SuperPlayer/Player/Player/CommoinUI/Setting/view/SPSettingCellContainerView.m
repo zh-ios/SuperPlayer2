@@ -2,7 +2,7 @@
 //  SPSettingCellContainerView.m
 //  FMhatProject
 //
-//  Created by zh on 2018/7/3.
+//  Created by zhxxxx  ondfasd 2018/7/3.
 //  Copyright © 2018年 xiaomi. All rights reserved.
 //
 
@@ -62,20 +62,20 @@
     self.img.hidden = YES;
     self.img.contentMode = UIViewContentModeScaleAspectFit;
     
-    self.titleL = [[BaseLabel alloc] init];
+    self.titleL = [[SPBaseLabel alloc] init];
     self.titleL.font = [UIFont systemFontOfSize:kSettingCellTitleFont];
     self.titleL.textColor = RGB(34, 34, 34);
     [self addSubview:self.titleL];
     
     // 默认隐藏
-    self.subTitleL = [[BaseLabel alloc] init];
+    self.subTitleL = [[SPBaseLabel alloc] init];
     self.subTitleL.hidden = YES;
     self.subTitleL.font = [UIFont systemFontOfSize:kSettingCellSubTitleFont];
     self.subTitleL.textColor = RGB(153, 153, 153);
     [self addSubview:self.subTitleL];
     
     // 默认隐藏
-    self.accessoryL = [[BaseLabel alloc] init];
+    self.accessoryL = [[SPBaseLabel alloc] init];
     self.accessoryL.hidden = YES;
     self.accessoryL.userInteractionEnabled = YES;
     self.accessoryL.font = [UIFont systemFontOfSize:kSettingCellSubTitleFont];
@@ -83,7 +83,7 @@
     [self addSubview:self.accessoryL];
     
     
-    self.updateMsgL = [[BaseLabel alloc] init];
+    self.updateMsgL = [[SPBaseLabel alloc] init];
     self.updateMsgL.text = @"new";
     self.updateMsgL.hidden = YES;
     self.updateMsgL.font = [UIFont systemFontOfSize:10];

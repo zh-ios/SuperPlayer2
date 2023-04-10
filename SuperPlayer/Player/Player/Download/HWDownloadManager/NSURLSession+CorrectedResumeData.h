@@ -1,6 +1,6 @@
 //
 //  NSURLSession+CorrectedResumeData.h
-//  HWDownloadDemo
+//  SPHWDownloadDemo
 //
 //  Created by wangqibin on 2018/5/25.
 //  Copyright © 2018年 hero. All rights reserved.

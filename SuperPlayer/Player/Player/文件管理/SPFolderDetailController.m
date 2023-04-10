@@ -67,7 +67,7 @@
         _tableView.dataSource = self;
         _tableView.rowHeight = 90;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.tableFooterView = [[BaseView alloc] init];
+        _tableView.tableFooterView = [[SPBaseView alloc] init];
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
         _tableView.estimatedRowHeight = 0;
@@ -170,7 +170,7 @@
                 NSString *targetPath = (model.isLocked?[[SPLocalFileManager sharedManager] getLockedFilePath]:[[SPLocalFileManager sharedManager] getGlobalFilePath]);
                 
                 if ([[SPLocalFileManager sharedManager] hasSameNameFile:model.name folderPath:targetPath]) {
-                    [ZHToastUtil showToast:kZHLocalizedString(@"已存在同名文件，请重命名后再试~")];
+                    [SPToastUtil showToast:kZHLocalizedString(@"已存在同名文件，请重命名后再试~")];
                     return;
                 }
 
@@ -180,7 +180,7 @@
                     [self.tableView reloadData];
                     [self reloadController];
                 } else {
-                    [ZHToastUtil showToast:kZHLocalizedString(@"操作失败，请重命名后再进行操作")];
+                    [SPToastUtil showToast:kZHLocalizedString(@"操作失败，请重命名后再进行操作")];
                 }
             }
         }];
@@ -192,13 +192,13 @@
     UIAlertAction *action = [UIAlertAction actionWithTitle:kZHLocalizedString(@"确定") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSString *folderName = [alert.textFields firstObject].text;
         if ([folderName trimingWhiteSpaceAndNewline] == 0) {
-            [ZHToastUtil showToast:kZHLocalizedString(@"请输入有效文件名")];
+            [SPToastUtil showToast:kZHLocalizedString(@"请输入有效文件名")];
             return;
         }
         BOOL repeated = NO;
         repeated = [[SPLocalFileManager sharedManager] hasSameNameFile:folderName folderPath:self.folderModel.fullPath];
         if (repeated) {
-            [ZHToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
+            [SPToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
         } else {
             [[SPLocalFileManager sharedManager] reNameFoldersWithName:folderName folderPath:model.fullPath];
             [self reloadController];

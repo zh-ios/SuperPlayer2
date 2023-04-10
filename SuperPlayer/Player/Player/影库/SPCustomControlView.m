@@ -801,7 +801,7 @@
 
 - (UIView *)fastView {
     if (!_fastView) {
-        _fastView = [[BaseView alloc] init];
+        _fastView = [[SPBaseView alloc] init];
         _fastView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];
         _fastView.layer.cornerRadius = 4;
         _fastView.layer.masksToBounds = YES;
@@ -819,7 +819,7 @@
 
 - (UILabel *)fastTimeLabel {
     if (!_fastTimeLabel) {
-        _fastTimeLabel = [[BaseLabel alloc] init];
+        _fastTimeLabel = [[SPBaseLabel alloc] init];
         _fastTimeLabel.textColor = [UIColor whiteColor];
         _fastTimeLabel.textAlignment = NSTextAlignmentCenter;
         _fastTimeLabel.font = [UIFont systemFontOfSize:14.0];

@@ -58,7 +58,7 @@
             [self addChildViewController:screenLockVC];
             self.SPScreenLockController = screenLockVC;
             @weakify(self)
-            self.SPScreenLockController.InputRightPwdCallback = ^{
+            self.SPScreenLockController.inputRightPwdCallback = ^{
             @strongify(self)
                 [self.SPScreenLockController.view removeFromSuperview];
                 [self.SPScreenLockController removeFromParentViewController];
@@ -92,7 +92,7 @@
         [self.view addSubview:_emptyView];
         _emptyView.hidden = YES;
         _emptyView.emptyViewOnClicked = ^{
-            [ZHToastUtil showToast:kZHLocalizedString(@"请到本地页面上传视频")];
+            [SPToastUtil showToast:kZHLocalizedString(@"请到本地页面上传视频")];
             AppDelegate *appDelegate = kAppDelegate;
             appDelegate.tabbar.selectedIndex = 0;
         };
@@ -124,7 +124,7 @@
         _tableView.dataSource = self;
         _tableView.rowHeight = 90;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.tableFooterView = [[BaseView alloc] init];
+        _tableView.tableFooterView = [[SPBaseView alloc] init];
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
         _tableView.estimatedRowHeight = 0;
@@ -253,7 +253,7 @@
         NSString *folderName = [alert.textFields firstObject].text;
         BOOL repeated = [[SPLocalFileManager sharedManager] hasSameNameFolders:folderName folderPath:[[SPLocalFileManager sharedManager] getGlobalFilePath]];
         if (repeated) {
-            [ZHToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
+            [SPToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
         } else {
             [[SPLocalFileManager sharedManager] createFolders:folderName];
             [self reloadController];
@@ -317,7 +317,7 @@
 
 - (void)reNameFileOp:(NSString *)fileName fileModel:(SPFilesModel *)model {
     if ([fileName trimingWhiteSpaceAndNewline].length == 0) {
-        [ZHToastUtil showToast:kZHLocalizedString(@"请输入有效文件名")];
+        [SPToastUtil showToast:kZHLocalizedString(@"请输入有效文件名")];
         return;
     }
     BOOL repeated = NO;
@@ -328,7 +328,7 @@
     }
      
     if (repeated) {
-        [ZHToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
+        [SPToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
         return;
     } else {
         NSInteger index = [self.filesArray indexOfObject:model];

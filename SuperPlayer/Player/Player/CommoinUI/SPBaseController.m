@@ -2,14 +2,14 @@
 //  SPBaseController.m
 //  ZHProject
 //
-//  Created by zh on 2018/9/27.
+//  Created by zhxxxx  ondfasd 2018/9/27.
 //  Copyright © 2018年 autohome. All rights reserved.
 //
 
 #import "SPBaseController.h"
-#import "ZHNavigationAnimation.h"
-#import "ZHNavigationController.h"
-#import "ZHNavigationBar.h"
+#import "SPNavigationAnimation.h"
+#import "SPNavigationController.h"
+#import "SPNavigationBar.h"
 @interface SPBaseController ()<UINavigationControllerDelegate>
 
 
@@ -37,9 +37,9 @@
     [self.view bringSubviewToFront:self.customNavView];
 }
 
-- (ZHNavigationBar *)customNavView {
+- (SPNavigationBar *)customNavView {
     if (!_customNavView) {
-        _customNavView = [[ZHNavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, kNavbarHeight)];
+        _customNavView = [[SPNavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, kNavbarHeight)];
     }
     return _customNavView;
 }
@@ -98,12 +98,12 @@
 
 //- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
 //    if (operation == UINavigationControllerOperationPop) {
-//        ZHNavigationAnimation *animation = [[ZHNavigationAnimation alloc] init];
+//        SPNavigationAnimation *animation = [[SPNavigationAnimation alloc] init];
 //        animation.isPush = NO;
 //        return animation;
 //    }
 //    if (operation == UINavigationControllerOperationPush) {
-////        ZHNavigationAnimation *animation = [[ZHNavigationAnimation alloc] init];
+////        SPNavigationAnimation *animation = [[SPNavigationAnimation alloc] init];
 ////        animation.isPush = YES;
 ////        SPBaseController *fromViewController = (SPBaseController *)fromVC;
 ////        SPBaseController *toViewController = (SPBaseController *)toVC;

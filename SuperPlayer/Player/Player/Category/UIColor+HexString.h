@@ -2,7 +2,7 @@
 //  UIColor+HexString.h
 //  CommonFunction
 //
-//  Created by zh on 2018/6/7.
+//  Created by zhxxxx  ondfasd 2018/6/7.
 //  Copyright © 2018年 zh. All rights reserved.
 //
 

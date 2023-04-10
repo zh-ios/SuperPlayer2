@@ -114,7 +114,7 @@
 }
 
 - (void)configBottomToolBar {
-    _toolBar = [[BaseView alloc] initWithFrame:CGRectZero];
+    _toolBar = [[SPBaseView alloc] initWithFrame:CGRectZero];
     CGFloat rgb = 34 / 255.0;
     _toolBar.backgroundColor = [UIColor colorWithRed:rgb green:rgb blue:rgb alpha:0.7];
     
@@ -296,12 +296,12 @@
 #pragma mark - lazy
 - (UIView *)iCloudErrorView{
     if (!_iCloudErrorView) {
-        _iCloudErrorView = [[BaseView alloc] initWithFrame:CGRectMake(0, [TZCommonTools tz_statusBarHeight] + 44 + 10, self.view.tz_width, 28)];
+        _iCloudErrorView = [[SPBaseView alloc] initWithFrame:CGRectMake(0, [TZCommonTools tz_statusBarHeight] + 44 + 10, self.view.tz_width, 28)];
         UIImageView *icloud = [[UIImageView alloc] init];
         icloud.image = [UIImage tz_imageNamedFromMyBundle:@"iCloudError"];
         icloud.frame = CGRectMake(20, 0, 28, 28);
         [_iCloudErrorView addSubview:icloud];
-        UILabel *label = [[BaseLabel alloc] init];
+        UILabel *label = [[SPBaseLabel alloc] init];
         label.frame = CGRectMake(53, 0, self.view.tz_width - 63, 28);
         label.font = [UIFont systemFontOfSize:10];
         label.textColor = [UIColor whiteColor];

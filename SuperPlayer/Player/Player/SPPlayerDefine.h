@@ -2,8 +2,8 @@
 //  TSSCDefine.h
 //  ZHProject
 //
-//  Created by zh on 2019/5/24.
-//  Copyright © 2019 autohome. All rights reserved.
+//  Created by zhxxxx  ondfasd 2019/5/24.
+//  Copyright © 2023 zhssssx. 
 //
 
 
@@ -16,11 +16,8 @@
 #define TSSCDefine_h
 
 
-
-
-
-#define kAllThemeKey                                    @"AllLocalThemes"
-#define kPlaceholderImageName                           @"kPlaceholderImageName"
+#define kAllThemeKey                                    @"AllLocalThemesKEY"
+#define kPlaceholderImageName                           @"kPlaceholderImageNameKEY"
 
 // 高亮颜色
 //#A9D3F1
@@ -38,31 +35,31 @@
 // 是否设置过密码
 #define kHadSetPwd                                      @"kHadSetPwd"
 // 设置的密码
-#define kPwd                                            @"kUserSetSimplePwd"
+#define kPwd                                            @"kUserSetSimplePwdKEY"
 // 是否展示过加密提示（只展示一次）
-#define kHadShowLockTips                                @"kHadShowLockTips"
+#define kHadShowLockTips                                @"kHadShowLockTipsKEY"
 // 本地启动不再展示
-#define kDontShowThisTime                               @"kDontShowThisTime"
+#define kDontShowThisTime                               @"kDontShowThisTimeKEY"
 
 #define kFliterPoetryBelowStars                         (1000)
 
 // 免费加密视频最大数量
 #define kLockVideoMaxCount                              (10)
 #define kRandomFreeGirlVideoMaxCount                         (5)
-#define kRandomFreeGirlVideoMaxCountKey                 @"kRandomFreeGirlVideoMaxCountKey"
+#define kRandomFreeGirlVideoMaxCountKey                 @"kRandomFreeGirlVideoMaxCountKeyKEY"
 
 
-#define kThemeBeginColor                                [UIColor colorWithHexString:@"A9D3F1"]
-#define kThemeMiddleColor                                [UIColor colorWithHexString:@"62B0EF"]
-#define kThemeEndColor                                  [UIColor colorWithHexString:@"30A4F1"]
+#define kThemeBeginColor                                [UIColor colorWithHexString:@"A9D3F2"]
+#define kThemeMiddleColor                                [UIColor colorWithHexString:@"62B0EE"]
+#define kThemeEndColor                                  [UIColor colorWithHexString:@"30A4F2"]
 
 
 // 订阅到期
-#define kIAP_Expire_Ts                               @"kIAP_Expire_Ts"
+#define kIAP_Expire_Ts                               @"kIAP_Expire_TsTS"
 
 #define kSpeedupStatusKey                               @"kSpeedupStatusKey"
-#define kUnlockAllFuncForeverKey                        @"kUnlockAllFuncForeverKey"
-#define kAllScreenLockKey                               @"kAllScreenLockKey"
+#define khadUnlockAllFuncForeverKey                        @"khadUnlockAllFuncForeverKeyKEY"
+#define kAllScreenLockKey                               @"kAllScreenLockKeyKEY"
 
 //pwdLabel.text = @"●  ●  ●  ○";
 //break;
@@ -98,15 +95,15 @@ typedef NS_ENUM(NSInteger, ZHVideoDownloadStatus) {
 };
 
 // 下载相关key 后续可以优化成 const string 
-#define HWDownloadStateChangeNotification               @"HWDownloadStateChangeNotification"
-#define HWDownloadMaxConcurrentCountKey                 @"HWDownloadMaxConcurrentCountKey"
-#define HWDownloadMaxConcurrentCountChangeNotification  @"HWDownloadMaxConcurrentCountChangeNotification"
-#define HWNetworkingReachabilityDidChangeNotification   @"HWNetworkingReachabilityDidChangeNotification"
-#define HWDownloadAllowsCellularAccessKey               @"HWDownloadAllowsCellularAccessKey"
-#define HWDownloadProgressNotification                  @"HWDownloadProgressNotification"
-#define HWDownloadAllowsCellularAccessChangeNotification    @"HWDownloadAllowsCellularAccessChangeNotification"
+#define SPHWDownloadStateChangeNotification               @"SPHWDownloadStateChangeNotificationKEY"
+#define SPHWDownloadMaxConcurrentCountKey                 @"SPHWDownloadMaxConcurrentCountKey"
+#define SPHWDownloadMaxConcurrentCountChangeNotification  @"SPHWDownloadMaxConcurrentCountChangeNotificationKEY"
+#define SPHWNetworkingReachabilityDidChangeNotification   @"SPHWNetworkingReachabilityDidChangeNotificationKEY"
+#define SPHWDownloadAllowsCellularAccessKey               @"SPHWDownloadAllowsCellularAccessKeyKEY"
+#define SPHWDownloadProgressNotification                  @"SPHWDownloadProgressNotificationKEY"
+#define SPHWDownloadAllowsCellularAccessChangeNotification    @"SPHWDownloadAllowsCellularAccessChangeNotificationKEY"
 
-#define kHadClick18YearOldAlert     @"kHadClick18YearOldAlert"
+#define kHadClick18YearOldAlert     @"kHadClick18YearOldAlertKEY"
 
 #define kSupportedVideoFormats      @[@"MP4",@"FLV",@"F4V",@"WEBM",\
                                     @"M4V",@"MOV",@"3GP",@"3G2",\
@@ -119,8 +116,8 @@ typedef NS_ENUM(NSInteger, ZHVideoDownloadStatus) {
                                     @"F4"\
                                     ]
 
-#define kHadShowDemoVideos          @"kHadShowDemoVideos"
+#define kHadShowDemoVideos          @"kHadShowDemoVideosKEY"
 
-#define kRemoteConfigDataKey        @"kRemoteConfigDataKey"
+#define kRemoteConfigDataKey        @"kRemoteConfigDataKeyKEY"
 
 #endif /* TSSCDefine_h */

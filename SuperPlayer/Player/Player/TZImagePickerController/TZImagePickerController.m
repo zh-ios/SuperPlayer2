@@ -197,7 +197,7 @@
         [self configDefaultSetting];
         
         if (![[TZImageManager manager] authorizationStatusAuthorized]) {
-            _tipLabel = [[BaseLabel alloc] init];
+            _tipLabel = [[SPBaseLabel alloc] init];
             _tipLabel.frame = CGRectMake(8, 120, self.view.tz_width - 16, 60);
             _tipLabel.textAlignment = NSTextAlignmentCenter;
             _tipLabel.numberOfLines = 0;
@@ -442,7 +442,7 @@
         _progressHUD = [UIButton buttonWithType:UIButtonTypeCustom];
         [_progressHUD setBackgroundColor:[UIColor clearColor]];
         
-        _HUDContainer = [[BaseView alloc] init];
+        _HUDContainer = [[SPBaseView alloc] init];
         _HUDContainer.layer.cornerRadius = 8;
         _HUDContainer.clipsToBounds = YES;
         _HUDContainer.backgroundColor = [UIColor darkGrayColor];
@@ -450,7 +450,7 @@
         
         _HUDIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         
-        _HUDLabel = [[BaseLabel alloc] init];
+        _HUDLabel = [[SPBaseLabel alloc] init];
         _HUDLabel.textAlignment = NSTextAlignmentCenter;
         _HUDLabel.text = self.processHintStr;
         _HUDLabel.font = [UIFont systemFontOfSize:15];
@@ -811,7 +811,7 @@
                     } else {
                         self->_tableView.backgroundColor = [UIColor whiteColor];
                     }
-                    self->_tableView.tableFooterView = [[BaseView alloc] init];
+                    self->_tableView.tableFooterView = [[SPBaseView alloc] init];
                     self->_tableView.dataSource = self;
                     self->_tableView.delegate = self;
                     [self->_tableView registerClass:[TZAlbumCell class] forCellReuseIdentifier:@"TZAlbumCell"];

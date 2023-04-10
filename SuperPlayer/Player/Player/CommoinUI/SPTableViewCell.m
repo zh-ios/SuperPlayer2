@@ -2,7 +2,7 @@
 //  SPTableViewCell.m
 //  ZHProject
 //
-//  Created by zh on 2018/7/10.
+//  Created by zhxxxx  ondfasd 2018/7/10.
 //  Copyright © 2018年 autohome. All rights reserved.
 //
 
@@ -33,11 +33,11 @@
 }
 
 - (void)addSplitLine:(CGRect)lineFrame {
-    _splitLine = [[BaseView alloc] initWithFrame:CGRectMake(10, lineFrame.size.height-onePixel, kScreenWidth-10, onePixel)];
+    _splitLine = [[SPBaseView alloc] initWithFrame:CGRectMake(10, lineFrame.size.height-onePixel, kScreenWidth-10, onePixel)];
     _splitLine.backgroundColor = [UIColor lightGrayColor];
     [self.contentView addSubview:self.splitLine];
     
-    UIView *backgroundView = [[BaseView alloc] init];
+    UIView *backgroundView = [[SPBaseView alloc] init];
     self.selectedBgView = backgroundView;
     backgroundView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
     self.selectedBackgroundView = backgroundView;

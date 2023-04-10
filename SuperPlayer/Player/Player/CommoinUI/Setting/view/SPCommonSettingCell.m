@@ -2,7 +2,7 @@
 //  SPCommonSettingCell.m
 //  FMhatProject
 //
-//  Created by zh on 2018/7/3.
+//  Created by zhxxxx  ondfasd 2018/7/3.
 //  Copyright © 2018年 xiaomi. All rights reserved.
 //
 
@@ -38,13 +38,13 @@
     self.containerView = [[SPSettingCellContainerView alloc] initWithFrame:CGRectMake(0, 0, self.width, 52)];
     [self.contentView addSubview:self.containerView];
     
-    UIView *selectedBgView = [[BaseView alloc] initWithFrame:self.bounds];
+    UIView *selectedBgView = [[SPBaseView alloc] initWithFrame:self.bounds];
     selectedBgView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
     
     self.selectedBackgroundView = selectedBgView;
     self.multipleSelectionBackgroundView = selectedBgView;
     
-//    self.lineView = [[BaseView alloc] init];
+//    self.lineView = [[SPBaseView alloc] init];
 //    self.lineView.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
 //    [self.contentView addSubview:self.lineView];
 }

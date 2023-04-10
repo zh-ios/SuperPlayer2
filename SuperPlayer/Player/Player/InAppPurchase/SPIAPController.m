@@ -64,7 +64,7 @@
 - (void)initSubViews {
     CGFloat leftPadding = 15;
 
-    UILabel *tipLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(leftPadding , kNavbarHeight+15, 250, 80)];
+    UILabel *tipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftPadding , kNavbarHeight+15, 250, 80)];
     tipLabel.text = [NSString stringWithFormat:kZHLocalizedString(@"  欢迎使用\n                %@！"),kZHLocalizedString(@"秒播")];
     tipLabel.font = [UIFont boldSystemFontOfSize:25];
     tipLabel.numberOfLines = 2;
@@ -162,7 +162,7 @@
         previewBtn.hidden = YES;
     }
     
-    UILabel *declarationLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(iapLeftPadding, previewBtn.bottom+30, self.subscribeBtn.width, 40)];
+    UILabel *declarationLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(iapLeftPadding, previewBtn.bottom+30, self.subscribeBtn.width, 40)];
     declarationLabel.textColor = kTextColor9;
     declarationLabel.font = [UIFont systemFontOfSize:9];
     [self.containerView addSubview:declarationLabel];
@@ -295,7 +295,7 @@
 
 - (void)SPIAPManagerDidFinishPurchase:(NSString *)pid {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [ZHToastUtil showToast:@"欢迎来到 VIP 世界~ ✿✿ヽ(°▽°)ノ✿ ！！！" duration:2 completed:^{
+        [SPToastUtil showToast:@"欢迎来到 VIP 世界~ ✿✿ヽ(°▽°)ノ✿ ！！！" duration:2 completed:^{
             [SKStoreReviewController requestReview];
         }];
     });

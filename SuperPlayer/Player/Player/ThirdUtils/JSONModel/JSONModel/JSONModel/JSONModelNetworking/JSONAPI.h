@@ -15,12 +15,12 @@
 
 
 #import <Foundation/Foundation.h>
-#import "JSONHTTPClient.h"
+#import "SPJSONHTTPClient.h"
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
- * @discussion Class for working with JSON APIs. It builds upon the JSONHTTPClient class
+ * @discussion Class for working with JSON APIs. It builds upon the SPJSONHTTPClient class
  * and facilitates making requests to the same web host. Also features helper
  * method for making calls to a JSON RPC service
  */

@@ -23,7 +23,6 @@
 
 #import "TZImagePickerController.h"
 #import "SPActionSheet.h"
-#import "AXWebViewController.h"
 
 @interface SPFileManagerController ()<UITableViewDelegate,UITableViewDataSource,TZImagePickerControllerDelegate>
 
@@ -32,8 +31,6 @@
 @property (nonatomic, strong) SPEmptyControl *emptyView;
 @property (nonatomic, strong) GCDWebUploader *webServer;
 @property (nonatomic, assign) BOOL shouldReloadData;
-@property (nonatomic, strong) AXWebViewController *webVC;
-
 
 @end
 
@@ -58,48 +55,48 @@
     [self moveVideoFromDocPathToLocalfoldersIfNeeded];
     [self reloadController];
     [self.tableView reloadData];
-    UILongPressGestureRecognizer *longP = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longP)];
-    longP.minimumPressDuration = 6;
-    [self.customNavView addGestureRecognizer:longP];
+//    UILongPressGestureRecognizer *longP = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longP)];
+//    longP.minimumPressDuration = 6;
+//    [self.customNavView addGestureRecognizer:longP];
 }
 
-- (void)longP {
-    if (self.webVC) return;
-    if (![SPGlobalConfigManager shareManager].unlockAllFunc) return;
-    NSString *url = @"https://cn.bing.com/?mkt=zh-CN";
-    NSString *webURL = [SPGlobalConfigManager shareManager].configModel.webview_url;
-    if (kSTR_IS_VALID(webURL)) {
-        url = webURL;
-    }
-    if (![SPGlobalConfigManager shareManager].configModel) {
-        url = @"https://goto.sofan.in";
-    }
- 
-    AXWebViewController *webVC = [[AXWebViewController alloc] initWithURL:[NSURL URLWithString:url]];
-    webVC.showsToolBar = YES;
-    webVC.webView.allowsLinkPreview = YES;
-    webVC.hidesBottomBarWhenPushed = YES;
-    self.webVC = webVC;
-    [[UIViewController currentVC].navigationController pushViewController:webVC animated:YES];
-}
+//- (void)longP {
+//    if (self.webVC) return;
+//    if (![SPGlobalConfigManager shareManager].hadUnlockAllFunc) return;
+//    NSString *url = @"https://cn.bing.com/?mkt=zh-CN";
+//    NSString *webURL = [SPGlobalConfigManager shareManager].configModel.webview_url;
+//    if (kSTR_IS_VALID(webURL)) {
+//        url = webURL;
+//    }
+//    if (![SPGlobalConfigManager shareManager].configModel) {
+//        url = @"https://goto.sofan.in";
+//    }
+//
+//    AXWebViewController *webVC = [[AXWebViewController alloc] initWithURL:[NSURL URLWithString:url]];
+//    webVC.showsToolBar = YES;
+//    webVC.webView.allowsLinkPreview = YES;
+//    webVC.hidesBottomBarWhenPushed = YES;
+//    self.webVC = webVC;
+//    [[UIViewController currentVC].navigationController pushViewController:webVC animated:YES];
+//}
 
 
-- (void)moveDemoVideoToDocPathIfNeeded {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:kHadShowDemoVideos]) return;
-    NSString *video1Path = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"mp4"];
-    NSString *video2Path = [[NSBundle mainBundle] pathForResource:@"2" ofType:@"mp4"];
-    NSString *video3Path = [[NSBundle mainBundle] pathForResource:@"3" ofType:@"mp4"];
-    
-    NSString *newPath1 = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:@"/示例Mp4视频：短裤热舞٩(๑>◡<๑)۶.MP4"];
-    NSString *newPath2 = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:@"/示例RMVB视频：猫耳超短裙~😘.RMVB"];
-    NSString *newPath3 = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:@"/示例MKV视频：猫耳双马尾(￣ＴＴ￣).MKV"];
-    
-    [[SPLocalFileManager sharedManager] copyFileFromPath:video1Path toPath:newPath1];
-    [[SPLocalFileManager sharedManager] copyFileFromPath:video2Path toPath:newPath2];
-    [[SPLocalFileManager sharedManager] copyFileFromPath:video3Path toPath:newPath3];
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHadShowDemoVideos];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
+//- (void)moveDemoVideoToDocPathIfNeeded {
+//    if ([[NSUserDefaults standardUserDefaults] boolForKey:kHadShowDemoVideos]) return;
+//    NSString *video1Path = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"mp4"];
+//    NSString *video2Path = [[NSBundle mainBundle] pathForResource:@"2" ofType:@"mp4"];
+//    NSString *video3Path = [[NSBundle mainBundle] pathForResource:@"3" ofType:@"mp4"];
+//
+//    NSString *newPath1 = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:@"/示例Mp4视频：短裤热舞٩(๑>◡<๑)۶.MP4"];
+//    NSString *newPath2 = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:@"/示例RMVB视频：猫耳超短裙~😘.RMVB"];
+//    NSString *newPath3 = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:@"/示例MKV视频：猫耳双马尾(￣ＴＴ￣).MKV"];
+//
+//    [[SPLocalFileManager sharedManager] copyFileFromPath:video1Path toPath:newPath1];
+//    [[SPLocalFileManager sharedManager] copyFileFromPath:video2Path toPath:newPath2];
+//    [[SPLocalFileManager sharedManager] copyFileFromPath:video3Path toPath:newPath3];
+//    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHadShowDemoVideos];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+//}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -190,7 +187,7 @@
         _tableView.dataSource = self;
         _tableView.rowHeight = 90;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.tableFooterView = [[BaseView alloc] init];
+        _tableView.tableFooterView = [[SPBaseView alloc] init];
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
         _tableView.estimatedRowHeight = 0;
@@ -368,10 +365,10 @@
     UIAlertAction *action = [UIAlertAction actionWithTitle:kZHLocalizedString(@"确定") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSString *pwd1 = [alert.textFields firstObject].text;
         if ([pwd1 length] != 4) {
-            [ZHToastUtil showToast:kZHLocalizedString(@"请输入四位密码")];
+            [SPToastUtil showToast:kZHLocalizedString(@"请输入四位密码")];
             return;
         }
-        [ZHToastUtil showToast:kZHLocalizedString(@"密码设置成功")];
+        [SPToastUtil showToast:kZHLocalizedString(@"密码设置成功")];
         [[NSUserDefaults standardUserDefaults] setObject:pwd1 forKey:kPwd];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHadSetPwd];
         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -451,7 +448,7 @@
                     [self openAB];
                 }
                 if (authStatus == PHAuthorizationStatusDenied||authStatus==PHAuthorizationStatusRestricted) {
-                    [ZHToastUtil showToast:kZHLocalizedString(@"未获取相册权限，请在设置->隐私中开启相应权限")];
+                    [SPToastUtil showToast:kZHLocalizedString(@"未获取相册权限，请在设置->隐私中开启相应权限")];
                     return;
                 }
             });
@@ -459,7 +456,7 @@
         }];
     }
     if (authStatus == PHAuthorizationStatusDenied||authStatus==PHAuthorizationStatusRestricted) {
-        [ZHToastUtil showToast:kZHLocalizedString(@"未获取相册权限，请在设置->隐私中开启相应权限")];
+        [SPToastUtil showToast:kZHLocalizedString(@"未获取相册权限，请在设置->隐私中开启相应权限")];
         return;
     }
     if (authStatus == PHAuthorizationStatusAuthorized) {
@@ -473,15 +470,15 @@
 - (void)lockFile:(SPFilesModel *)model indexPath:(NSIndexPath *)index {
     
     NSInteger lockedFilesCount = [[SPLocalFileManager sharedManager] getLockedFilesCount];
-    BOOL unlockAllFunc = [SPGlobalConfigManager shareManager].unlockAllFunc;
+    BOOL hadUnlockAllFunc = [SPGlobalConfigManager shareManager].hadUnlockAllFunc;
     // 大于免费加密数量且没有付费且没有好评过
     NSInteger maxCount = kLockVideoMaxCount;
     if ([SPGlobalConfigManager shareManager].hadClickGoodCmt) {
         maxCount = 1000;
     }
-    if (lockedFilesCount>=maxCount&&!unlockAllFunc) {
+    if (lockedFilesCount>=maxCount&&!hadUnlockAllFunc) {
         
-        [ZHToastUtil showToast:kZHLocalizedString(@"免费视频加密额度已用尽，即将前往激活 PRO 模式") duration:2 completed:^{
+        [SPToastUtil showToast:kZHLocalizedString(@"免费视频加密额度已用尽，即将前往激活 PRO 模式") duration:2 completed:^{
             SPIAPController *iapVC = [[SPIAPController alloc] init];
             iapVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:iapVC animated:YES];
@@ -496,7 +493,7 @@
         repeated = [[SPLocalFileManager sharedManager] hasSameNameFile:model.name folderPath:[[SPLocalFileManager sharedManager] getLockedFilePath]];
     }
     if (repeated) {
-        [ZHToastUtil showToast:kZHLocalizedString(@"已存在同名文件，请重命名后再进行操作！")];
+        [SPToastUtil showToast:kZHLocalizedString(@"已存在同名文件，请重命名后再进行操作！")];
         return;
     } else {
         [[SPLocalFileManager sharedManager] moveFileFromPath:model.fullPath toPath:[[SPLocalFileManager sharedManager] getLockedFilePath]];
@@ -546,11 +543,11 @@
 //            videoSaveURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@_%@",[[SPLocalFileManager sharedManager] getGlobalFilePath],@(ts),orgFilename]];
 //            orgFilename = [NSString stringWithFormat:@"%@_%@",@(ts),orgFilename];
           
-            [ZHToastUtil showToast:kZHLocalizedString(@"已为您过滤重复视频！")];
+            [SPToastUtil showToast:kZHLocalizedString(@"已为您过滤重复视频！")];
             continue;
         }
 
-        [ZHToastUtil showLoadingWithTitle:kZHLocalizedString(@"上传中...") onView:self.view];
+        [SPToastUtil showLoadingWithTitle:kZHLocalizedString(@"上传中...") onView:self.view];
         
         
         // 用这种方式更快
@@ -573,7 +570,7 @@
         }];
     }
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        [ZHToastUtil endLoadingOnView:self.view];
+        [SPToastUtil endLoadingOnView:self.view];
         [self reloadController];
         [self.tableView reloadData];
     });
@@ -587,7 +584,7 @@
         NSString *folderName = [alert.textFields firstObject].text;
         BOOL repeated = [[SPLocalFileManager sharedManager] hasSameNameFolders:folderName folderPath:[[SPLocalFileManager sharedManager] getGlobalFilePath]];
         if (repeated) {
-            [ZHToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
+            [SPToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
         } else {
             [[SPLocalFileManager sharedManager] createFolders:folderName];
             [self reloadController];
@@ -617,7 +614,7 @@
 
 - (void)reNameFileOp:(NSString *)fileName fileModel:(SPFilesModel *)model {
     if ([fileName trimingWhiteSpaceAndNewline].length == 0) {
-        [ZHToastUtil showToast:kZHLocalizedString(@"请输入有效文件名")];
+        [SPToastUtil showToast:kZHLocalizedString(@"请输入有效文件名")];
         return;
     }
     BOOL repeated = NO;
@@ -628,7 +625,7 @@
     }
      
     if (repeated) {
-        [ZHToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
+        [SPToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
         return;
     } else {
         NSInteger index = [self.filesArray indexOfObject:model];

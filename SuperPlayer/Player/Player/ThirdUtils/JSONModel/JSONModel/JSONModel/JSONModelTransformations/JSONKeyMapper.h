@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NSString* (^JSONModelKeyMapBlock)(NSString* keyName);
+typedef NSString* (^SPJSONModelKeyMapBlock)(NSString* keyName);
 
 /**
  * **You won't need to create or store instances of this class yourself.** If you want your model
@@ -52,10 +52,10 @@ typedef NSString* (^JSONModelKeyMapBlock)(NSString* keyName);
 
 /** @name Name converters */
 /** Block, which takes in a JSON key and converts it to the corresponding property name */
-@property (readonly, nonatomic) JSONModelKeyMapBlock JSONToModelKeyBlock;
+@property (readonly, nonatomic) SPJSONModelKeyMapBlock JSONToModelKeyBlock;
 
 /** Block, which takes in a property name and converts it to the corresponding JSON key name */
-@property (readonly, nonatomic) JSONModelKeyMapBlock modelToJSONKeyBlock;
+@property (readonly, nonatomic) SPJSONModelKeyMapBlock modelToJSONKeyBlock;
 
 /** Combined converter method
 * @param value the source name
@@ -68,18 +68,18 @@ typedef NSString* (^JSONModelKeyMapBlock)(NSString* keyName);
 
 /**
  * Creates a JSONKeyMapper instance, based on the two blocks you provide this initializer.
- * The two parameters take in a JSONModelKeyMapBlock block:
- * <pre>NSString* (^JSONModelKeyMapBlock)(NSString* keyName)</pre>
+ * The two parameters take in a SPJSONModelKeyMapBlock block:
+ * <pre>NSString* (^SPJSONModelKeyMapBlock)(NSString* keyName)</pre>
  * The block takes in a string and returns the transformed (if at all) string.
  * @param toModel transforms JSON key name to your model property name
  * @param toJSON transforms your model property name to a JSON key
  */
--(instancetype)initWithJSONToModelBlock:(JSONModelKeyMapBlock)toModel
-                       modelToJSONBlock:(JSONModelKeyMapBlock)toJSON;
+-(instancetype)initWithJSONToModelBlock:(SPJSONModelKeyMapBlock)toModel
+                       modelToJSONBlock:(SPJSONModelKeyMapBlock)toJSON;
 
 /**
  * Creates a JSONKeyMapper instance, based on the mapping you provide
- * in the map parameter. Use the JSON key names as keys, your JSONModel 
+ * in the map parameter. Use the JSON key names as keys, your SPJSONModel 
  * property names as values.
  * @param map map dictionary, in the format: <pre>@{@"crazy_JSON_name":@"myCamelCaseName"}</pre>
  * @return JSONKeyMapper instance
@@ -95,7 +95,7 @@ typedef NSString* (^JSONModelKeyMapBlock)(NSString* keyName);
 
 /**
  * Creates a JSONKeyMapper based on a built-in JSONKeyMapper, with specific exceptions.
- * Use the original JSON key names as keys, and your JSONModel property names as values.
+ * Use the original JSON key names as keys, and your SPJSONModel property names as values.
  */
 + (instancetype)mapper:(JSONKeyMapper *)baseKeyMapper withExceptions:(NSDictionary *)exceptions;
 

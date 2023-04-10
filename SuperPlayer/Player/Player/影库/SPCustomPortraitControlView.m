@@ -318,7 +318,7 @@
 
 - (UIView *)topToolView {
     if (!_topToolView) {
-        _topToolView = [[BaseView alloc] init];
+        _topToolView = [[SPBaseView alloc] init];
         UIImage *image = ZFPlayer_Image(@"ZFPlayer_top_shadow");
         _topToolView.layer.contents = (id)image.CGImage;
     }
@@ -327,7 +327,7 @@
 
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
-        _titleLabel = [[BaseLabel alloc] init];
+        _titleLabel = [[SPBaseLabel alloc] init];
         _titleLabel.textColor = [UIColor whiteColor];
         _titleLabel.font = [UIFont systemFontOfSize:15.0];
     }
@@ -336,7 +336,7 @@
 
 - (UIView *)bottomToolView {
     if (!_bottomToolView) {
-        _bottomToolView = [[BaseView alloc] init];
+        _bottomToolView = [[SPBaseView alloc] init];
         UIImage *image = ZFPlayer_Image(@"ZFPlayer_bottom_shadow");
         _bottomToolView.layer.contents = (id)image.CGImage;
     }
@@ -354,7 +354,7 @@
 
 - (UILabel *)currentTimeLabel {
     if (!_currentTimeLabel) {
-        _currentTimeLabel = [[BaseLabel alloc] init];
+        _currentTimeLabel = [[SPBaseLabel alloc] init];
         _currentTimeLabel.textColor = [UIColor whiteColor];
         _currentTimeLabel.font = [UIFont systemFontOfSize:14.0f];
         _currentTimeLabel.textAlignment = NSTextAlignmentCenter;
@@ -377,7 +377,7 @@
 
 - (UILabel *)totalTimeLabel {
     if (!_totalTimeLabel) {
-        _totalTimeLabel = [[BaseLabel alloc] init];
+        _totalTimeLabel = [[SPBaseLabel alloc] init];
         _totalTimeLabel.textColor = [UIColor whiteColor];
         _totalTimeLabel.font = [UIFont systemFontOfSize:14.0f];
         _totalTimeLabel.textAlignment = NSTextAlignmentCenter;

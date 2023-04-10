@@ -17,7 +17,7 @@
 #import "JSONAPI.h"
 
 #pragma mark - helper error model class
-@interface JSONAPIRPCErrorModel: JSONModel
+@interface JSONAPIRPCErrorModel: SPJSONModel
 @property (assign, nonatomic) int code;
 @property (strong, nonatomic) NSString* message;
 @property (strong, nonatomic) id<Optional> data;
@@ -57,7 +57,7 @@ static long jsonRpcId = 0;
 
 +(void)setContentType:(NSString*)ctype
 {
-    [JSONHTTPClient setRequestContentType: ctype];
+    [SPJSONHTTPClient setRequestContentType: ctype];
 }
 
 #pragma mark - GET methods
@@ -65,7 +65,7 @@ static long jsonRpcId = 0;
 {
     NSString* fullURL = [NSString stringWithFormat:@"%@%@", sharedInstance.baseURLString, path];
     
-    [JSONHTTPClient getJSONFromURLWithString: fullURL params:params completion:^(NSDictionary *json, JSONModelError *e) {
+    [SPJSONHTTPClient getJSONFromURLWithString: fullURL params:params completion:^(NSDictionary *json, SPJSONModelError *e) {
         completeBlock(json, e);
     }];
 }
@@ -75,7 +75,7 @@ static long jsonRpcId = 0;
 {
     NSString* fullURL = [NSString stringWithFormat:@"%@%@", sharedInstance.baseURLString, path];
     
-    [JSONHTTPClient postJSONFromURLWithString: fullURL params:params completion:^(NSDictionary *json, JSONModelError *e) {
+    [SPJSONHTTPClient postJSONFromURLWithString: fullURL params:params completion:^(NSDictionary *json, SPJSONModelError *e) {
         completeBlock(json, e);
     }];
 }
@@ -90,9 +90,9 @@ static long jsonRpcId = 0;
     NSString* jsonRequestString = [[NSString alloc] initWithData:jsonRequestData encoding: NSUTF8StringEncoding];
 
     NSAssert(sharedInstance.baseURLString, @"API base URL not set");
-    [JSONHTTPClient postJSONFromURLWithString: sharedInstance.baseURLString
+    [SPJSONHTTPClient postJSONFromURLWithString: sharedInstance.baseURLString
                                    bodyString: jsonRequestString
-                                   completion:^(NSDictionary *json, JSONModelError* e) {
+                                   completion:^(NSDictionary *json, SPJSONModelError* e) {
 
                                        if (completeBlock) {
                                            //handle the rpc response
@@ -103,12 +103,12 @@ static long jsonRpcId = 0;
                                                if (error) {
                                                    //custom server error
                                                    if (!error.message) error.message = @"Generic json rpc error";
-                                                   e = [JSONModelError errorWithDomain:JSONModelErrorDomain
+                                                   e = [SPJSONModelError errorWithDomain:SPJSONModelErrorDomain
                                                                                   code:error.code
                                                                               userInfo: @{ NSLocalizedDescriptionKey : error.message}];
                                                } else {
                                                    //generic error
-                                                   e = [JSONModelError errorBadResponse];
+                                                   e = [SPJSONModelError errorBadResponse];
                                                }
                                            }
                                            

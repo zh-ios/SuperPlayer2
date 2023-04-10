@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SPScreenLockController : SPBaseController
 
-@property (nonatomic, copy) void (^InputRightPwdCallback)(void);
+@property (nonatomic, copy) void (^inputRightPwdCallback)(void);
 
 @end
 

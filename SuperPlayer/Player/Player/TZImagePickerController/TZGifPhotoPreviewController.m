@@ -68,7 +68,7 @@
 }
 
 - (void)configBottomToolBar {
-    _toolBar = [[BaseView alloc] initWithFrame:CGRectZero];
+    _toolBar = [[SPBaseView alloc] initWithFrame:CGRectZero];
     CGFloat rgb = 34 / 255.0;
     _toolBar.backgroundColor = [UIColor colorWithRed:rgb green:rgb blue:rgb alpha:0.7];
     
@@ -85,7 +85,7 @@
     }
     [_toolBar addSubview:_doneButton];
     
-    UILabel *byteLabel = [[BaseLabel alloc] init];
+    UILabel *byteLabel = [[SPBaseLabel alloc] init];
     byteLabel.textColor = [UIColor whiteColor];
     byteLabel.font = [UIFont systemFontOfSize:13];
     byteLabel.frame = CGRectMake(10, 0, 100, 44);

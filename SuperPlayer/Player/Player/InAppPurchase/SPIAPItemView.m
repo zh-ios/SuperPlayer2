@@ -9,10 +9,10 @@
 
 @interface SPIAPItemView ()
 
-@property (nonatomic, strong) BaseLabel  *discountLabel;
-@property (nonatomic, strong) BaseLabel *timeLabel;
-@property (nonatomic, strong) BaseLabel *priceLabel;
-@property (nonatomic, strong) BaseLabel *typeLabel;
+@property (nonatomic, strong) SPBaseLabel  *discountLabel;
+@property (nonatomic, strong) SPBaseLabel *timeLabel;
+@property (nonatomic, strong) SPBaseLabel *priceLabel;
+@property (nonatomic, strong) SPBaseLabel *typeLabel;
 
 @end
 
@@ -26,7 +26,7 @@
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
         
-        self.discountLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, self.width, 20)];
+        self.discountLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, 0, self.width, 20)];
         self.discountLabel.textColor = [UIColor whiteColor];
         self.discountLabel.font = [UIFont systemFontOfSize:11];
         [self addSubview:self.discountLabel];
@@ -34,14 +34,14 @@
         if (dTitle.length>0) self.discountLabel.text = dTitle;
         self.discountLabel.backgroundColor = kThemeBeginColor;
         
-        self.timeLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(0, self.discountLabel.bottom+3, self.width, 20)];
+        self.timeLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, self.discountLabel.bottom+3, self.width, 20)];
         self.timeLabel.textColor = kTextColor3;
         self.timeLabel.font = [UIFont systemFontOfSize:12];
         [self addSubview:self.timeLabel];
         self.timeLabel.text = timeTitle;
         self.timeLabel.textAlignment = NSTextAlignmentCenter;
         
-        self.priceLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(0, self.timeLabel.bottom+3, self.width, 20)];
+        self.priceLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, self.timeLabel.bottom+3, self.width, 20)];
         self.priceLabel.textColor = kTextColor9;
         self.priceLabel.font = [UIFont systemFontOfSize:17];
         self.priceLabel.text = price;
@@ -49,7 +49,7 @@
         self.priceLabel.textColor = kThemeEndColor;
         self.priceLabel.textAlignment = NSTextAlignmentCenter;
         
-        self.typeLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(0, self.priceLabel.bottom, self.width, 0)];
+        self.typeLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, self.priceLabel.bottom, self.width, 0)];
         self.typeLabel.textColor = kTextColor9;
         self.typeLabel.font = [UIFont systemFontOfSize:12];
         self.typeLabel.numberOfLines = 2;

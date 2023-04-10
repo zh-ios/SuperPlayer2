@@ -143,7 +143,7 @@ static NSString *global_lock_folderName = @"lockfolders";
 
 - (BOOL)createFolders:(NSString *)folderName {
     if ([folderName containsString:@"/"]) {
-        [ZHToastUtil showToast:kZHLocalizedString(@"包含非法字符\")/\"")];
+        [SPToastUtil showToast:kZHLocalizedString(@"包含非法字符\")/\"")];
         return NO;
     }
     NSString *folderPath = [global_folderPath stringByAppendingPathComponent:folderName];

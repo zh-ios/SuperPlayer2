@@ -15,7 +15,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import "JSONModelArray.h"
+#import "SPJSONModelArray.h"
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -38,9 +38,9 @@ extern BOOL isNull(id value);
  * Just few examples of what can you add to JSONValueTransformer: hex colors in JSON to UIColor,
  * hex numbers in JSON to NSNumber model properties, base64 encoded strings in JSON to UIImage properties, and more.
  *
- * The class is invoked by JSONModel while transforming incoming
+ * The class is invoked by SPJSONModel while transforming incoming
  * JSON types into your target class property classes, and vice versa.
- * One static copy is create and store in the JSONModel class scope.
+ * One static copy is create and store in the SPJSONModel class scope.
  */
 @interface JSONValueTransformer : NSObject
 
@@ -73,14 +73,14 @@ extern BOOL isNull(id value);
  */
 -(NSMutableArray*)NSMutableArrayFromNSArray:(NSArray*)array;
 
-#pragma mark - NS(Mutable)Array <- JSONModelArray
+#pragma mark - NS(Mutable)Array <- SPJSONModelArray
 /**
- * Transforms an array to a JSONModelArray
+ * Transforms an array to a SPJSONModelArray
  * @param array incoming array
- * @return JSONModelArray
+ * @return SPJSONModelArray
  */
--(NSArray*)NSArrayFromJSONModelArray:(JSONModelArray*)array;
--(NSMutableArray*)NSMutableArrayFromJSONModelArray:(JSONModelArray*)array;
+-(NSArray*)NSArrayFromSPSPJSONModelArray:(SPJSONModelArray*)array;
+-(NSMutableArray*)NSMutableArrayFromSPSPJSONModelArray:(SPJSONModelArray*)array;
 
 #pragma mark - NSMutableDictionary <-> NSDictionary
 /**

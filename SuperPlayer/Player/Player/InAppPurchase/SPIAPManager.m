@@ -63,7 +63,7 @@ static SPIAPManager *_mgr = nil;
 }
 
 - (void)requestProductWithPid:(NSString *)pid {
-    [ZHToastUtil showLoadingWithTitle:kZHLocalizedString(@"数据加载中...") onView:[UIViewController currentVC].view];
+    [SPToastUtil showLoadingWithTitle:kZHLocalizedString(@"数据加载中...") onView:[UIViewController currentVC].view];
     if ([SKPaymentQueue canMakePayments]) {
         if (pid) {
             NSSet *set = [NSSet setWithArray:@[pid]];
@@ -71,12 +71,12 @@ static SPIAPManager *_mgr = nil;
             req.delegate = self;
             [req start];
         } else {
-            [ZHToastUtil showToast:kZHLocalizedString(@"无效产品id")];
-            [ZHToastUtil endLoadingOnView:[UIViewController currentVC].view];
+            [SPToastUtil showToast:kZHLocalizedString(@"无效产品id")];
+            [SPToastUtil endLoadingOnView:[UIViewController currentVC].view];
         }
     } else {
-        [ZHToastUtil endLoadingOnView:[UIViewController currentVC].view];
-        [ZHToastUtil showToast:kZHLocalizedString(@"不支持内购功能，需要去设置中进行修改")];
+        [SPToastUtil endLoadingOnView:[UIViewController currentVC].view];
+        [SPToastUtil showToast:kZHLocalizedString(@"不支持内购功能，需要去设置中进行修改")];
     }
 }
 
@@ -94,7 +94,7 @@ static SPIAPManager *_mgr = nil;
                 
                 break;
             case SKPaymentTransactionStateFailed:
-                [ZHToastUtil endLoadingOnView:[UIViewController currentVC].view];
+                [SPToastUtil endLoadingOnView:[UIViewController currentVC].view];
                 if (self.delegate && [self.delegate respondsToSelector:@selector(SPIAPManagerCancelledOrFailed:)]) {
                     [self.delegate SPIAPManagerCancelledOrFailed:trans.payment.productIdentifier];
                 }
@@ -103,7 +103,7 @@ static SPIAPManager *_mgr = nil;
                 // 购买成功
             case SKPaymentTransactionStatePurchased:
                 [queue finishTransaction:trans];
-                [ZHToastUtil endLoadingOnView:[UIViewController currentVC].view];
+                [SPToastUtil endLoadingOnView:[UIViewController currentVC].view];
                 [self verifyTransactionResultWithPid:trans.payment.productIdentifier];
                 break;
             // 恢复购买，已经购买过该商品
@@ -121,7 +121,7 @@ static SPIAPManager *_mgr = nil;
 
 // 恢复购买失败
 - (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error {
-    [ZHToastUtil showToast:kZHLocalizedString(@"恢复购买失败")];
+    [SPToastUtil showToast:kZHLocalizedString(@"恢复购买失败")];
 }
 
 // 恢复购买
@@ -133,9 +133,9 @@ static SPIAPManager *_mgr = nil;
             }
         }
         // 需要进行校验
-        [ZHToastUtil showToast:kZHLocalizedString(@"已为您恢复购买")];
+        [SPToastUtil showToast:kZHLocalizedString(@"已为您恢复购买")];
     } else {
-        [ZHToastUtil showToast:kZHLocalizedString(@"未查询到购买记录")];
+        [SPToastUtil showToast:kZHLocalizedString(@"未查询到购买记录")];
     }
 }
 
@@ -190,7 +190,7 @@ static SPIAPManager *_mgr = nil;
    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 
     RUN_IN_MAIN_THREAD(^{
-        [ZHToastUtil showLoadingWithTitle:kZHLocalizedString(@"购买成功正在进行校验...") onView:[UIViewController currentVC].view];
+        [SPToastUtil showLoadingWithTitle:kZHLocalizedString(@"购买成功正在进行校验...") onView:[UIViewController currentVC].view];
     })
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:queue];
@@ -200,8 +200,8 @@ static SPIAPManager *_mgr = nil;
           if (error) {
               NSLog(kZHLocalizedString(@"链接失败"));
               RUN_IN_MAIN_THREAD(^{
-                  [ZHToastUtil showToast:kZHLocalizedString(@"网络连接失败,请重试")];
-                  [ZHToastUtil endLoadingOnView:[UIViewController currentVC].view];
+                  [SPToastUtil showToast:kZHLocalizedString(@"网络连接失败,请重试")];
+                  [SPToastUtil endLoadingOnView:[UIViewController currentVC].view];
               });
           } else {
               NSError *error;
@@ -209,8 +209,8 @@ static SPIAPManager *_mgr = nil;
               if (!jsonResponse) {
                   NSLog(kZHLocalizedString(@"验证失败"));
                   RUN_IN_MAIN_THREAD(^{
-                      [ZHToastUtil endLoadingOnView:[UIViewController currentVC].view];
-                      [ZHToastUtil showToast:kZHLocalizedString(@"验证失败")];
+                      [SPToastUtil endLoadingOnView:[UIViewController currentVC].view];
+                      [SPToastUtil showToast:kZHLocalizedString(@"验证失败")];
                   })
               }
 
@@ -236,10 +236,10 @@ static SPIAPManager *_mgr = nil;
                       for (NSDictionary *dic in inAppIap) {
                           /////////////////////  永久解锁情况
                           if ([dic[@"product_id"] isEqualToString:kunlockForever]) {
-                              [ZHToastUtil endLoadingOnView:[UIViewController currentVC].view];
-                              [ZHToastUtil showToast:kZHLocalizedString(@"校验成功，感谢您的支持！")];
+                              [SPToastUtil endLoadingOnView:[UIViewController currentVC].view];
+                              [SPToastUtil showToast:kZHLocalizedString(@"校验成功，感谢您的支持！")];
                               // 永久激活
-                              [SPGlobalConfigManager shareManager].unlockAllFuncForeverStatus = YES;
+                              [SPGlobalConfigManager shareManager].hadUnlockAllFunctionForeverStatus = YES;
                               if (self.delegate && [self.delegate respondsToSelector:@selector(SPIAPManagerDidFinishPurchase:)]) {
                                     [self.delegate SPIAPManagerDidFinishPurchase:pid];
                                   return;
@@ -252,16 +252,16 @@ static SPIAPManager *_mgr = nil;
                       }
                       // 有有效的订阅内容
                       if (expireTs>initExpireTs) {
-                          [ZHToastUtil endLoadingOnView:[UIViewController currentVC].view];
-                          [ZHToastUtil showToast:kZHLocalizedString(@"校验成功，感谢您的支持！")];
+                          [SPToastUtil endLoadingOnView:[UIViewController currentVC].view];
+                          [SPToastUtil showToast:kZHLocalizedString(@"校验成功，感谢您的支持！")];
                           [[SPGlobalConfigManager shareManager] updateIAPWithExpireTs:expireTs];
                           if (self.delegate && [self.delegate respondsToSelector:@selector(SPIAPManagerDidFinishPurchase:)]) {
                                 [self.delegate SPIAPManagerDidFinishPurchase:pid];
                           }
                           // 订阅失效或者过期了
                       } else {
-                          [ZHToastUtil endLoadingOnView:[UIViewController currentVC].view];
-                          [ZHToastUtil showToast:kZHLocalizedString(@"订阅已过期，请重新订阅！")];
+                          [SPToastUtil endLoadingOnView:[UIViewController currentVC].view];
+                          [SPToastUtil showToast:kZHLocalizedString(@"订阅已过期，请重新订阅！")];
                       }
                       
                   });
@@ -297,7 +297,7 @@ static SPIAPManager *_mgr = nil;
         }
     } else if (products.count == 0) {
         RUN_IN_MAIN_THREAD(^{
-            [ZHToastUtil showToast:kZHLocalizedString(kZHLocalizedString(@"无可购买产品"))];
+            [SPToastUtil showToast:kZHLocalizedString(kZHLocalizedString(@"无可购买产品"))];
         })
         
     } else {
@@ -309,9 +309,9 @@ static SPIAPManager *_mgr = nil;
 
 
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
-    [ZHToastUtil showToast:kZHLocalizedString(@"查询信息失败，请稍后再试")];
+    [SPToastUtil showToast:kZHLocalizedString(@"查询信息失败，请稍后再试")];
     RUN_IN_MAIN_THREAD(^{
-        [ZHToastUtil endLoadingOnView:[UIViewController currentVC].view];
+        [SPToastUtil endLoadingOnView:[UIViewController currentVC].view];
     })
 }
 

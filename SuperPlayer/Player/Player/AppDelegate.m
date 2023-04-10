@@ -20,9 +20,9 @@
 #import <UMCommon/UMCommon.h>
 
 #import <UMAPM/UMCrashConfigure.h>
-#import "LOTAnimationView.h"
-#import "HWNetworkReachabilityManager.h"
-#import "HWDownloadManager.h"
+//#import "LOTAnimationView.h"
+#import "SPHWNetworkReachabilityManager.h"
+#import "SPHWDownloadManager.h"
 #import "NetHelper.h"
 @interface AppDelegate ()
 
@@ -75,10 +75,10 @@
     }];
     
     // 开启网络监听
-    [[HWNetworkReachabilityManager shareManager] monitorNetworkStatus];
+    [[SPHWNetworkReachabilityManager shareManager] monitorNetworkStatus];
     
     // 初始化下载单例，若之前程序杀死时有正在下的任务，会自动恢复下载
-    [HWDownloadManager shareManager];
+    [SPHWDownloadManager shareManager];
     
     return YES;
 }

@@ -55,7 +55,7 @@
 }
 
 - (void)configBottomToolBar {
-    _toolBar = [[BaseView alloc] initWithFrame:CGRectZero];
+    _toolBar = [[SPBaseView alloc] initWithFrame:CGRectZero];
     CGFloat rgb = 34 / 255.0;
     _toolBar.backgroundColor = [UIColor colorWithRed:rgb green:rgb blue:rgb alpha:0.7];
     

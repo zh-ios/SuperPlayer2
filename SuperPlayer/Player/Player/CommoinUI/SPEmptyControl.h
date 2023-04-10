@@ -8,8 +8,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UILabel *titleLabel;
 
-+ (instancetype)showEmptyViewOnView:(UIView *)baseView  inset:(UIEdgeInsets)inset;
-+ (void)removeEmptyViewOnView:(UIView *)baseView;
++ (instancetype)showEmptyViewOnView:(UIView *)SPBaseView  inset:(UIEdgeInsets)inset;
++ (void)removeEmptyViewOnView:(UIView *)SPBaseView;
 
 @property (nonatomic, copy) void (^emptyViewOnClicked)(void);
 

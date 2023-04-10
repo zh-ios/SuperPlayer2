@@ -123,7 +123,7 @@
         }
         [self addSubview:_scrollView];
         
-        _imageContainerView = [[BaseView alloc] init];
+        _imageContainerView = [[SPBaseView alloc] init];
         _imageContainerView.clipsToBounds = YES;
         _imageContainerView.contentMode = UIViewContentModeScaleAspectFill;
         [_scrollView addSubview:_imageContainerView];
@@ -138,7 +138,7 @@
         _iCloudErrorIcon.image = [UIImage tz_imageNamedFromMyBundle:@"iCloudError"];
         _iCloudErrorIcon.hidden = YES;
         [self addSubview:_iCloudErrorIcon];
-        _iCloudErrorLabel = [[BaseLabel alloc] init];
+        _iCloudErrorLabel = [[SPBaseLabel alloc] init];
         _iCloudErrorLabel.font = [UIFont systemFontOfSize:10];
         _iCloudErrorLabel.textColor = [UIColor whiteColor];
         _iCloudErrorLabel.text = [NSBundle tz_localizedStringForKey:@"iCloud sync failed"];
@@ -409,7 +409,7 @@
     _iCloudErrorIcon = [[UIImageView alloc] init];
     _iCloudErrorIcon.image = [UIImage tz_imageNamedFromMyBundle:@"iCloudError"];
     _iCloudErrorIcon.hidden = YES;
-    _iCloudErrorLabel = [[BaseLabel alloc] init];
+    _iCloudErrorLabel = [[SPBaseLabel alloc] init];
     _iCloudErrorLabel.font = [UIFont systemFontOfSize:10];
     _iCloudErrorLabel.textColor = [UIColor whiteColor];
     _iCloudErrorLabel.text = [NSBundle tz_localizedStringForKey:@"iCloud sync failed"];

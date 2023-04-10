@@ -285,7 +285,7 @@
 
 - (UIView *)bottomView {
     if (_bottomView == nil) {
-        UIView *bottomView = [[BaseView alloc] init];
+        UIView *bottomView = [[SPBaseView alloc] init];
         static NSInteger rgb = 0;
         bottomView.userInteractionEnabled = NO;
         bottomView.backgroundColor = [UIColor colorWithRed:rgb green:rgb blue:rgb alpha:0.8];
@@ -316,7 +316,7 @@
 
 - (UILabel *)timeLength {
     if (_timeLength == nil) {
-        UILabel *timeLength = [[BaseLabel alloc] init];
+        UILabel *timeLength = [[SPBaseLabel alloc] init];
         timeLength.font = [UIFont boldSystemFontOfSize:11];
         timeLength.textColor = [UIColor whiteColor];
         timeLength.textAlignment = NSTextAlignmentRight;
@@ -328,7 +328,7 @@
 
 - (UILabel *)indexLabel {
     if (_indexLabel == nil) {
-        UILabel *indexLabel = [[BaseLabel alloc] init];
+        UILabel *indexLabel = [[SPBaseLabel alloc] init];
         indexLabel.font = [UIFont systemFontOfSize:14];
         indexLabel.adjustsFontSizeToFitWidth = YES;
         indexLabel.textColor = [UIColor whiteColor];
@@ -465,7 +465,7 @@
 
 - (UILabel *)titleLabel {
     if (_titleLabel == nil) {
-        UILabel *titleLabel = [[BaseLabel alloc] init];
+        UILabel *titleLabel = [[SPBaseLabel alloc] init];
         titleLabel.font = [UIFont boldSystemFontOfSize:17];
         if (@available(iOS 13.0, *)) {
             titleLabel.textColor = UIColor.labelColor;

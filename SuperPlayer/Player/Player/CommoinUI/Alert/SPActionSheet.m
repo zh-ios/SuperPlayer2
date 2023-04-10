@@ -62,7 +62,7 @@
 }
 
 - (void)initContentView {
-    _backView = [[BaseView alloc] initWithFrame:self.frame];
+    _backView = [[SPBaseView alloc] initWithFrame:self.frame];
     _backView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.1];
     [self addSubview:_backView];
 
@@ -84,7 +84,7 @@
     float height = (dataSource.count + 1) * KKROWCELLHEIGHT + 5;
    
     
-    _containerView = [[BaseView alloc] initWithFrame:CGRectMake(0, kScreenHeight-height-kBottomSafeArea, kScreenWidth, height+kBottomSafeArea)];
+    _containerView = [[SPBaseView alloc] initWithFrame:CGRectMake(0, kScreenHeight-height-kBottomSafeArea, kScreenWidth, height+kBottomSafeArea)];
     _containerView.backgroundColor = [UIColor whiteColor];
     [_backView addSubview:_containerView];
     
@@ -120,11 +120,11 @@
         }
         btn.tag = i+1;
         if (i != datas.count-1) {
-            UIView *lineView = [[BaseView alloc] initWithFrame:CGRectMake(0, btnH-onePixel, kScreenWidth, onePixel)];
+            UIView *lineView = [[SPBaseView alloc] initWithFrame:CGRectMake(0, btnH-onePixel, kScreenWidth, onePixel)];
             lineView.backgroundColor = RGBA(0, 0, 0, 0.1);
             [btn addSubview:lineView];
         } else {
-            UIView *view = [[BaseView alloc] initWithFrame:CGRectMake(0, dataSource.count*btnH, kScreenWidth, 5)];
+            UIView *view = [[SPBaseView alloc] initWithFrame:CGRectMake(0, dataSource.count*btnH, kScreenWidth, 5)];
             view.backgroundColor = RGBA(238, 238, 238, 1);
             [_containerView addSubview:view];
         }
@@ -141,7 +141,7 @@
     [cancelBtn addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
     [_containerView addSubview:cancelBtn];
     
-    UILabel *cancelLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, btnH)];
+    UILabel *cancelLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, btnH)];
     cancelLabel.textColor = TEXT_COLOR;
     cancelLabel.font = [UIFont systemFontOfSize:TEXT_FONT_SIZE];
     cancelLabel.textAlignment = NSTextAlignmentCenter;

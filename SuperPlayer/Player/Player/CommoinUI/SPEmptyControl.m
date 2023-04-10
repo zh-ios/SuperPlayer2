@@ -1,30 +1,30 @@
 
 
 #import "SPEmptyControl.h"
-#import "Lottie.h"
+//#import "Lottie.h"
 
 @interface SPEmptyControl ()
 
 @property (nonatomic,strong) UIImageView *topImageView;
-@property (nonatomic, strong) LOTAnimationView *lotAnimationView;
+//@property (nonatomic, strong) LOTAnimationView *lotAnimationView;
 
 
 @end
 
 @implementation SPEmptyControl
 
-+ (instancetype)showEmptyViewOnView:(UIView *)baseView  inset:(UIEdgeInsets)inset {
++ (instancetype)showEmptyViewOnView:(UIView *)SPBaseView  inset:(UIEdgeInsets)inset {
     
-    SPEmptyControl *emptyView = [baseView viewWithTag:222222];
+    SPEmptyControl *emptyView = [SPBaseView viewWithTag:333333];
     if (!emptyView) {
         emptyView = [[SPEmptyControl alloc] init];
-        [baseView addSubview:emptyView];
+        [SPBaseView addSubview:emptyView];
     }else {
-        [baseView bringSubviewToFront:emptyView];
+        [SPBaseView bringSubviewToFront:emptyView];
     }
     [emptyView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(baseView).insets(inset);
-        make.edges.equalTo(baseView).insets(UIEdgeInsetsMake(inset.top+80, inset.left, inset.bottom, inset.right));
+//        make.edges.equalTo(SPBaseView).insets(inset);
+        make.edges.equalTo(SPBaseView).insets(UIEdgeInsetsMake(inset.top+80, inset.left, inset.bottom, inset.right));
 
     }];
     
@@ -33,9 +33,9 @@
     return emptyView;
 }
 
-+ (void)removeEmptyViewOnView:(UIView *)baseView{
++ (void)removeEmptyViewOnView:(UIView *)SPBaseView{
     
-    UIView *emptyView = [baseView viewWithTag:222222];
+    UIView *emptyView = [SPBaseView viewWithTag:333333];
     [emptyView removeFromSuperview];
 }
 
@@ -43,7 +43,7 @@
     if (self = [super init]) {
         
         self.backgroundColor = [UIColor whiteColor];
-        self.tag = 222222;
+        self.tag = 333333;
         self.titleLabel = [UILabel new];
         self.titleLabel.font = [UIFont systemFontOfSize:14];
         self.titleLabel.textColor = RGB(153, 153, 153);
@@ -63,16 +63,16 @@
         self.topImageView.image = [UIImage imageNamed:@"sp_icon_empty_file"];
 //        [self addSubview:self.topImageView];
         
-        self.lotAnimationView = [[LOTAnimationView alloc] init];
-        [self addSubview:self.lotAnimationView];
-        [self.lotAnimationView setAnimationNamed:[NSString stringWithFormat:@"car-loading%@-data",@(arc4random_uniform(6)+1)]];
-        [self.lotAnimationView play];
-        self.lotAnimationView.loopAnimation = YES;
-        [self.lotAnimationView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.equalTo(self);
-            make.size.mas_equalTo(CGSizeMake(150, 120));
-            make.bottom.equalTo(self.titleLabel.mas_bottom).offset(-34);
-        }];
+//        self.lotAnimationView = [[LOTAnimationView alloc] init];
+//        [self addSubview:self.lotAnimationView];
+//        [self.lotAnimationView setAnimationNamed:[NSString stringWithFormat:@"car-loading%@-data",@(arc4random_uniform(6)+1)]];
+//        [self.lotAnimationView play];
+//        self.lotAnimationView.loopAnimation = YES;
+//        [self.lotAnimationView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.centerX.equalTo(self);
+//            make.size.mas_equalTo(CGSizeMake(150, 120));
+//            make.bottom.equalTo(self.titleLabel.mas_bottom).offset(-34);
+//        }];
         
 //        [self.topImageView mas_makeConstraints:^(MASConstraintMaker *make) {
 //            make.centerX.equalTo(self);

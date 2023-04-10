@@ -51,26 +51,26 @@
     [containerScrollView addSubview:wifi];
 
     
-    UILabel *titleLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(wifi.right+13, 10, btnWH, btnWH)];
+    UILabel *titleLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(wifi.right+13, 10, btnWH, btnWH)];
     titleLabel.font = [UIFont systemFontOfSize:28 weight:UIFontWeightLight];
     titleLabel.text = kZHLocalizedString(@"Wifi 快速传输");
     [titleLabel sizeToFit];
     titleLabel.textColor = kThemeMiddleColor;
     [containerScrollView addSubview:titleLabel];
     
-    UILabel *tipLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(leftpadding, wifi.bottom+15, self.view.width-leftpadding, 18)];
+    UILabel *tipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, wifi.bottom+15, self.view.width-leftpadding, 18)];
     tipLabel.text = kZHLocalizedString(@"请在浏览器里输入以下地址：");
     tipLabel.textColor = kTextColor3;
     [containerScrollView addSubview:tipLabel];
     
-    UILabel *ipLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(leftpadding, tipLabel.bottom+15, self.view.width-leftpadding*2, 30)];
+    UILabel *ipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, tipLabel.bottom+15, self.view.width-leftpadding*2, 30)];
     ipLabel.font = [UIFont boldSystemFontOfSize:25];
     ipLabel.text = [self.webServer.serverURL absoluteString];
     ipLabel.textColor = kTextColor3;
     [containerScrollView addSubview:ipLabel];
     ipLabel.backgroundColor = kThemeBeginColor;
     
-    UILabel *attentionLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(leftpadding, ipLabel.bottom+15, self.view.width-leftpadding*2, 200)];
+    UILabel *attentionLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, ipLabel.bottom+15, self.view.width-leftpadding*2, 200)];
     attentionLabel.textColor = kTextColor6;
     attentionLabel.numberOfLines = 0;
     attentionLabel.font = [UIFont systemFontOfSize:14];
@@ -78,7 +78,7 @@
     attentionLabel.text = kZHLocalizedString(@"Wifi 传输说明：\n1、请确保手机和电脑处于同一个 Wifi 环境下\n2、传输完成前请不要退出此页面或者将App退入后台\n3、传输完成后返回上一页面即可看到上传的文件");
     [attentionLabel sizeToFit];
     
-    UIView *lineView = [[BaseView alloc] initWithFrame:CGRectMake(leftpadding, attentionLabel.bottom+10, kScreenWidth-leftpadding*2, 10)];
+    UIView *lineView = [[SPBaseView alloc] initWithFrame:CGRectMake(leftpadding, attentionLabel.bottom+10, kScreenWidth-leftpadding*2, 10)];
     [lineView addGradientColorsFrom:nil toColor:nil];
     [containerScrollView addSubview:lineView];
     
@@ -92,14 +92,14 @@
     [containerScrollView addSubview:itunesImage];
 
     
-    UILabel *itunesTitleLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(itunesImage.right+13, lineView.bottom+10, btnWH, btnWH)];
+    UILabel *itunesTitleLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(itunesImage.right+13, lineView.bottom+10, btnWH, btnWH)];
     itunesTitleLabel.font = [UIFont systemFontOfSize:28 weight:UIFontWeightLight];
     itunesTitleLabel.text = kZHLocalizedString(@"iTunes 快速传输");
     [itunesTitleLabel sizeToFit];
     itunesTitleLabel.textColor = kThemeMiddleColor;
     [containerScrollView addSubview:itunesTitleLabel];
     
-    UILabel *itunesLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(leftpadding, itunesTitleLabel.bottom+10, lineView.width, 200)];
+    UILabel *itunesLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, itunesTitleLabel.bottom+10, lineView.width, 200)];
     itunesLabel.numberOfLines = 0;
     itunesLabel.font = [UIFont systemFontOfSize:14];
     itunesLabel.textColor = kTextColor6;

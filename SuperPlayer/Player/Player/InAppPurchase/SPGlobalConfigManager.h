@@ -2,15 +2,15 @@
 //  GlobalStatusManager.h
 //  ZHProject
 //
-//  Created by zh on 2019/8/21.
-//  Copyright © 2019 autohome. All rights reserved.
+//  Created by zhxxxx  ondfasd 2019/8/21.
+//  Copyright © 2023 zhssssx. 
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONModel.h"
+#import "SPJSONModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RemoteConfigModel : JSONModel
+@interface RemoteConfigModel : SPJSONModel
 
 @property (nonatomic, strong) NSArray<NSString *> *cmts;
 @property (nonatomic, assign) BOOL is_new_version_online;
@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 是否付费解锁全部功能了
 // !!!!
-@property (nonatomic, assign) BOOL unlockAllFunc;
+@property (nonatomic, assign) BOOL hadUnlockAllFunc;
 
 
 
@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL openAllScreenLockStatus;
 
 // 是否永久解锁全部功能
-@property (nonatomic, assign) BOOL unlockAllFuncForeverStatus;
+@property (nonatomic, assign) BOOL hadUnlockAllFunctionForeverStatus;
 
 
 @property (nonatomic, assign) BOOL speedupStatus;

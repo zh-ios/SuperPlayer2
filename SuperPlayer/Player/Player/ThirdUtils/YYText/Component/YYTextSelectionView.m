@@ -272,7 +272,7 @@
             }
         } else {
             if (rect.size.width > 0 && rect.size.height > 0) {
-                UIView *mark = [[BaseView alloc] initWithFrame:rect];
+                UIView *mark = [[SPBaseView alloc] initWithFrame:rect];
                 mark.backgroundColor = _color;
                 mark.alpha = kMarkAlpha;
                 [self insertSubview:mark atIndex:0];

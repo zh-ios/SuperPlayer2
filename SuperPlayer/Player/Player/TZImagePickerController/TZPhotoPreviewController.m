@@ -102,7 +102,7 @@
 - (void)configCustomNaviBar {
     TZImagePickerController *tzImagePickerVc = (TZImagePickerController *)self.navigationController;
     
-    _naviBar = [[BaseView alloc] initWithFrame:CGRectZero];
+    _naviBar = [[SPBaseView alloc] initWithFrame:CGRectZero];
     _naviBar.backgroundColor = [UIColor colorWithRed:(34/255.0) green:(34/255.0)  blue:(34/255.0) alpha:0.7];
     
     _backButton = [[UIButton alloc] initWithFrame:CGRectZero];
@@ -119,7 +119,7 @@
     [_selectButton addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
     _selectButton.hidden = !tzImagePickerVc.showSelectBtn;
     
-    _indexLabel = [[BaseLabel alloc] init];
+    _indexLabel = [[SPBaseLabel alloc] init];
     _indexLabel.adjustsFontSizeToFitWidth = YES;
     _indexLabel.font = [UIFont systemFontOfSize:14];
     _indexLabel.textColor = [UIColor whiteColor];
@@ -132,7 +132,7 @@
 }
 
 - (void)configBottomToolBar {
-    _toolBar = [[BaseView alloc] initWithFrame:CGRectZero];
+    _toolBar = [[SPBaseView alloc] initWithFrame:CGRectZero];
     static CGFloat rgb = 34 / 255.0;
     _toolBar.backgroundColor = [UIColor colorWithRed:rgb green:rgb blue:rgb alpha:0.7];
     
@@ -150,7 +150,7 @@
         [_originalPhotoButton setImage:_tzImagePickerVc.photoPreviewOriginDefImage forState:UIControlStateNormal];
         [_originalPhotoButton setImage:_tzImagePickerVc.photoOriginSelImage forState:UIControlStateSelected];
         
-        _originalPhotoLabel = [[BaseLabel alloc] init];
+        _originalPhotoLabel = [[SPBaseLabel alloc] init];
         _originalPhotoLabel.textAlignment = NSTextAlignmentLeft;
         _originalPhotoLabel.font = [UIFont systemFontOfSize:13];
         _originalPhotoLabel.textColor = [UIColor whiteColor];
@@ -170,7 +170,7 @@
     _numberImageView.contentMode = UIViewContentModeScaleAspectFit;
     _numberImageView.hidden = _tzImagePickerVc.selectedModels.count <= 0;
     
-    _numberLabel = [[BaseLabel alloc] init];
+    _numberLabel = [[SPBaseLabel alloc] init];
     _numberLabel.font = [UIFont systemFontOfSize:15];
     _numberLabel.adjustsFontSizeToFitWidth = YES;
     _numberLabel.textColor = [UIColor whiteColor];

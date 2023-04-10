@@ -2,13 +2,13 @@
 //  SPBaseController.h
 //  ZHProject
 //
-//  Created by zh on 2018/9/27.
+//  Created by zhxxxx  ondfasd 2018/9/27.
 //  Copyright © 2018年 autohome. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "ZHNavigationDefine.h"
-#import "ZHNavigationBar.h"
+#import "SPNavigationDefine.h"
+#import "SPNavigationBar.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NaviAnimationType animationType;
 
-@property (nonatomic, strong) ZHNavigationBar *customNavView;
+@property (nonatomic, strong) SPNavigationBar *customNavView;
 
 
 /**

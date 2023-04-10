@@ -15,7 +15,7 @@
 
 
 #import "JSONValueTransformer.h"
-#import "JSONModelArray.h"
+#import "SPJSONModelArray.h"
 
 #pragma mark - functions
 extern BOOL isNull(id value)
@@ -82,21 +82,21 @@ extern BOOL isNull(id value)
 #pragma mark - NSMutableArray <-> NSArray
 -(NSMutableArray*)NSMutableArrayFromNSArray:(NSArray*)array
 {
-    if ([array isKindOfClass:[JSONModelArray class]]) {
-        //it's a jsonmodelarray already, just return it
+    if ([array isKindOfClass:[SPJSONModelArray class]]) {
+        //it's a SPJSONModelArray already, just return it
         return (id)array;
     }
     
     return [NSMutableArray arrayWithArray:array];
 }
 
-#pragma mark - NS(Mutable)Array <- JSONModelArray
--(NSArray*)NSArrayFromJSONModelArray:(JSONModelArray*)array
+#pragma mark - NS(Mutable)Array <- SPJSONModelArray
+-(NSArray*)NSArrayFromSPSPJSONModelArray:(SPJSONModelArray*)array
 {
     return (NSMutableArray*)array;
 }
 
--(NSMutableArray*)NSMutableArrayFromJSONModelArray:(JSONModelArray*)array
+-(NSMutableArray*)NSMutableArrayFromSPSPJSONModelArray:(SPJSONModelArray*)array
 {
     return (NSMutableArray*)array;
 }
@@ -201,7 +201,7 @@ extern BOOL isNull(id value)
 -(NSURL*)NSURLFromNSString:(NSString*)string
 {
     // do not change this behavior - there are other ways of overriding it
-    // see: https://github.com/icanzilb/JSONModel/pull/119
+    // see: https://github.com/icanzilb/SPJSONModel/pull/119
     return [NSURL URLWithString:string];
 }
 
@@ -258,7 +258,7 @@ extern BOOL isNull(id value)
 }
 
 #pragma mark - hidden transform for empty dictionaries
-//https://github.com/icanzilb/JSONModel/issues/163
+//https://github.com/icanzilb/SPJSONModel/issues/163
 -(NSDictionary*)__NSDictionaryFromNSArray:(NSArray*)array
 {
     if (array.count==0) return @{};

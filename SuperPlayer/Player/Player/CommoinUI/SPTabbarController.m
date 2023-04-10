@@ -2,14 +2,13 @@
 //  SPTabbarController.m
 //  ZHProject
 //
-//  Created by zh on 2018/10/15.
+//  Created by zhxxxx  ondfasd 2018/10/15.
 //  Copyright © 2018年 autohome. All rights reserved.
 //
 
 #import "SPTabbarController.h"
-#import "ZHNavigationController.h"
+#import "SPNavigationController.h"
 #import "SPProfileController.h"
-#import "SPSearchController.h"
 #import "SPFileManagerController.h"
 #import "SPLockedController.h"
 #import "SPVersionManager.h"
@@ -158,17 +157,13 @@
     self.controllersArr = @[].mutableCopy;
     
     SPFileManagerController *friendBattleVC = [[SPFileManagerController alloc] init];
-    [self setupChildViewController:friendBattleVC title:kZHLocalizedString(@"本地") imageName:@"tab_icon_file" selectedImageName:@"tab_icon_file_selected"];
+    [self setupChildViewController:friendBattleVC title:kZHLocalizedString(@"视频") imageName:@"tab_icon_file" selectedImageName:@"tab_icon_file_selected"];
     
     SPLockedController *lockedVideos = [[SPLockedController alloc]init];
-    [self setupChildViewController:lockedVideos title:kZHLocalizedString(@"Vip视频") imageName:@"tab_icon_movies" selectedImageName:@"tab_icon_movies_selected"];
-    
-    SPSearchController *course = [[SPSearchController alloc] init];
-    [self setupChildViewController:course title:kZHLocalizedString(@"在线") imageName:@"tab_icon_search" selectedImageName:@"tab_icon_search_selected"];
-    
+    [self setupChildViewController:lockedVideos title:kZHLocalizedString(@"VIP") imageName:@"tab_icon_movies" selectedImageName:@"tab_icon_movies_selected"];
 
     SPProfileController *profile = [[SPProfileController alloc] init];
-    [self setupChildViewController:profile title:kZHLocalizedString(@"个人中心") imageName:@"tab_icon_profile" selectedImageName:@"tab_icon_profile_selected"];
+    [self setupChildViewController:profile title:kZHLocalizedString(@"我") imageName:@"tab_icon_profile" selectedImageName:@"tab_icon_profile_selected"];
     
     self.viewControllers = self.controllersArr;
     
@@ -189,13 +184,10 @@
     self.controllersArr = @[].mutableCopy;
     
     SPFileManagerController *friendBattleVC = [[SPFileManagerController alloc] init];
-    [self setupChildViewController:friendBattleVC title:kZHLocalizedString(@"本地") imageName:@"tab_icon_file" selectedImageName:@"tab_icon_file_selected"];
+    [self setupChildViewController:friendBattleVC title:kZHLocalizedString(@"视频") imageName:@"tab_icon_file" selectedImageName:@"tab_icon_file_selected"];
     
-    SPSearchController *course = [[SPSearchController alloc] init];
-    [self setupChildViewController:course title:kZHLocalizedString(@"在线") imageName:@"tab_icon_search" selectedImageName:@"tab_icon_search_selected"];
-
     SPProfileController *profile = [[SPProfileController alloc] init];
-    [self setupChildViewController:profile title:kZHLocalizedString(@"个人中心") imageName:@"tab_icon_profile" selectedImageName:@"tab_icon_profile_selected"];
+    [self setupChildViewController:profile title:kZHLocalizedString(@"我") imageName:@"tab_icon_profile" selectedImageName:@"tab_icon_profile_selected"];
     
     self.viewControllers = self.controllersArr;
     
@@ -230,7 +222,7 @@
     // 隐藏返回按钮
     controller.customNavView.backBtn.hidden = YES;
     
-    ZHNavigationController *nav = [[ZHNavigationController alloc] initWithRootViewController:controller];
+    SPNavigationController *nav = [[SPNavigationController alloc] initWithRootViewController:controller];
     nav.navigationBar.hidden = YES;
     [self.controllersArr addObject:nav];
 }

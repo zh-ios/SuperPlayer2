@@ -14,10 +14,9 @@
 #import "SPCustomControlView.h"
 #import "YYCache.h"
 #import "SPVideoPlayerController.h"
-#import "HWDownloadModel.h"
+#import "SPHWDownloadModel.h"
 #import "SPLocalFileManager.h"
-#import "NSString+Encryption.h"
-#import "HWDownloadManager.h"
+#import "SPHWDownloadManager.h"
 
 static NSString *kVideoProgressCache = @"videoProgressCache";
 
@@ -145,7 +144,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
         /// IJPPlayer
         self.player = [ZFPlayerController playerWithPlayerManager:playerManager containerView:self.containerView];
     } else {
-        [ZHToastUtil showToast:@"不支持的格式,请输入http开头的视频链接！"];
+        [SPToastUtil showToast:@"不支持的格式,请输入http开头的视频链接！"];
         [self.navigationController popViewControllerAnimated:YES];
         return;
     }
@@ -173,7 +172,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
                 
             }
             if (playState == ZFPlayerPlayStatePlayFailed) {
-                [ZHToastUtil endLoadingOnView:self.view];
+                [SPToastUtil endLoadingOnView:self.view];
             }
         };
     
@@ -202,8 +201,8 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     
     self.customControlView.downloadBtnClickCallback = ^{
         @strongify(self);
-        [self downloadCurrentVideo];
-        [ZHToastUtil showToast:kZHLocalizedString(@"已加入下载队列，请勿重复下载，下载完成后会自动存储到首页！")];
+//        [self downloadCurrentVideo];
+        [SPToastUtil showToast:kZHLocalizedString(@"已加入下载队列，请勿重复下载，下载完成后会自动存储到首页！")];
     };
     
     if (self.isOnLineVideo) {
@@ -229,18 +228,18 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     [self.customControlView showTitle:@"" coverURLString:@"" fullScreenMode:ZFFullScreenModeAutomatic];
 }
 
-- (void)downloadCurrentVideo {
-    NSString *url = self.urls[self.currentIndex];
-    HWDownloadModel *model = [[HWDownloadModel alloc] init];
-    NSString *name = [[url pathComponents] lastObject];
-    NSString *ext = [url pathExtension];
-    model.fileName = [name stringByAppendingPathExtension:ext];
-    model.url = url;
-    NSString *targetPath = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:[model.fileName stringByDeletingPathExtension]];
-//    model.localPath = targetPath;
-    model.vid = [url MD5Str];
-    [[HWDownloadManager shareManager] startDownloadTask:model];
-}
+//- (void)downloadCurrentVideo {
+//    NSString *url = self.urls[self.currentIndex];
+//    SPHWDownloadModel *model = [[SPHWDownloadModel alloc] init];
+//    NSString *name = [[url pathComponents] lastObject];
+//    NSString *ext = [url pathExtension];
+//    model.fileName = [name stringByAppendingPathExtension:ext];
+//    model.url = url;
+//    NSString *targetPath = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:[model.fileName stringByDeletingPathExtension]];
+////    model.localPath = targetPath;
+////    model.vid = [url MD5Str];
+//    [[SPHWDownloadManager shareManager] startDownloadTask:model];
+//}
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;

@@ -5,7 +5,7 @@
 //  Created by hz on 2021/12/6.
 //
 
-#import "BaseView.h"
+#import "SPBaseView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -236,7 +236,7 @@ static CGFloat itemMargin = 5;
     TZImagePickerController *tzImagePickerVc = (TZImagePickerController *)self.navigationController;
     if (!tzImagePickerVc.showSelectBtn) return;
     
-    _bottomToolBar = [[BaseView alloc] initWithFrame:CGRectZero];
+    _bottomToolBar = [[SPBaseView alloc] initWithFrame:CGRectZero];
     CGFloat rgb = 253 / 255.0;
     if (@available(iOS 13.0, *)) {
         _bottomToolBar.backgroundColor = UIColor.tertiarySystemBackgroundColor;
@@ -277,7 +277,7 @@ static CGFloat itemMargin = 5;
         _originalPhotoButton.selected = _isSelectOriginalPhoto;
         _originalPhotoButton.enabled = tzImagePickerVc.selectedModels.count > 0;
         
-        _originalPhotoLabel = [[BaseLabel alloc] init];
+        _originalPhotoLabel = [[SPBaseLabel alloc] init];
         _originalPhotoLabel.textAlignment = NSTextAlignmentLeft;
         _originalPhotoLabel.font = [UIFont systemFontOfSize:16];
         if (@available(iOS 13.0, *)) {
@@ -303,7 +303,7 @@ static CGFloat itemMargin = 5;
     _numberImageView.contentMode = UIViewContentModeScaleAspectFit;
     _numberImageView.backgroundColor = [UIColor clearColor];
     
-    _numberLabel = [[BaseLabel alloc] init];
+    _numberLabel = [[SPBaseLabel alloc] init];
     _numberLabel.font = [UIFont systemFontOfSize:15];
     _numberLabel.adjustsFontSizeToFitWidth = YES;
     _numberLabel.textColor = [UIColor whiteColor];
@@ -316,7 +316,7 @@ static CGFloat itemMargin = 5;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doneButtonClick)];
     [_numberLabel addGestureRecognizer:tapGesture];
     
-    _divideLine = [[BaseView alloc] init];
+    _divideLine = [[SPBaseView alloc] init];
     CGFloat rgb2 = 222 / 255.0;
     if (@available(iOS 13.0, *)) {
         UIColor *divideLineDyColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull trainCollection) {

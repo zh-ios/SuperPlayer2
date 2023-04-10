@@ -36,8 +36,8 @@
     return self;
 }
 
--(instancetype)initWithJSONToModelBlock:(JSONModelKeyMapBlock)toModel
-                       modelToJSONBlock:(JSONModelKeyMapBlock)toJSON
+-(instancetype)initWithJSONToModelBlock:(SPJSONModelKeyMapBlock)toModel
+                       modelToJSONBlock:(SPJSONModelKeyMapBlock)toJSON
 {
     self = [self init];
     
@@ -132,7 +132,7 @@
 
 +(instancetype)mapperFromUnderscoreCaseToCamelCase
 {
-    JSONModelKeyMapBlock toModel = ^ NSString* (NSString* keyName) {
+    SPJSONModelKeyMapBlock toModel = ^ NSString* (NSString* keyName) {
 
         //bail early if no transformation required
         if ([keyName rangeOfString:@"_"].location==NSNotFound) return keyName;
@@ -145,7 +145,7 @@
         return camelCase;
     };
 
-    JSONModelKeyMapBlock toJSON = ^ NSString* (NSString* keyName) {
+    SPJSONModelKeyMapBlock toJSON = ^ NSString* (NSString* keyName) {
         
         NSMutableString* result = [NSMutableString stringWithString:keyName];
         NSRange upperCharRange = [result rangeOfCharacterFromSet:[NSCharacterSet uppercaseLetterCharacterSet]];
@@ -186,12 +186,12 @@
 
 +(instancetype)mapperFromUpperCaseToLowerCase
 {
-    JSONModelKeyMapBlock toModel = ^ NSString* (NSString* keyName) {
+    SPJSONModelKeyMapBlock toModel = ^ NSString* (NSString* keyName) {
         NSString*lowercaseString = [keyName lowercaseString];
         return lowercaseString;
     };
 
-    JSONModelKeyMapBlock toJSON = ^ NSString* (NSString* keyName) {
+    SPJSONModelKeyMapBlock toJSON = ^ NSString* (NSString* keyName) {
 
         NSString *uppercaseString = [keyName uppercaseString];
 
@@ -211,7 +211,7 @@
     NSDictionary *toModelMap = [NSDictionary dictionaryWithObjects:values forKeys:keys];
     NSDictionary *toJsonMap = [NSDictionary dictionaryWithObjects:keys forKeys:values];
 
-    JSONModelKeyMapBlock toModel = ^NSString *(NSString *keyName) {
+    SPJSONModelKeyMapBlock toModel = ^NSString *(NSString *keyName) {
         if (!keyName)
             return nil;
 
@@ -221,7 +221,7 @@
         return baseKeyMapper.JSONToModelKeyBlock(keyName);
     };
 
-    JSONModelKeyMapBlock toJson = ^NSString *(NSString *keyName) {
+    SPJSONModelKeyMapBlock toJson = ^NSString *(NSString *keyName) {
         if (!keyName)
             return nil;
 

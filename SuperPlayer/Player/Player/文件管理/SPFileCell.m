@@ -44,7 +44,7 @@
     [self.coverImageView addSubview:self.lockImageView];
     self.lockImageView.hidden = YES;
     
-    self.titleL = [[BaseLabel alloc] initWithFrame:CGRectMake(self.coverImageView.right+10, self.coverImageView.top+5, kScreenWidth-10*2-self.coverImageView.right- 50, 0)];
+    self.titleL = [[SPBaseLabel alloc] initWithFrame:CGRectMake(self.coverImageView.right+10, self.coverImageView.top+5, kScreenWidth-10*2-self.coverImageView.right- 50, 0)];
     self.titleL.font = [UIFont systemFontOfSize:14];
     self.titleL.numberOfLines = 2;
 //    self.titleL.height = self.titleL.font.lineHeight+1;
@@ -52,7 +52,7 @@
     [self.contentView addSubview:self.titleL];
     self.titleL.lineBreakMode = NSLineBreakByTruncatingMiddle;
     
-    self.sizeLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(self.coverImageView.right+10, self.coverImageView.bottom+10, self.titleL.width, 0)];
+    self.sizeLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(self.coverImageView.right+10, self.coverImageView.bottom+10, self.titleL.width, 0)];
     
     self.sizeLabel.font = [UIFont systemFontOfSize:12];
     self.sizeLabel.height = self.sizeLabel.font.lineHeight+1;

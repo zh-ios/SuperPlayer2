@@ -1,16 +1,16 @@
+////
+////  ZHDownloadController.h
+////  Player
+////
+////  Created by zhuhao on 2022/10/14.
+////
 //
-//  ZHDownloadController.h
-//  Player
+//#import "SPBaseController.h"
 //
-//  Created by zhuhao on 2022/10/14.
+//NS_ASSUME_NONNULL_BEGIN
 //
-
-#import "SPBaseController.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface ZHDownloadController : SPBaseController
-
-@end
-
-NS_ASSUME_NONNULL_END
+//@interface ZHDownloadController : SPBaseController
+//
+//@end
+//
+//NS_ASSUME_NONNULL_END

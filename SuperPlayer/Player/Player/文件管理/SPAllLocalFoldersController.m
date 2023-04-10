@@ -63,7 +63,7 @@
         _tableView.dataSource = self;
         _tableView.rowHeight = 90;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.tableFooterView = [[BaseView alloc] init];
+        _tableView.tableFooterView = [[SPBaseView alloc] init];
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
         _tableView.estimatedRowHeight = 0;
@@ -97,11 +97,11 @@
     SPFilesModel *folder = self.folders[indexPath.row];
     BOOL success = [[SPLocalFileManager sharedManager] moveFileFromPath:self.model.fullPath toPath:folder.fullPath];
     if (success) {
-        [ZHToastUtil showToast:kZHLocalizedString(@"已放入该文件夹,将自动返回上一页面") completed:^{
+        [SPToastUtil showToast:kZHLocalizedString(@"已放入该文件夹,将自动返回上一页面") completed:^{
             [self.navigationController popViewControllerAnimated:YES];
         }];
     } else {
-        [ZHToastUtil showToast:kZHLocalizedString(@"操作失败，请重命名后再进行操作")];
+        [SPToastUtil showToast:kZHLocalizedString(@"操作失败，请重命名后再进行操作")];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

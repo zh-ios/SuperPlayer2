@@ -27,14 +27,14 @@
 }
 
 - (void)initSubviews {
-    UILabel *inputTipLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(0, kNavbarHeight+40, self.view.width, 20)];
+    UILabel *inputTipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, kNavbarHeight+40, self.view.width, 20)];
     inputTipLabel.textColor = kScreenLockThemeColor;
     inputTipLabel.textAlignment = NSTextAlignmentCenter;
     inputTipLabel.text = kZHLocalizedString(@"请输入密码");
     inputTipLabel.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:inputTipLabel];
     
-    self.pwdLabel = [[BaseLabel alloc] initWithFrame:CGRectMake(0, inputTipLabel.bottom+10, self.view.width, 18)];
+    self.pwdLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, inputTipLabel.bottom+10, self.view.width, 18)];
     self.pwdLabel.text = kPWDInputZeroNumerStr;
     self.pwdLabel.font = [UIFont systemFontOfSize:17];
     self.pwdLabel.textAlignment = NSTextAlignmentCenter;
@@ -154,8 +154,8 @@
             }
             NSString *inputStr = [muStr copy];
             if ([inputStr isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:kPwd]]) {
-                if (self.InputRightPwdCallback) {
-                    self.InputRightPwdCallback();
+                if (self.inputRightPwdCallback) {
+                    self.inputRightPwdCallback();
                 }
                 if (self.dtShowBtn.selected) {
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kDontShowThisTime];
@@ -165,7 +165,7 @@
             }
             
             if (self.inpuNumbers.count>=4) {
-                [ZHToastUtil showToast:kZHLocalizedString(@"密码输入错误！")];
+                [SPToastUtil showToast:kZHLocalizedString(@"密码输入错误！")];
                 [self shakeAnimationForView:self.pwdLabel];
                 [self.inpuNumbers removeAllObjects];
                 self.pwdLabel.text = kPWDInputZeroNumerStr;

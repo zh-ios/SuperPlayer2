@@ -35,7 +35,7 @@
     
     CGFloat imageViewH = kScreenWidth/0.45*0.8;
     for (int i = 0; i<self.imageItems.count; i++) {
-        BaseImageView *imageView = [[BaseImageView alloc] initWithFrame:CGRectMake(0, -60 + i * imageViewH, kScreenWidth, imageViewH)];
+        SPBaseImageView *imageView = [[SPBaseImageView alloc] initWithFrame:CGRectMake(0, -60 + i * imageViewH, kScreenWidth, imageViewH)];
         [self.containerScrollView addSubview:imageView];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.image = [UIImage imageNamed:self.imageItems[i]];
