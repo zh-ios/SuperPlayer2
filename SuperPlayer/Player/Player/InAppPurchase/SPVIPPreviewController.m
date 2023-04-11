@@ -11,8 +11,8 @@
 @interface SPVIPPreviewController ()<UIScrollViewDelegate, SPIAPManagerDelegate>
 
 @property (nonatomic, strong) UIScrollView *containerScrollView;
-@property (nonatomic, strong) UIButton *tryButton;
-@property (nonatomic, strong) UIButton *onceBuyButton;
+@property (nonatomic, strong) SPBaseButton *tryButton;
+@property (nonatomic, strong) SPBaseButton *onceBuyButton;
 
 @property (nonatomic, strong) NSArray *imageItems;
 
@@ -47,7 +47,7 @@
     
     CGFloat leftpadding = 15;
     CGFloat btnWidth = (kScreenWidth - leftpadding * 2 - 20)/2;
-    self.tryButton = [[UIButton alloc] initWithFrame:CGRectMake(leftpadding, kScreenHeight - kBottomSafeArea - 50 - 30, btnWidth, 50)];
+    self.tryButton = [[SPBaseButton alloc] initWithFrame:CGRectMake(leftpadding, kScreenHeight - kBottomSafeArea - 50 - 30, btnWidth, 50)];
     self.tryButton.backgroundColor = kThemeEndColor;
     [self.tryButton addTarget:self action:@selector(try) forControlEvents:UIControlEventTouchUpInside];
     self.tryButton.titleLabel.font = [UIFont systemFontOfSize:15];
@@ -56,7 +56,7 @@
     [self.tryButton setTitle:kZHLocalizedString(@"试用一个月") forState:UIControlStateNormal];
     [self.view addSubview:self.tryButton];
     
-    self.onceBuyButton = [[UIButton alloc] initWithFrame:CGRectMake(self.tryButton.right + 20, kScreenHeight - kBottomSafeArea - 50 - 30, btnWidth, 50)];
+    self.onceBuyButton = [[SPBaseButton alloc] initWithFrame:CGRectMake(self.tryButton.right + 20, kScreenHeight - kBottomSafeArea - 50 - 30, btnWidth, 50)];
     self.onceBuyButton.backgroundColor = kThemeEndColor;
     self.onceBuyButton.titleLabel.font = [UIFont systemFontOfSize:15];
     [self.onceBuyButton addTarget:self action:@selector(preview) forControlEvents:UIControlEventTouchUpInside];

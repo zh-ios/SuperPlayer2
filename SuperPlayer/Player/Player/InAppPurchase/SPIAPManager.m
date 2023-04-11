@@ -2,7 +2,7 @@
 //  SPIAPManager.m
 //  ZHProject
 //
-//  Created by hz on 2021/10/25.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/10/25.
 //  Copyright © 2021 autohome. All rights reserved.
 //
 
@@ -157,7 +157,7 @@ static SPIAPManager *_mgr = nil;
       BASE64是可以编码和解码的
     */
 //    8150b99dfc2d499ba64189fefeb35da7 app专用共享秘钥，订阅模式专用
-    NSDictionary *requestContents = @{@"receipt-data":[receipt base64EncodedStringWithOptions:0],@"password":@"8150b99dfc2d499ba64189fefeb35da7"};
+    NSDictionary *requestContents = @{@"receipt-data":[receipt base64EncodedStringWithOptions:0],@"password":@"ffda6242987848dc85bd720fb18d4008"};
    NSError *error;
    // 转换为 JSON 格式
    NSData *requestData = [NSJSONSerialization dataWithJSONObject:requestContents options:0 error:&error];

@@ -43,7 +43,7 @@
 @property (nonatomic, strong, readonly) UIImageView *fastImageView;
 
 /// 加载失败按钮
-@property (nonatomic, strong, readonly) UIButton *failBtn;
+@property (nonatomic, strong, readonly) SPBaseButton *failBtn;
 
 /// 底部播放进度
 @property (nonatomic, strong, readonly) ZFSliderView *bottomPgrogress;

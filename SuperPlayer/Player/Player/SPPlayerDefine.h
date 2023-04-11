@@ -19,13 +19,6 @@
 #define kAllThemeKey                                    @"AllLocalThemesKEY"
 #define kPlaceholderImageName                           @"kPlaceholderImageNameKEY"
 
-// 高亮颜色
-//#A9D3F1
-#define kTextHighlightColor                        [UIColor colorWithHexString:@"30A4F1"]
-// 首页诗句字体大小
-#define kTextDefaultFontSize                            (22)
-
-
 // 当设置为44时正好是 nav 高度
 #define kMenuViewHieght                                 44
 
@@ -44,33 +37,23 @@
 #define kFliterPoetryBelowStars                         (1000)
 
 // 免费加密视频最大数量
-#define kLockVideoMaxCount                              (10)
+#define kLockVideoMaxCount                              (5)
 #define kRandomFreeGirlVideoMaxCount                         (5)
 #define kRandomFreeGirlVideoMaxCountKey                 @"kRandomFreeGirlVideoMaxCountKeyKEY"
 
 
-#define kThemeBeginColor                                [UIColor colorWithHexString:@"A9D3F2"]
-#define kThemeMiddleColor                                [UIColor colorWithHexString:@"62B0EE"]
-#define kThemeEndColor                                  [UIColor colorWithHexString:@"30A4F2"]
+#define kThemeBeginColor                                [UIColor colorWithHexString:@"fbd090"]
+#define kThemeMiddleColor                                [UIColor colorWithHexString:@"f4a631"]
+#define kThemeEndColor                                  [UIColor colorWithHexString:@"fa9605"]
 
+// 高亮颜色
+//#A9D3F1
+#define kTextHighlightColor                            [UIColor colorWithHexString:@"fa9605"]
 
 // 订阅到期
 #define kIAP_Expire_Ts                               @"kIAP_Expire_TsTS"
-
-#define kSpeedupStatusKey                               @"kSpeedupStatusKey"
 #define khadUnlockAllFuncForeverKey                        @"khadUnlockAllFuncForeverKeyKEY"
 #define kAllScreenLockKey                               @"kAllScreenLockKeyKEY"
-
-//pwdLabel.text = @"●  ●  ●  ○";
-//break;
-//case 2:
-//self.pwdLabel.text = @"●  ●  ○  ○";
-//break;
-//case 1:
-//self.pwdLabel.text = @"●  ○  ○  ○";
-//break;
-//case 0:
-//self.pwdLabel.text = @"○  ○  ○  ○";
 
 #define kPWDInputZeroNumerStr                        @"○   ○   ○   ○"
 #define kPWDInputOneNumerStr                         @"●   ○   ○   ○"
@@ -80,19 +63,17 @@
 
 
 // 是否已经隐藏vipvideos
-#define kHadHideVipVideos                            @"kHadHideVipVideos"
+#define kHadHideVipVideos                            @"kHadHideVipVideosKEY"
 // 用户是否启用摇一摇隐藏功能
-#define kUserUseShakeToHideFunc                      @"kUserUseShakeToHideFunc"
-
-#define kUMengAppKey                                 @"6260d31230a4f67780ae65d0"
+#define kUserUseShakeToHideFunc                      @"kUserUseShakeToHideFuncKEY"
 
 
-typedef NS_ENUM(NSInteger, ZHVideoDownloadStatus) {
-    ZHVideoDownloadStatus_Downloading,
-    ZHVideoDownloadStatus_Paused,
-    ZHVideoDownloadStatus_Finished,
-    ZHVideoDownloadStatus_Failed
-};
+//typedef NS_ENUM(NSInteger, ZHVideoDownloadStatus) {
+//    ZHVideoDownloadStatus_Downloading,
+//    ZHVideoDownloadStatus_Paused,
+//    ZHVideoDownloadStatus_Finished,
+//    ZHVideoDownloadStatus_Failed
+//};
 
 // 下载相关key 后续可以优化成 const string 
 #define SPHWDownloadStateChangeNotification               @"SPHWDownloadStateChangeNotificationKEY"

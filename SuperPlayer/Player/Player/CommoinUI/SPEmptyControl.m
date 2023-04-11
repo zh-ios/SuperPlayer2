@@ -41,8 +41,7 @@
 
 - (instancetype)init{
     if (self = [super init]) {
-        
-        self.backgroundColor = [UIColor whiteColor];
+
         self.tag = 333333;
         self.titleLabel = [UILabel new];
         self.titleLabel.font = [UIFont systemFontOfSize:14];

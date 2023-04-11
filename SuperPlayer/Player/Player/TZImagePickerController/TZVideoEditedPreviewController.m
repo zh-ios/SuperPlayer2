@@ -15,11 +15,11 @@
 @interface TZVideoEditedPreviewController () {
     AVPlayer *_player;
     AVPlayerLayer *_playerLayer;
-    UIButton *_playButton;
+    SPBaseButton *_playButton;
     UIImage *_cover;
     
     UIView *_toolBar;
-    UIButton *_doneButton;
+    SPBaseButton *_doneButton;
     UIProgressView *_progress;
     
     UIStatusBarStyle _originStatusBarStyle;

@@ -3,7 +3,7 @@
 //  ZHProject
 //
 //  Created by zhxxxx  ondfasd 2018/9/27.
-//  Copyright © 2018年 autohome. All rights reserved.
+//  Copyright © 2023 zhsxx. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param btn 返回btn
  */
-- (void)backBtnOnClicked:(UIButton *)btn;
+- (void)backBtnOnClicked:(SPBaseButton *)btn;
 
 @end
 

@@ -5,12 +5,11 @@
       "scale" : "1x"
     },
     {
-      "filename" : "sp_icon_feedback@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "sp_icon_feedback@3x.png",
+      "filename" : "帮助.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

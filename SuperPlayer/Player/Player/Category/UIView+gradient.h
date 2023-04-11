@@ -2,7 +2,7 @@
 //  UIView+gradient.h
 //  VansLive
 //
-//  Created by hz on 2021/1/14.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/1/14.
 //  Copyright © 2021 Xiaomi. All rights reserved.
 //
 

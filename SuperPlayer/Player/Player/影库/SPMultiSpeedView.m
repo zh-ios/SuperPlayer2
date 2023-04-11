@@ -2,14 +2,14 @@
 //  SPMultiSpeedView.m
 //  Player
 //
-//  Created by hz on 2021/12/17.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/12/17.
 //
 
 #import "SPMultiSpeedView.h"
 
 @interface SPMultiSpeedView ()
 
-@property (nonatomic, strong) UIButton *lastSelectedBtn;
+@property (nonatomic, strong) SPBaseButton *lastSelectedBtn;
 @property (nonatomic, strong) NSMutableArray *btns;
 
 @end
@@ -31,7 +31,7 @@
     CGFloat btnH = 30;
     CGFloat btnMargin = 5;
     for (int i = 0; i<titles.count; i++) {
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, (btnH+btnMargin)*i, btnW, btnH)];
+        SPBaseButton *btn = [[SPBaseButton alloc] initWithFrame:CGRectMake(0, (btnH+btnMargin)*i, btnW, btnH)];
         [btn setTitle:titles[i] forState:UIControlStateNormal];
         [btn setTitleColor:[[UIColor whiteColor] colorWithAlphaComponent:0.5] forState:UIControlStateNormal];
         btn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
@@ -56,7 +56,7 @@
     if (rate == 10) index = 1;
     if (rate == 15) index = 2;
     if (rate == 20) index = 3;
-    UIButton *btn = self.btns[index];
+    SPBaseButton *btn = self.btns[index];
     btn.selected = YES;
     self.lastSelectedBtn = btn;
     [UIView animateWithDuration:0.2 animations:^{
@@ -64,7 +64,7 @@
     }];
 }
 
-- (void)speedBtnOnClicked:(UIButton *)btn {
+- (void)speedBtnOnClicked:(SPBaseButton *)btn {
     if (btn.selected) return;
     self.lastSelectedBtn.selected = NO;
     

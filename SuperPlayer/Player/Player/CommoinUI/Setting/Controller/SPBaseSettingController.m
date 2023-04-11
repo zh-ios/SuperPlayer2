@@ -3,7 +3,7 @@
 //  FMhatProject
 //
 //  Created by zhxxxx  ondfasd 2018/7/3.
-//  Copyright © 2018年 xiaomi. All rights reserved.
+//  Copyright © 2023 zhsxx. All rights reserved.
 //
 
 #import "SPBaseSettingController.h"
@@ -21,13 +21,14 @@ static NSString *const cellId = @"xccommonsetttingcellid";
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavbarHeight, self.view.width, self.view.height-kNavbarHeight-kBottomSafeArea) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavbarHeight, self.view.width, self.view.height-kNavbarHeight-kTabbarHeight) style:UITableViewStyleGrouped];
         _tableView.rowHeight = 50;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         // 设置没有分割线
 //        _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
         _tableView.separatorColor = kSeparatorLineColor;
+        _tableView.backgroundColor = [UIColor clearColor];
     }
     return _tableView;
 }

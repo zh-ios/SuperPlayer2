@@ -64,7 +64,6 @@ static SPGlobalConfigManager *_mgr = nil;
 
         self.hadUnlockAllFunctionForeverStatus = [[NSUserDefaults standardUserDefaults] boolForKey:khadUnlockAllFuncForeverKey];
         self.openAllScreenLockStatus = [[NSUserDefaults standardUserDefaults] boolForKey:kAllScreenLockKey];
-        self.speedupStatus = [[NSUserDefaults standardUserDefaults] boolForKey:kSpeedupStatusKey];
 
         self.iapExpireTs = [[[NSUserDefaults standardUserDefaults] objectForKey:kIAP_Expire_Ts] longLongValue];
 
@@ -104,23 +103,23 @@ static SPGlobalConfigManager *_mgr = nil;
 //    NSLog(@"%@",self.configModel);
 //#endif
 
-    NSDictionary *cachedDict = [[NSUserDefaults standardUserDefaults] objectForKey:kRemoteConfigDataKey];
-    if (cachedDict && [cachedDict isKindOfClass:NSDictionary.class]) {
-        self.configModel = [[RemoteConfigModel alloc] initWithDictionary:cachedDict error:nil];
-    }
-    @weakify(self);
+//    NSDictionary *cachedDict = [[NSUserDefaults standardUserDefaults] objectForKey:kRemoteConfigDataKey];
+//    if (cachedDict && [cachedDict isKindOfClass:NSDictionary.class]) {
+//        self.configModel = [[RemoteConfigModel alloc] initWithDictionary:cachedDict error:nil];
+//    }
+//    @weakify(self);
 //    super_player_rc
-    [NetHelper GET:@"https://gitee.com/zhsxx/super_player_rc/raw/master/super_player_rc" parameters:nil success:^(id responseObject) {
-        @strongify(self);
-        if (responseObject && [responseObject isKindOfClass:[NSDictionary class]]) {
-            self.configModel = [[RemoteConfigModel alloc] initWithDictionary:responseObject error:nil];
-            [[NSUserDefaults standardUserDefaults] setObject:responseObject forKey:kRemoteConfigDataKey];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-        }
-        
-    } failure:^(MiNetError *error) {
-
-    }];
+//    [NetHelper GET:@"https://gitee.com/zhsxx/super_player_rc/raw/master/super_player_rc" parameters:nil success:^(id responseObject) {
+//        @strongify(self);
+//        if (responseObject && [responseObject isKindOfClass:[NSDictionary class]]) {
+//            self.configModel = [[RemoteConfigModel alloc] initWithDictionary:responseObject error:nil];
+//            [[NSUserDefaults standardUserDefaults] setObject:responseObject forKey:kRemoteConfigDataKey];
+//            [[NSUserDefaults standardUserDefaults] synchronize];
+//        }
+//
+//    } failure:^(MiNetError *error) {
+//
+//    }];
 }
 
 - (void)updateIAPWithExpireTs:(long long)expireTs {

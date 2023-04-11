@@ -2,7 +2,7 @@
 //  SPFolderDetailController.m
 //  Player
 //
-//  Created by hz on 2021/11/15.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/11/15.
 //
 
 #import "SPFolderDetailController.h"
@@ -33,7 +33,7 @@
 }
 
 - (void)reloadController {
-    self.filesArray = [[[SPLocalFileManager sharedManager] getFilesInFolder:self.folderModel.fullPath fliterFiles:NO] mutableCopy];
+    self.filesArray = [[[SPLocalFileManager sharedMgr] getFilesInFolder:self.folderModel.fullPath fliterFiles:NO] mutableCopy];
     // 更新是否是加密文件属性
     for (SPFilesModel *m in self.filesArray) {
         m.isLocked = self.folderModel.isLocked;
@@ -91,9 +91,9 @@
     if (!cell) {
         cell = [[SPFileCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID cellFrame:CGRectMake(0, 0, kScreenWidth, 80)];
     }
-    [cell updateCellWithFileModel:self.filesArray[indexPath.row]];
+    [cell updateCellWithModel:self.filesArray[indexPath.row]];
     @weakify(self)
-    cell.operateBtnOnClicked = ^(SPFilesModel * _Nonnull model, UIButton *btn){
+    cell.operateBtnOnClicked = ^(SPFilesModel * _Nonnull model, SPBaseButton *btn){
         @strongify(self)
         [self showOperateAlert:model indexPath:indexPath  sourceBtn:btn];
     };
@@ -107,7 +107,7 @@
     playerVC.hidesBottomBarWhenPushed = YES;
     
     
-    NSArray *filesArr = [[SPLocalFileManager sharedManager] getFilesInFolder:self.folderModel.fullPath fliterFiles:NO];
+    NSArray *filesArr = [[SPLocalFileManager sharedMgr] getFilesInFolder:self.folderModel.fullPath fliterFiles:NO];
     NSMutableArray *filesURLArr = @[].mutableCopy;
     for (SPFilesModel *model in filesArr) {
         [filesURLArr addObject:model.fullPath];
@@ -137,11 +137,11 @@
 - (void)deleteFiles:(SPFilesModel *)model indexPath:(NSIndexPath *)indexPath {
     [self.filesArray removeObject:model];
 
-    [[SPLocalFileManager sharedManager] deleteFile:model.fullPath];
+    [[SPLocalFileManager sharedMgr] deleteFile:model.fullPath];
     [self reloadController];
 }
 
-- (void)showOperateAlert:(SPFilesModel *)model indexPath:(NSIndexPath *)indexPath sourceBtn:(UIButton *)btn {
+- (void)showOperateAlert:(SPFilesModel *)model indexPath:(NSIndexPath *)indexPath sourceBtn:(SPBaseButton *)btn {
     
     SPActionSheetItem *disableItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"选择您想要进行的操作") style:SPActionSheetItemStyle_Title];
     SPActionSheetItem *deleteItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"删除") style:SPActionSheetItemStyle_Default];
@@ -167,14 +167,14 @@
                 [self reNameFiles:model];
             }
             if (index == 3) {
-                NSString *targetPath = (model.isLocked?[[SPLocalFileManager sharedManager] getLockedFilePath]:[[SPLocalFileManager sharedManager] getGlobalFilePath]);
+                NSString *targetPath = (model.isLocked?[[SPLocalFileManager sharedMgr] getLockedFilePath]:[[SPLocalFileManager sharedMgr] getGlobalFilePath]);
                 
-                if ([[SPLocalFileManager sharedManager] hasSameNameFile:model.name folderPath:targetPath]) {
+                if ([[SPLocalFileManager sharedMgr] hasSameNameFile:model.name folderPath:targetPath]) {
                     [SPToastUtil showToast:kZHLocalizedString(@"已存在同名文件，请重命名后再试~")];
                     return;
                 }
 
-                BOOL success = [[SPLocalFileManager sharedManager] moveFileFromPath:model.fullPath toPath:targetPath];
+                BOOL success = [[SPLocalFileManager sharedMgr] moveFileFromPath:model.fullPath toPath:targetPath];
                 if (success) {
                     [self.filesArray removeObject:model];
                     [self.tableView reloadData];
@@ -196,11 +196,11 @@
             return;
         }
         BOOL repeated = NO;
-        repeated = [[SPLocalFileManager sharedManager] hasSameNameFile:folderName folderPath:self.folderModel.fullPath];
+        repeated = [[SPLocalFileManager sharedMgr] hasSameNameFile:folderName folderPath:self.folderModel.fullPath];
         if (repeated) {
             [SPToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
         } else {
-            [[SPLocalFileManager sharedManager] reNameFoldersWithName:folderName folderPath:model.fullPath];
+            [[SPLocalFileManager sharedMgr] reNameFoldersWithName:folderName folderPath:model.fullPath];
             [self reloadController];
         }
     }];

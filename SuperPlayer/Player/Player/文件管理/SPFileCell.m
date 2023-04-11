@@ -2,7 +2,7 @@
 //  SPFileCell.m
 //  Player
 //
-//  Created by hz on 2021/11/10.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/11/10.
 //
 
 #import "SPFileCell.h"
@@ -60,26 +60,26 @@
     self.sizeLabel.textColor = kTextColor9;
     [self.contentView addSubview:self.sizeLabel];
     
-    self.operateBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth-60, 15, 50, 50)];
+    self.operateBtn = [[SPBaseButton alloc] initWithFrame:CGRectMake(kScreenWidth-60, 15, 50, 50)];
     [self.operateBtn setImage:[UIImage imageNamed:@"sp_icon_operate"] forState:UIControlStateNormal];
     [self.contentView addSubview:self.operateBtn];
     [self.operateBtn addTarget:self action:@selector(operate:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)operate:(UIButton *)btn {
+- (void)operate:(SPBaseButton *)btn {
     if (self.operateBtnOnClicked) {
         self.operateBtnOnClicked(self.SPFilesModel, btn);
     }
 }
 
-- (void)updateCellWithFileModel:(SPFilesModel *)model {
+- (void)updateCellWithModel:(SPFilesModel *)model {
     self.SPFilesModel = model;
     if (model.isFolder) {
         self.coverImageView.image = [UIImage imageNamed:@"sp_icon_file"];
         self.sizeLabel.text = [NSString stringWithFormat:kZHLocalizedString(@"%@ 共%@个视频"),model.fileSizeStringValue, @(model.filesCount)];
     } else {
         // TODO 由于加载图片需要时间，显示上会有问题， 会先显示文件夹图片然后再显示 封面图
-        [[SPVideoManager sharedManager] getThumbnailImage:model.fullPath completion:^(UIImage * _Nullable image) {
+        [[SPVideoManager sharedMgr] getThumbnailImage:model.fullPath completion:^(UIImage * _Nullable image) {
             if (image) {
                 self.coverImageView.image = image;
             } else {

@@ -5,12 +5,11 @@
       "scale" : "1x"
     },
     {
-      "filename" : "dfgicon_lock@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "daicon_lock@3x.png",
+      "filename" : "安全.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

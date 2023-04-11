@@ -3,7 +3,7 @@
 //  FMhatProject
 //
 //  Created by zhxxxx  ondfasd 2018/7/3.
-//  Copyright © 2018年 xiaomi. All rights reserved.
+//  Copyright © 2023 zhsxx. All rights reserved.
 //  右侧是开关的cell模型
 
 #import "SPCellItem.h"

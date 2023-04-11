@@ -19,8 +19,8 @@ typedef enum : NSUInteger {
 
 @class TZAssetModel;
 @interface TZAssetCell : UICollectionViewCell
-@property (weak, nonatomic) UIButton *selectPhotoButton;
-@property (weak, nonatomic) UIButton *cannotSelectLayerButton;
+@property (weak, nonatomic) SPBaseButton *selectPhotoButton;
+@property (weak, nonatomic) SPBaseButton *cannotSelectLayerButton;
 @property (nonatomic, strong) TZAssetModel *model;
 @property (assign, nonatomic) NSInteger index;
 @property (nonatomic, copy) void (^didSelectPhotoBlock)(BOOL);
@@ -44,7 +44,7 @@ typedef enum : NSUInteger {
 @class TZAlbumModel;
 @interface TZAlbumCell : UITableViewCell
 @property (nonatomic, strong) TZAlbumModel *model;
-@property (weak, nonatomic) UIButton *selectedCountButton;
+@property (weak, nonatomic) SPBaseButton *selectedCountButton;
 
 @property (nonatomic, copy) void (^albumCellDidSetModelBlock)(TZAlbumCell *cell, UIImageView *posterImageView, UILabel *titleLabel);
 @property (nonatomic, copy) void (^albumCellDidLayoutSubviewsBlock)(TZAlbumCell *cell, UIImageView *posterImageView, UILabel *titleLabel);

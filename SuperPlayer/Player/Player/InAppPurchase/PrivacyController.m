@@ -2,7 +2,7 @@
 //  PrivacyController.m
 //  Player
 //
-//  Created by hz on 2021/12/6.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/12/6.
 //
 
 #import "PrivacyController.h"
@@ -25,7 +25,7 @@
     textView.textColor = kTextColor3;
     textView.showsVerticalScrollIndicator = NO;
     
-    textView.text = kZHLocalizedString(@"本应用不会收集任何有关于你的隐私信息，你可以放心使用，确保你的隐私安全");
+    textView.text = kZHLocalizedString(@"本APP不会收集任何有关于你的隐私信息，你可以放心使用，确保你的隐私安全");
     
     
 }

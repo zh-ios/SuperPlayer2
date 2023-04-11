@@ -2,7 +2,7 @@
 //  MovieRepoController.m
 //  SMPlayer
 //
-//  Created by hz on 2021/10/21.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/10/21.
 //
 
 #import "SPLockedController.h"
@@ -88,11 +88,11 @@
 - (SPEmptyControl *)emptyView {
     if (!_emptyView) {
        _emptyView = [SPEmptyControl showEmptyViewOnView:self.view inset:UIEdgeInsetsMake(kNavbarHeight, 0, kTabbarHeight, 0)];
-        _emptyView.titleLabel.text = kZHLocalizedString(@"还未添加视频,添加马上开车 .|. 🚀 ");
+        _emptyView.titleLabel.text = kZHLocalizedString(@"空空如也，点击上传视频 ~_~");
         [self.view addSubview:_emptyView];
         _emptyView.hidden = YES;
         _emptyView.emptyViewOnClicked = ^{
-            [SPToastUtil showToast:kZHLocalizedString(@"请到本地页面上传视频")];
+            [SPToastUtil showToast:kZHLocalizedString(@"请到首页上传视频")];
             AppDelegate *appDelegate = kAppDelegate;
             appDelegate.tabbar.selectedIndex = 0;
         };
@@ -106,7 +106,7 @@
 }
 
 - (void)reloadController {
-    NSArray *localFolders = [[SPLocalFileManager sharedManager] getLocalLockedFiles];
+    NSArray *localFolders = [[SPLocalFileManager sharedMgr] getLocalLockedFiles];
     self.filesArray = [NSMutableArray arrayWithArray:localFolders];
     if (localFolders.count == 0) {
         self.emptyView.hidden = NO;
@@ -149,9 +149,9 @@
     if (!cell) {
         cell = [[SPFileCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID cellFrame:CGRectMake(0, 0, kScreenWidth, 80)];
     }
-    [cell updateCellWithFileModel:self.filesArray[indexPath.row]];
+    [cell updateCellWithModel:self.filesArray[indexPath.row]];
     @weakify(self)
-    cell.operateBtnOnClicked = ^(SPFilesModel * _Nonnull model, UIButton *btn){
+    cell.operateBtnOnClicked = ^(SPFilesModel * _Nonnull model, SPBaseButton *btn){
         @strongify(self)
         [self showOperateAlert:model indexPath:indexPath sourceBtn:btn];
     };
@@ -204,7 +204,7 @@
     }
 }
 
-- (void)showOperateAlert:(SPFilesModel *)model indexPath:(NSIndexPath *)indexPath sourceBtn:(UIButton *)btn {
+- (void)showOperateAlert:(SPFilesModel *)model indexPath:(NSIndexPath *)indexPath sourceBtn:(SPBaseButton *)btn {
 
     SPActionSheetItem *disableItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"选择您想要进行的操作") style:SPActionSheetItemStyle_Title];
     SPActionSheetItem *deleteItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"删除") style:SPActionSheetItemStyle_Default];
@@ -251,11 +251,11 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:kZHLocalizedString(@"请输入文件夹名字") message:nil preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:kZHLocalizedString(@"确定") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSString *folderName = [alert.textFields firstObject].text;
-        BOOL repeated = [[SPLocalFileManager sharedManager] hasSameNameFolders:folderName folderPath:[[SPLocalFileManager sharedManager] getGlobalFilePath]];
+        BOOL repeated = [[SPLocalFileManager sharedMgr] hasSameNameFolders:folderName folderPath:[[SPLocalFileManager sharedMgr] getGlobalFilePath]];
         if (repeated) {
             [SPToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
         } else {
-            [[SPLocalFileManager sharedManager] createFolders:folderName];
+            [[SPLocalFileManager sharedMgr] createFolders:folderName];
             [self reloadController];
         }
     }];
@@ -302,7 +302,7 @@
 
 #pragma mark --文件各种操作
 - (void)deleteOption:(SPFilesModel *)file {
-    [[SPLocalFileManager sharedManager] deleteFolders:file.fullPath];
+    [[SPLocalFileManager sharedMgr] deleteFolders:file.fullPath];
     NSInteger index = [self.filesArray indexOfObject:file];
     [self.filesArray removeObject:file];
     NSIndexPath *deletedIndexPath = [NSIndexPath indexPathForRow:index inSection:0];
@@ -322,9 +322,9 @@
     }
     BOOL repeated = NO;
     if (model.isFolder) {
-       repeated = [[SPLocalFileManager sharedManager] hasSameNameFolders:fileName folderPath:[[SPLocalFileManager sharedManager] getGlobalFilePath]];
+       repeated = [[SPLocalFileManager sharedMgr] hasSameNameFolders:fileName folderPath:[[SPLocalFileManager sharedMgr] getGlobalFilePath]];
     } else {
-       repeated = [[SPLocalFileManager sharedManager] hasSameNameFile:fileName folderPath:[[SPLocalFileManager sharedManager] getGlobalFilePath]];
+       repeated = [[SPLocalFileManager sharedMgr] hasSameNameFile:fileName folderPath:[[SPLocalFileManager sharedMgr] getGlobalFilePath]];
     }
      
     if (repeated) {
@@ -333,7 +333,7 @@
     } else {
         NSInteger index = [self.filesArray indexOfObject:model];
         NSIndexPath *reloadIndexPath = [NSIndexPath indexPathForRow:index inSection:0];
-        [[SPLocalFileManager sharedManager] reNameFoldersWithName:fileName folderPath:model.fullPath];
+        [[SPLocalFileManager sharedMgr] reNameFoldersWithName:fileName folderPath:model.fullPath];
         NSString *targetName = [fileName stringByAppendingPathExtension:[model.fullPath pathExtension]];
         model.fullPath = [model.fullPath stringByReplacingOccurrencesOfString:model.name withString:targetName];
 

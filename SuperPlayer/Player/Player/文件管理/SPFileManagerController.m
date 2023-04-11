@@ -2,7 +2,7 @@
 //  SPFileManagerController.m
 //  SMPlayer
 //
-//  Created by hz on 2021/10/21.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/10/21.
 //
 
 
@@ -26,7 +26,7 @@
 
 @interface SPFileManagerController ()<UITableViewDelegate,UITableViewDataSource,TZImagePickerControllerDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UITableView *fileManagerTableView;
 @property (nonatomic, strong) NSMutableArray *filesArray;
 @property (nonatomic, strong) SPEmptyControl *emptyView;
 @property (nonatomic, strong) GCDWebUploader *webServer;
@@ -54,7 +54,7 @@
     // 文稿中的视频移动到 localFolders
     [self moveVideoFromDocPathToLocalfoldersIfNeeded];
     [self reloadController];
-    [self.tableView reloadData];
+    [self.fileManagerTableView reloadData];
 //    UILongPressGestureRecognizer *longP = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longP)];
 //    longP.minimumPressDuration = 6;
 //    [self.customNavView addGestureRecognizer:longP];
@@ -87,13 +87,13 @@
 //    NSString *video2Path = [[NSBundle mainBundle] pathForResource:@"2" ofType:@"mp4"];
 //    NSString *video3Path = [[NSBundle mainBundle] pathForResource:@"3" ofType:@"mp4"];
 //
-//    NSString *newPath1 = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:@"/示例Mp4视频：短裤热舞٩(๑>◡<๑)۶.MP4"];
-//    NSString *newPath2 = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:@"/示例RMVB视频：猫耳超短裙~😘.RMVB"];
-//    NSString *newPath3 = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:@"/示例MKV视频：猫耳双马尾(￣ＴＴ￣).MKV"];
+//    NSString *newPath1 = [[[SPLocalFileManager sharedMgr] getDocumentPath] stringByAppendingPathComponent:@"/示例Mp4视频：短裤热舞٩(๑>◡<๑)۶.MP4"];
+//    NSString *newPath2 = [[[SPLocalFileManager sharedMgr] getDocumentPath] stringByAppendingPathComponent:@"/示例RMVB视频：猫耳超短裙~😘.RMVB"];
+//    NSString *newPath3 = [[[SPLocalFileManager sharedMgr] getDocumentPath] stringByAppendingPathComponent:@"/示例MKV视频：猫耳双马尾(￣ＴＴ￣).MKV"];
 //
-//    [[SPLocalFileManager sharedManager] copyFileFromPath:video1Path toPath:newPath1];
-//    [[SPLocalFileManager sharedManager] copyFileFromPath:video2Path toPath:newPath2];
-//    [[SPLocalFileManager sharedManager] copyFileFromPath:video3Path toPath:newPath3];
+//    [[SPLocalFileManager sharedMgr] copyFileFromPath:video1Path toPath:newPath1];
+//    [[SPLocalFileManager sharedMgr] copyFileFromPath:video2Path toPath:newPath2];
+//    [[SPLocalFileManager sharedMgr] copyFileFromPath:video3Path toPath:newPath3];
 //    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHadShowDemoVideos];
 //    [[NSUserDefaults standardUserDefaults] synchronize];
 //}
@@ -104,7 +104,7 @@
     [self moveVideoFromDocPathToLocalfoldersIfNeeded];
     if (self.shouldReloadData) {
         [self reloadController];
-        [self.tableView reloadData];
+        [self.fileManagerTableView reloadData];
         self.shouldReloadData = NO;
     }
 }
@@ -124,9 +124,9 @@
         // 如果不是视频文件 contine
         if (![pathEx containsObject:[[sub pathExtension] uppercaseString]]) continue;
         // 将视频文件全部移动到 localFolder文件夹
-        NSString *targetPath = [[SPLocalFileManager sharedManager] getGlobalFilePath];
+        NSString *targetPath = [[SPLocalFileManager sharedMgr] getGlobalFilePath];
         NSString *sourcePath = [docPath stringByAppendingPathComponent:sub];
-        [[SPLocalFileManager sharedManager] moveFileFromPath:sourcePath toPath:targetPath];
+        [[SPLocalFileManager sharedMgr] moveFileFromPath:sourcePath toPath:targetPath];
         self.shouldReloadData = YES;
     }
 
@@ -152,13 +152,13 @@
 
 
 - (void)reloadController {
-    NSArray *localFolders = [[SPLocalFileManager sharedManager] getLocalFiles];
+    NSArray *localFolders = [[SPLocalFileManager sharedMgr] getLocalFiles];
     self.filesArray = [NSMutableArray arrayWithArray:localFolders];
     if (localFolders.count == 0) {
         if (!self.emptyView) {
             SPEmptyControl *control = [SPEmptyControl showEmptyViewOnView:self.view inset:UIEdgeInsetsMake(kNavbarHeight, 0, kTabbarHeight, 0)];
             self.emptyView = control;
-            self.emptyView.titleLabel.text = kZHLocalizedString(@"点击上传视频，马上开车 .|. 🚀 ");
+            self.emptyView.titleLabel.text = kZHLocalizedString(@"空空如也，点击上传视频 ~_~ ");
             [self.view addSubview:control];
             @weakify(self)
             control.emptyViewOnClicked = ^{
@@ -167,32 +167,33 @@
             };
         } else {
             self.emptyView.hidden = NO;
-            self.tableView.hidden = YES;
+            self.fileManagerTableView.hidden = YES;
         }
        
     } else {
-        self.tableView.hidden = NO;
+        self.fileManagerTableView.hidden = NO;
         self.emptyView.hidden = YES;
         
-        if (![self.view.subviews containsObject:self.tableView]) {
-            [self.view addSubview:self.tableView];
+        if (![self.view.subviews containsObject:self.fileManagerTableView]) {
+            [self.view addSubview:self.fileManagerTableView];
         }
     }
 }
 
-- (UITableView *)tableView {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavbarHeight, kScreenWidth, kScreenHeight-kNavbarHeight-kTabbarHeight)];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.rowHeight = 90;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.tableFooterView = [[SPBaseView alloc] init];
-        _tableView.estimatedSectionFooterHeight = 0;
-        _tableView.estimatedSectionHeaderHeight = 0;
-        _tableView.estimatedRowHeight = 0;
+- (UITableView *)fileManagerTableView {
+    if (!_fileManagerTableView) {
+        _fileManagerTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavbarHeight, kScreenWidth, kScreenHeight-kNavbarHeight-kTabbarHeight)];
+        _fileManagerTableView.delegate = self;
+        _fileManagerTableView.dataSource = self;
+        _fileManagerTableView.rowHeight = 90;
+        _fileManagerTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _fileManagerTableView.tableFooterView = [[SPBaseView alloc] init];
+        _fileManagerTableView.estimatedSectionFooterHeight = 0;
+        _fileManagerTableView.estimatedSectionHeaderHeight = 0;
+        _fileManagerTableView.estimatedRowHeight = 0;
+        _fileManagerTableView.backgroundColor = [UIColor clearColor];
     }
-    return _tableView;
+    return _fileManagerTableView;
 }
 
 #pragma mark --- tableViewDelegate and datasource
@@ -211,9 +212,9 @@
     if (!cell) {
         cell = [[SPFileCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID cellFrame:CGRectMake(0, 0, kScreenWidth, 80)];
     }
-    [cell updateCellWithFileModel:self.filesArray[indexPath.row]];
+    [cell updateCellWithModel:self.filesArray[indexPath.row]];
     @weakify(self)
-    cell.operateBtnOnClicked = ^(SPFilesModel * _Nonnull model, UIButton *btn){
+    cell.operateBtnOnClicked = ^(SPFilesModel * _Nonnull model, SPBaseButton *btn){
         @strongify(self)
         [self showOperateAlert:model indexPath:indexPath sourceBtn:btn];
     };
@@ -265,7 +266,7 @@
 }
 
 - (void)initNaviView {
-    UIButton *btn = [[UIButton alloc] init];
+    SPBaseButton *btn = [[SPBaseButton alloc] init];
     [btn setImage:[UIImage imageNamed:@"sp_icon_add_white"] forState:UIControlStateNormal];
     [self.customNavView addSubview:btn];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -279,7 +280,7 @@
 
 
 #pragma mark --- alert
-- (void)showOperateAlert:(SPFilesModel *)model indexPath:(NSIndexPath *)indexPath sourceBtn:(UIButton *)btn {
+- (void)showOperateAlert:(SPFilesModel *)model indexPath:(NSIndexPath *)indexPath sourceBtn:(SPBaseButton *)btn {
     
     SPActionSheetItem *disableItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"选择您想要进行的操作") style:SPActionSheetItemStyle_Title];
     SPActionSheetItem *lockItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"加密") style:SPActionSheetItemStyle_Default];
@@ -329,7 +330,7 @@
     };
 }
 
-- (void)showPopView:(UIButton *)btn {
+- (void)showPopView:(SPBaseButton *)btn {
     
     SPActionSheetItem *disableItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"选择您想要进行的操作") style:SPActionSheetItemStyle_Title];
     SPActionSheetItem *createFolder = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"新建文件夹") style:SPActionSheetItemStyle_Default];
@@ -469,7 +470,7 @@
 // 对文件或者文件夹进行加密 ，移动到加密文件夹
 - (void)lockFile:(SPFilesModel *)model indexPath:(NSIndexPath *)index {
     
-    NSInteger lockedFilesCount = [[SPLocalFileManager sharedManager] getLockedFilesCount];
+    NSInteger lockedFilesCount = [[SPLocalFileManager sharedMgr] getLockedFilesCount];
     BOOL hadUnlockAllFunc = [SPGlobalConfigManager shareManager].hadUnlockAllFunc;
     // 大于免费加密数量且没有付费且没有好评过
     NSInteger maxCount = kLockVideoMaxCount;
@@ -488,20 +489,20 @@
     
     BOOL repeated = NO;
     if (model.isFolder) {
-        repeated = [[SPLocalFileManager sharedManager] hasSameNameFolders:model.name folderPath:[[SPLocalFileManager sharedManager] getLockedFilePath]];
+        repeated = [[SPLocalFileManager sharedMgr] hasSameNameFolders:model.name folderPath:[[SPLocalFileManager sharedMgr] getLockedFilePath]];
     } else {
-        repeated = [[SPLocalFileManager sharedManager] hasSameNameFile:model.name folderPath:[[SPLocalFileManager sharedManager] getLockedFilePath]];
+        repeated = [[SPLocalFileManager sharedMgr] hasSameNameFile:model.name folderPath:[[SPLocalFileManager sharedMgr] getLockedFilePath]];
     }
     if (repeated) {
         [SPToastUtil showToast:kZHLocalizedString(@"已存在同名文件，请重命名后再进行操作！")];
         return;
     } else {
-        [[SPLocalFileManager sharedManager] moveFileFromPath:model.fullPath toPath:[[SPLocalFileManager sharedManager] getLockedFilePath]];
+        [[SPLocalFileManager sharedMgr] moveFileFromPath:model.fullPath toPath:[[SPLocalFileManager sharedMgr] getLockedFilePath]];
         
         NSInteger deleteIndex = [self.filesArray indexOfObject:model];
         [self.filesArray removeObject:model];
         NSIndexPath *deletedIndexPath = [NSIndexPath indexPathForRow:deleteIndex inSection:0];
-        [self.tableView deleteRowsAtIndexPaths:@[deletedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.fileManagerTableView deleteRowsAtIndexPaths:@[deletedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         // 发送更新通知
         [[NSNotificationCenter defaultCenter] postNotificationName:@"lockedFilesUpdatedNoti" object:nil];
         
@@ -533,14 +534,14 @@
         NSString *orgFilename = ((PHAssetResource*)resources[0]).originalFilename;
         
         
-        NSString *savePath = [NSString stringWithFormat:@"%@/%@",[[SPLocalFileManager sharedManager] getGlobalFilePath],orgFilename];
+        NSString *savePath = [NSString stringWithFormat:@"%@/%@",[[SPLocalFileManager sharedMgr] getGlobalFilePath],orgFilename];
         
 //        NSURL *videoSaveURL = [NSURL fileURLWithPath:savePath];
         
         // 存在同名文件
-        if ([[SPLocalFileManager sharedManager] hasSameNameFile:orgFilename folderPath:[[SPLocalFileManager sharedManager] getGlobalFilePath]]) {
+        if ([[SPLocalFileManager sharedMgr] hasSameNameFile:orgFilename folderPath:[[SPLocalFileManager sharedMgr] getGlobalFilePath]]) {
 //            long long ts = [[NSDate date] timeIntervalSince1970];
-//            videoSaveURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@_%@",[[SPLocalFileManager sharedManager] getGlobalFilePath],@(ts),orgFilename]];
+//            videoSaveURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@_%@",[[SPLocalFileManager sharedMgr] getGlobalFilePath],@(ts),orgFilename]];
 //            orgFilename = [NSString stringWithFormat:@"%@_%@",@(ts),orgFilename];
           
             [SPToastUtil showToast:kZHLocalizedString(@"已为您过滤重复视频！")];
@@ -572,7 +573,7 @@
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         [SPToastUtil endLoadingOnView:self.view];
         [self reloadController];
-        [self.tableView reloadData];
+        [self.fileManagerTableView reloadData];
     });
 }
 
@@ -582,14 +583,14 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:kZHLocalizedString(@"请输入文件夹名字") message:nil preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:kZHLocalizedString(@"确定") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSString *folderName = [alert.textFields firstObject].text;
-        BOOL repeated = [[SPLocalFileManager sharedManager] hasSameNameFolders:folderName folderPath:[[SPLocalFileManager sharedManager] getGlobalFilePath]];
+        BOOL repeated = [[SPLocalFileManager sharedMgr] hasSameNameFolders:folderName folderPath:[[SPLocalFileManager sharedMgr] getGlobalFilePath]];
         if (repeated) {
             [SPToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
         } else {
-            [[SPLocalFileManager sharedManager] createFolders:folderName];
+            [[SPLocalFileManager sharedMgr] createFolders:folderName];
             [self reloadController];
             // 刷新数据
-            [self.tableView reloadData];
+            [self.fileManagerTableView reloadData];
         }
     }];
     [alert addAction:action];
@@ -600,11 +601,11 @@
 }
 
 - (void)deleteOption:(SPFilesModel *)file {
-    [[SPLocalFileManager sharedManager] deleteFolders:file.fullPath];
+    [[SPLocalFileManager sharedMgr] deleteFolders:file.fullPath];
     NSInteger index = [self.filesArray indexOfObject:file];
     [self.filesArray removeObject:file];
     NSIndexPath *deletedIndexPath = [NSIndexPath indexPathForRow:index inSection:0];
-    [self.tableView deleteRowsAtIndexPaths:@[deletedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.fileManagerTableView deleteRowsAtIndexPaths:@[deletedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     if (self.filesArray.count == 0) {
         [self reloadController];
@@ -619,9 +620,9 @@
     }
     BOOL repeated = NO;
     if (model.isFolder) {
-       repeated = [[SPLocalFileManager sharedManager] hasSameNameFolders:fileName folderPath:[[SPLocalFileManager sharedManager] getGlobalFilePath]];
+       repeated = [[SPLocalFileManager sharedMgr] hasSameNameFolders:fileName folderPath:[[SPLocalFileManager sharedMgr] getGlobalFilePath]];
     } else {
-       repeated = [[SPLocalFileManager sharedManager] hasSameNameFile:fileName folderPath:[[SPLocalFileManager sharedManager] getGlobalFilePath]];
+       repeated = [[SPLocalFileManager sharedMgr] hasSameNameFile:fileName folderPath:[[SPLocalFileManager sharedMgr] getGlobalFilePath]];
     }
      
     if (repeated) {
@@ -630,12 +631,12 @@
     } else {
         NSInteger index = [self.filesArray indexOfObject:model];
         NSIndexPath *reloadIndexPath = [NSIndexPath indexPathForRow:index inSection:0];
-        [[SPLocalFileManager sharedManager] reNameFoldersWithName:fileName folderPath:model.fullPath];
+        [[SPLocalFileManager sharedMgr] reNameFoldersWithName:fileName folderPath:model.fullPath];
         NSString *targetName = [fileName stringByAppendingPathExtension:[model.fullPath pathExtension]];
         model.fullPath = [model.fullPath stringByReplacingOccurrencesOfString:model.name withString:targetName];
 
         model.name = targetName;
-        [self.tableView reloadRowsAtIndexPaths:@[reloadIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.fileManagerTableView reloadRowsAtIndexPaths:@[reloadIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 

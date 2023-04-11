@@ -19,7 +19,7 @@
 /// 标题
 @property (nonatomic, strong) UILabel *titleLabel;
 /// 播放或暂停按钮
-@property (nonatomic, strong) UIButton *playOrPauseBtn;
+@property (nonatomic, strong) SPBaseButton *playOrPauseBtn;
 /// 播放的当前时间
 @property (nonatomic, strong) UILabel *currentTimeLabel;
 /// 滑杆
@@ -27,9 +27,9 @@
 /// 视频总时间
 @property (nonatomic, strong) UILabel *totalTimeLabel;
 /// 全屏按钮
-@property (nonatomic, strong) UIButton *fullScreenBtn;
+@property (nonatomic, strong) SPBaseButton *fullScreenBtn;
 
-@property (nonatomic, strong) UIButton *downloadButton;
+@property (nonatomic, strong) SPBaseButton *downloadButton;
 
 @property (nonatomic, assign) BOOL isShow;
 
@@ -61,7 +61,7 @@
 }
 
 - (void)addCloseButton {
-    UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(5, kTopSafeArea+10, 80, 30)];
+    SPBaseButton *backBtn = [[SPBaseButton alloc] initWithFrame:CGRectMake(5, kTopSafeArea+10, 80, 30)];
     self.closeButton = backBtn;
     [self addSubview:backBtn];
     self.closeButton = backBtn;
@@ -73,7 +73,7 @@
     [backBtn extendHitAreaTop:20 left:20 bottom:20 right:20];
 }
 
-- (void)close:(UIButton *)b {
+- (void)close:(SPBaseButton *)b {
     if (self.closeButtonOnClikedCallbackBlock) {
         self.closeButtonOnClikedCallbackBlock();
     }
@@ -162,11 +162,11 @@
 
 #pragma mark - action
 
-- (void)playPauseButtonClickAction:(UIButton *)sender {
+- (void)playPauseButtonClickAction:(SPBaseButton *)sender {
     [self playOrPause];
 }
 
-- (void)fullScreenButtonClickAction:(UIButton *)sender {
+- (void)fullScreenButtonClickAction:(SPBaseButton *)sender {
     [self.player enterFullScreen:YES animated:YES];
 }
 
@@ -343,7 +343,7 @@
     return _bottomToolView;
 }
 
-- (UIButton *)playOrPauseBtn {
+- (SPBaseButton *)playOrPauseBtn {
     if (!_playOrPauseBtn) {
         _playOrPauseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_playOrPauseBtn setImage:ZFPlayer_Image(@"new_allPlay_44x44_") forState:UIControlStateNormal];
@@ -385,7 +385,7 @@
     return _totalTimeLabel;
 }
 
-- (UIButton *)fullScreenBtn {
+- (SPBaseButton *)fullScreenBtn {
     if (!_fullScreenBtn) {
         _fullScreenBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_fullScreenBtn setImage:ZFPlayer_Image(@"ZFPlayer_fullscreen") forState:UIControlStateNormal];
@@ -393,9 +393,9 @@
     return _fullScreenBtn;
 }
 
-- (UIButton *)downloadButton {
+- (SPBaseButton *)downloadButton {
     if (!_downloadButton) {
-        _downloadButton = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth - 45, 0, 30, 30)];
+        _downloadButton = [[SPBaseButton alloc] initWithFrame:CGRectMake(kScreenWidth - 45, 0, 30, 30)];
         [_downloadButton setImage:kResizedImage(@"sp_icon_download_white", 27) forState:UIControlStateNormal];
         [_downloadButton addTarget:self action:@selector(downloadCurrentVideo) forControlEvents:UIControlEventTouchUpInside];
         _downloadButton.hidden = YES;

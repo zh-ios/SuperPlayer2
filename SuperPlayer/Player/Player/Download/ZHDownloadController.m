@@ -93,14 +93,14 @@
 //    SPHWDownloadModel *model = self.downloadDatas[indexPath.row];
 //    [cell updateUIWithModel:model];
 //    @weakify(self);
-//    cell.downloadBtnOnClickBlock = ^(UIButton * _Nonnull downloadBtn, ZHDownloadCell *cell, SPHWDownloadModel *model) {
+//    cell.downloadBtnOnClickBlock = ^(SPBaseButton * _Nonnull downloadBtn, ZHDownloadCell *cell, SPHWDownloadModel *model) {
 //        @strongify(self);
 //        [self handleDownloadEventWithModel:model cell:cell btn:downloadBtn];
 //    };
 //    return cell;
 //}
 //
-//- (void)handleDownloadEventWithModel:(SPHWDownloadModel *)model cell:(ZHDownloadCell *)cell btn:(UIButton *)btn {
+//- (void)handleDownloadEventWithModel:(SPHWDownloadModel *)model cell:(ZHDownloadCell *)cell btn:(SPBaseButton *)btn {
 //    if (!model.url) return;
 //    @weakify(self);
 //    SPHWDownloadState downloadState = model.state;

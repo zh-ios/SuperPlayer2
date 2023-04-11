@@ -5,12 +5,11 @@
       "scale" : "1x"
     },
     {
-      "filename" : "123icon_iap_lianjie@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "22icon_iap_lianjie@3x.png",
+      "filename" : "链接.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -13,7 +13,7 @@
 //@property (nonatomic, strong) UILabel *nameLabel;
 //@property (nonatomic, strong) UILabel *fileSizeLabel;
 //@property (nonatomic, strong) UILabel *progressLabel;
-//@property (nonatomic, strong) UIButton *downloadStatusBtn;
+//@property (nonatomic, strong) SPBaseButton *downloadStatusBtn;
 //@property (nonatomic, strong) SPHWDownloadModel *downloadModel;
 //
 //
@@ -48,7 +48,7 @@
 //    self.progressLabel.font = self.fileSizeLabel.font;
 //    [self.contentView addSubview:self.progressLabel];
 //    
-//    self.downloadStatusBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth - 15, 10, 35, 35)];
+//    self.downloadStatusBtn = [[SPBaseButton alloc] initWithFrame:CGRectMake(kScreenWidth - 15, 10, 35, 35)];
 //    [self.contentView addSubview:self.downloadStatusBtn];
 //    [self.downloadStatusBtn setImage:[UIImage imageNamed:@"download_page_download"] forState:UIControlStateNormal];
 //    [self.downloadStatusBtn addTarget:self action:@selector(downloadStatusBtnOnClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -64,7 +64,7 @@
 //}
 //
 //
-//- (void)downloadStatusBtnOnClicked:(UIButton *)btn {
+//- (void)downloadStatusBtnOnClicked:(SPBaseButton *)btn {
 //    if (self.downloadBtnOnClickBlock) {
 //        self.downloadBtnOnClickBlock(btn, self, self.downloadModel);
 //    }

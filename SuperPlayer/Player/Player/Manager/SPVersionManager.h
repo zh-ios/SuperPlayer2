@@ -2,7 +2,7 @@
 //  SPVersionManager.h
 //  Player
 //
-//  Created by hz on 2022/1/6.
+//  Cressssated by hzdddddd sxxxx on sky dat 2022/1/6.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SPVersionManager : NSObject
 
-+ (instancetype)sharedManager;
++ (instancetype)sharedMgr;
 
 @property (nonatomic, copy) NSString *currentVersion;
 

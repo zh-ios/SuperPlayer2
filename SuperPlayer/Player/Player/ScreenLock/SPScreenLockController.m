@@ -2,7 +2,7 @@
 //  SPScreenLockController.m
 //  Player
 //
-//  Created by hz on 2021/11/15.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/11/15.
 //
 
 #import "SPScreenLockController.h"
@@ -12,7 +12,7 @@
 @property (nonatomic, strong) UILabel *pwdLabel;
 @property (nonatomic, copy) NSString *currentInputPwd;
 @property (nonatomic, strong) NSMutableArray *inpuNumbers;
-@property (nonatomic, strong) UIButton *dtShowBtn;
+@property (nonatomic, strong) SPBaseButton *dtShowBtn;
 @end
 
 #define kScreenLockThemeColor kTextHighlightColor
@@ -30,7 +30,7 @@
     UILabel *inputTipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, kNavbarHeight+40, self.view.width, 20)];
     inputTipLabel.textColor = kScreenLockThemeColor;
     inputTipLabel.textAlignment = NSTextAlignmentCenter;
-    inputTipLabel.text = kZHLocalizedString(@"请输入密码");
+    inputTipLabel.text = kZHLocalizedString(@"请 输 入 密 码");
     inputTipLabel.font = [UIFont systemFontOfSize:17];
     [self.view addSubview:inputTipLabel];
     
@@ -41,11 +41,12 @@
     self.pwdLabel.textColor = kScreenLockThemeColor;
     [self.view addSubview:self.pwdLabel];
     
-    UIButton *dtShow = [[UIButton alloc] initWithFrame:CGRectMake(50, self.pwdLabel.bottom, kScreenWidth-50*2, 40)];
-    [dtShow setTitle:kZHLocalizedString(@"本次启动不再展示此页面") forState:UIControlStateNormal];
+    SPBaseButton *dtShow = [[SPBaseButton alloc] initWithFrame:CGRectMake(50, self.pwdLabel.bottom, kScreenWidth-50*2, 40)];
+    [dtShow setTitle:kZHLocalizedString(@"本次启动不再展示输入") forState:UIControlStateNormal];
     [dtShow setTitleColor:kTextColor9 forState:UIControlStateNormal];
     [dtShow setTitleColor:kScreenLockThemeColor forState:UIControlStateSelected];
     [dtShow addTarget:self action:@selector(dtShow:) forControlEvents:UIControlEventTouchUpInside];
+    dtShow.adjustsImageWhenHighlighted = NO;
     [self.view addSubview:dtShow];
     dtShow.titleLabel.font = [UIFont systemFontOfSize:13];
     [dtShow setImage:[UIImage imageNamed:@"sp_icon_checkbox_selected"] forState:UIControlStateSelected];
@@ -55,7 +56,7 @@
     dtShow.imageEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
     
     
-    CGFloat btnWH = 70;
+    CGFloat btnWH = 75;
     CGFloat btnMargin = 22;
     CGFloat btnUpDownMargin = 24;
     CGFloat leftPadding = (kScreenWidth-btnMargin*2-btnWH*3)/2;
@@ -68,7 +69,7 @@
         column = i % 3;
         row = i / 3;
         btnX = leftPadding+(btnWH+btnMargin)*column;
-        btnY = self.pwdLabel.bottom + 70+(btnWH+btnUpDownMargin)*row;
+        btnY = self.pwdLabel.bottom + 80 +(btnWH+btnUpDownMargin)*row;
         
         [self addBtnWithFrame:CGRectMake(btnX, btnY, btnWH, btnWH) tag:i+1];
     }
@@ -79,32 +80,32 @@
     
     CGFloat opBtnLeftPadding = 20;
     CGFloat opBtnW = 100;
-    UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(opBtnLeftPadding, self.view.height-130-kBottomSafeArea, opBtnW, 40)];
-    [cancelBtn setTitle:kZHLocalizedString(@"取消") forState:UIControlStateNormal];
-    [cancelBtn setTitleColor:kScreenLockThemeColor forState:UIControlStateNormal];
-    [cancelBtn addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:cancelBtn];
-    cancelBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-    cancelBtn.layer.cornerRadius = cancelBtn.height*0.5;
-    cancelBtn.layer.borderWidth = onePixel;
-    cancelBtn.layer.borderColor = kScreenLockThemeColor.CGColor;
+    SPBaseButton *cancelButton = [[SPBaseButton alloc] initWithFrame:CGRectMake(opBtnLeftPadding, self.view.height-130-kBottomSafeArea, opBtnW, 40)];
+    [cancelButton setTitle:kZHLocalizedString(@"取 消") forState:UIControlStateNormal];
+    [cancelButton setTitleColor:kScreenLockThemeColor forState:UIControlStateNormal];
+    [cancelButton addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:cancelButton];
+    cancelButton.titleLabel.font = [UIFont systemFontOfSize:17];
+    cancelButton.layer.cornerRadius = cancelButton.height*0.5;
+    cancelButton.layer.borderWidth = onePixel;
+    cancelButton.layer.borderColor = kScreenLockThemeColor.CGColor;
     // 暂时用不到
-    cancelBtn.hidden = YES;
+    cancelButton.hidden = YES;
     
-    UIButton *deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth-opBtnLeftPadding-opBtnW, cancelBtn.top, opBtnW, 40)];
-    [deleteBtn setTitle:kZHLocalizedString(@"删除") forState:UIControlStateNormal];
+    SPBaseButton *deleteBtn = [[SPBaseButton alloc] initWithFrame:CGRectMake(kScreenWidth-opBtnLeftPadding-opBtnW, cancelButton.top, opBtnW, 40)];
+    [deleteBtn setTitle:kZHLocalizedString(@"删 除") forState:UIControlStateNormal];
     [deleteBtn setTitleColor:kScreenLockThemeColor forState:UIControlStateNormal];
     [deleteBtn addTarget:self action:@selector(delete) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:deleteBtn];
     deleteBtn.titleLabel.font = [UIFont systemFontOfSize:17];
-    deleteBtn.layer.cornerRadius = cancelBtn.height*0.5;
+    deleteBtn.layer.cornerRadius = cancelButton.height*0.5;
     deleteBtn.layer.borderWidth = onePixel;
     deleteBtn.layer.borderColor = kScreenLockThemeColor.CGColor;
 
 }
 
 - (void)addBtnWithFrame:(CGRect)frame tag:(NSInteger)tag {
-    UIButton *btn = [[UIButton alloc] initWithFrame:frame];
+    SPBaseButton *btn = [[SPBaseButton alloc] initWithFrame:frame];
     [btn setTitleColor:kScreenLockThemeColor forState:UIControlStateNormal];
     btn.titleLabel.font = [UIFont systemFontOfSize:24];
     [self.view addSubview:btn];
@@ -118,11 +119,11 @@
     btn.layer.masksToBounds = YES;
 }
 
-- (void)dtShow:(UIButton *)btn {
+- (void)dtShow:(SPBaseButton *)btn {
     btn.selected = !btn.selected;
 }
 
-- (void)numberBtnOnClicked:(UIButton *)btn {
+- (void)numberBtnOnClicked:(SPBaseButton *)btn {
     kFeedbackMedium
     
     [self.inpuNumbers addObject:[NSString stringWithFormat:@"%@",@(btn.tag)]];

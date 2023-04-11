@@ -2,7 +2,7 @@
 //  SPIAPManager.h
 //  ZHProject
 //
-//  Created by hz on 2021/10/25.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/10/25.
 //  Copyright © 2021 autohome. All rights reserved.
 //
 
@@ -10,10 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define kunlockForever          @"com.player.forever"
-#define kunlockOneMonth         @"com.player.30day"
-#define kunlockOneSeason        @"com.player.90day"
-#define kunlockOneYear          @"com.player.12month"
+
+#define kunlockForever          @"com.splayer.forever"
+
+#define kunlockOneMonth         @"com.splayer.one.month"
+
+#define kunlockOneYear          @"com.splayer.12.month"
 
 @protocol SPIAPManagerDelegate <NSObject>
 @optional

@@ -3,7 +3,7 @@
 //  ZHProject
 //
 //  Created by zhxxxx  ondfasd 2018/7/26.
-//  Copyright © 2018年 autohome. All rights reserved.
+//  Copyright © 2023 zhsxx. All rights reserved.
 //
 
 #import "SPNavigationBar.h"
@@ -44,7 +44,7 @@
     self.titleL.textColor = [UIColor whiteColor];
     [self addSubview:titleL];
     
-    UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, kTopSafeArea+10, 80, 30)];
+    SPBaseButton *backBtn = [[SPBaseButton alloc] initWithFrame:CGRectMake(0, kTopSafeArea+10, 80, 30)];
     [self addSubview:backBtn];
     self.backBtn = backBtn;
     [backBtn setImage:[UIImage imageNamed:@"sp_icon_back"] forState:UIControlStateNormal];
@@ -59,7 +59,7 @@
     [self addSubview:self.bottomLine];
     self.bottomLine.hidden = YES;
 }
-- (void)back:(UIButton *)btn {
+- (void)back:(SPBaseButton *)btn {
     if (self.backOnClick) {
         self.backOnClick(btn);
     }

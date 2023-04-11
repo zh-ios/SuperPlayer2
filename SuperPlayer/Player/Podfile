@@ -32,25 +32,22 @@ target 'SPlayer' do
   pod 'AFNetworking', '~> 4.0.1'
   pod 'YYCache', '~> 1.0.4'
   pod 'SDWebImage', '~> 5.12.2'
-  pod 'SDWebImageWebPCoder'
+#  pod 'SDWebImageWebPCoder'
   pod 'Masonry'
   pod 'LMJHorizontalScrollText'
   pod 'MJRefresh', '~> 3.7.5'
       
   pod 'FMDB', '~> 2.7.5'
       
-  pod 'UMCommon'
-  pod 'UMDevice'
-  pod 'UMAPM'
-  
+
   # 下载文件
 #  pod 'MZDownloadManager', '~> 3.6'
   
   # 浏览器需求
-  pod 'AXNavigationBackItemInjection'
-  pod 'NJKWebViewProgress'
-  pod 'Aspects'
-  pod 'AXPracticalHUD'
+#  pod 'AXNavigationBackItemInjection'
+#  pod 'NJKWebViewProgress'
+#  pod 'Aspects'
+#  pod 'AXPracticalHUD'
 
   # VLC
   shared_pods

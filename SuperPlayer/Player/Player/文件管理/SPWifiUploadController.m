@@ -2,7 +2,7 @@
 //  SPWifiUploadController.m
 //  Player
 //
-//  Created by hz on 2021/12/7.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/12/7.
 //
 
 #import "SPWifiUploadController.h"
@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = kZHLocalizedString(@"Wifi / iTunes 上传");
+    self.title = kZHLocalizedString(@"Wifi/iTunes 上传");
     
     [self uploadByWifi];
     [self initSubViews];
@@ -117,7 +117,7 @@
 
 - (void)uploadByWifi {
     // 文件存储位置
-    NSString* filePath = [[SPLocalFileManager sharedManager] getGlobalFilePath];
+    NSString* filePath = [[SPLocalFileManager sharedMgr] getGlobalFilePath];
     NSLog(kZHLocalizedString(@"文件存储位置 : %@"), filePath);
     
     // 创建webServer，设置根目录
@@ -136,11 +136,11 @@
     // 限制文件上传类型
     _webServer.allowedFileExtensions = [mExt copy];
     // 设置网页标题
-    _webServer.title = kZHLocalizedString(@"极简极好用的播放器");
+    _webServer.title = kZHLocalizedString(@"极简极好用的万能播放器");
     // 设置展示在网页上的文字(开场白)
-    _webServer.prologue = kZHLocalizedString(@"安全、高效、方便、快捷的专业播放器");
+    _webServer.prologue = kZHLocalizedString(@"高效、方便、安全、快捷的专业播放器");
     // 设置展示在网页上的文字(收场白)
-    _webServer.epilogue = kZHLocalizedString(@"持续更新，不断优化，放心使用");
+    _webServer.epilogue = kZHLocalizedString(@"持续更新-不断优化-放心使用");
     
     if ([_webServer start]) {
     } else {
@@ -148,19 +148,19 @@
 }
 
     
-#pragma mark - <GCDWebUploaderDelegate>
-- (void)webUploader:(GCDWebUploader*)uploader didUploadFileAtPath:(NSString*)path {
-}
-
-- (void)webUploader:(GCDWebUploader*)uploader didMoveItemFromPath:(NSString*)fromPath toPath:(NSString*)toPath {
-}
-
-- (void)webUploader:(GCDWebUploader*)uploader didDeleteItemAtPath:(NSString*)path {
-    NSLog(@"[DELETE] %@", path);
-}
-
-- (void)webUploader:(GCDWebUploader*)uploader didCreateDirectoryAtPath:(NSString*)path {
-    NSLog(@"[CREATE] %@", path);
-}
+//#pragma mark - <GCDWebUploaderDelegate>
+//- (void)webUploader:(GCDWebUploader*)uploader didUploadFileAtPath:(NSString*)path {
+//}
+//
+//- (void)webUploader:(GCDWebUploader*)uploader didMoveItemFromPath:(NSString*)fromPath toPath:(NSString*)toPath {
+//}
+//
+//- (void)webUploader:(GCDWebUploader*)uploader didDeleteItemAtPath:(NSString*)path {
+//    NSLog(@"[DELETE] %@", path);
+//}
+//
+//- (void)webUploader:(GCDWebUploader*)uploader didCreateDirectoryAtPath:(NSString*)path {
+//    NSLog(@"[CREATE] %@", path);
+//}
 
 @end

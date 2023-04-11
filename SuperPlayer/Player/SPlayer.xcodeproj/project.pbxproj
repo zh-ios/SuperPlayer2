@@ -92,7 +92,6 @@
 		3698A543274F308E0046FD68 /* SPNavigationAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A49C274F308C0046FD68 /* SPNavigationAnimation.m */; };
 		3698A544274F308E0046FD68 /* SPPopDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A49D274F308C0046FD68 /* SPPopDownMenu.m */; };
 		3698A545274F308E0046FD68 /* SPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A49E274F308C0046FD68 /* SPNavigationController.m */; };
-		3698A546274F308E0046FD68 /* SPTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A49F274F308C0046FD68 /* SPTabbarController.m */; };
 		3698A547274F308E0046FD68 /* SPBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A4A3274F308C0046FD68 /* SPBaseController.m */; };
 		3698A548274F308E0046FD68 /* SPEmptyControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A4A4274F308C0046FD68 /* SPEmptyControl.m */; };
 		3698A549274F308E0046FD68 /* SPLocalFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A4A8274F308C0046FD68 /* SPLocalFileManager.m */; };
@@ -156,6 +155,28 @@
 		36DB113E29E3CB8F005E0231 /* SPHWNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB113729E3CB8F005E0231 /* SPHWNetworkReachabilityManager.m */; };
 		36DB113F29E3CB8F005E0231 /* SPHWDataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB113A29E3CB8F005E0231 /* SPHWDataBaseManager.m */; };
 		36DB118429E4339F005E0231 /* SPInputOnlineLinkerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB118229E4339F005E0231 /* SPInputOnlineLinkerController.m */; };
+		36DB11C829E4F372005E0231 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11C729E4F372005E0231 /* MainTabBarController.m */; };
+		36DB11F729E51CEA005E0231 /* UIBarButtonItem+CYLBadgeExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11CD29E51CEA005E0231 /* UIBarButtonItem+CYLBadgeExtention.m */; };
+		36DB11F829E51CEA005E0231 /* CYLBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11CE29E51CEA005E0231 /* CYLBaseTableViewController.m */; };
+		36DB11F929E51CEA005E0231 /* UIColor+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11D129E51CEA005E0231 /* UIColor+CYLTabBarControllerExtention.m */; };
+		36DB11FA29E51CEA005E0231 /* UIView+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11D829E51CEA005E0231 /* UIView+CYLTabBarControllerExtention.m */; };
+		36DB11FB29E51CEA005E0231 /* NSObject+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11D929E51CEA005E0231 /* NSObject+CYLTabBarControllerExtention.m */; };
+		36DB11FC29E51CEA005E0231 /* UITabBarItem+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11DB29E51CEA005E0231 /* UITabBarItem+CYLTabBarControllerExtention.m */; };
+		36DB11FD29E51CEA005E0231 /* CYLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11DE29E51CEA005E0231 /* CYLTabBarController.m */; };
+		36DB11FE29E51CEA005E0231 /* CYLBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11DF29E51CEA005E0231 /* CYLBaseNavigationController.m */; };
+		36DB11FF29E51CEA005E0231 /* UITabBarItem+CYLBadgeExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11E129E51CEA005E0231 /* UITabBarItem+CYLBadgeExtention.m */; };
+		36DB120029E51CEA005E0231 /* UIView+CYLBadgeExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11E429E51CEA005E0231 /* UIView+CYLBadgeExtention.m */; };
+		36DB120129E51CEA005E0231 /* CAAnimation+CYLBadgeExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11E529E51CEA005E0231 /* CAAnimation+CYLBadgeExtention.m */; };
+		36DB120229E51CEA005E0231 /* CYLTabBar+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11E629E51CEA005E0231 /* CYLTabBar+CYLTabBarControllerExtention.m */; };
+		36DB120329E51CEA005E0231 /* CYLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11E729E51CEA005E0231 /* CYLTabBar.m */; };
+		36DB120429E51CEA005E0231 /* CYLPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11E829E51CEA005E0231 /* CYLPlusButton.m */; };
+		36DB120529E51CEA005E0231 /* UIImage+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11EA29E51CEA005E0231 /* UIImage+CYLTabBarControllerExtention.m */; };
+		36DB120629E51CEA005E0231 /* UIViewController+CYLNavigationControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11EB29E51CEA005E0231 /* UIViewController+CYLNavigationControllerExtention.m */; };
+		36DB120729E51CEA005E0231 /* CYLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11ED29E51CEA005E0231 /* CYLBaseViewController.m */; };
+		36DB120829E51CEA005E0231 /* UIControl+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11F029E51CEA005E0231 /* UIControl+CYLTabBarControllerExtention.m */; };
+		36DB120929E51CEA005E0231 /* UIViewController+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11F229E51CEA005E0231 /* UIViewController+CYLTabBarControllerExtention.m */; };
+		36DB120D29E54716005E0231 /* SPAppThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB120C29E54716005E0231 /* SPAppThemeManager.m */; };
+		36DB121029E584B1005E0231 /* SPBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB120F29E584B1005E0231 /* SPBaseButton.m */; };
 		36DB3F0E27990BD30028D974 /* SPToastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB3F0D27990BD20028D974 /* SPToastUtil.m */; };
 		36DF00AC29779A300065F21D /* SPCustomPortraitControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DF00AB29779A300065F21D /* SPCustomPortraitControlView.m */; };
 		36DF00AF29779A450065F21D /* SPCustomLandscapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DF00AE29779A450065F21D /* SPCustomLandscapeControlView.m */; };
@@ -333,7 +354,6 @@
 		3698A48A274F307F0046FD68 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3698A48F274F308C0046FD68 /* XCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCTextField.m; sourceTree = "<group>"; };
 		3698A490274F308C0046FD68 /* SPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTableViewCell.m; sourceTree = "<group>"; };
-		3698A491274F308C0046FD68 /* SPTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTabbarController.h; sourceTree = "<group>"; };
 		3698A493274F308C0046FD68 /* SPEmptyControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEmptyControl.h; sourceTree = "<group>"; };
 		3698A494274F308C0046FD68 /* SPBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBaseController.h; sourceTree = "<group>"; };
 		3698A496274F308C0046FD68 /* SPNavigationAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNavigationAnimation.h; sourceTree = "<group>"; };
@@ -345,7 +365,6 @@
 		3698A49C274F308C0046FD68 /* SPNavigationAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNavigationAnimation.m; sourceTree = "<group>"; };
 		3698A49D274F308C0046FD68 /* SPPopDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPopDownMenu.m; sourceTree = "<group>"; };
 		3698A49E274F308C0046FD68 /* SPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNavigationController.m; sourceTree = "<group>"; };
-		3698A49F274F308C0046FD68 /* SPTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTabbarController.m; sourceTree = "<group>"; };
 		3698A4A0274F308C0046FD68 /* XCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTextField.h; sourceTree = "<group>"; };
 		3698A4A1274F308C0046FD68 /* SPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTableViewCell.h; sourceTree = "<group>"; };
 		3698A4A3274F308C0046FD68 /* SPBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBaseController.m; sourceTree = "<group>"; };
@@ -472,6 +491,52 @@
 		36DB113A29E3CB8F005E0231 /* SPHWDataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHWDataBaseManager.m; sourceTree = "<group>"; };
 		36DB118229E4339F005E0231 /* SPInputOnlineLinkerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPInputOnlineLinkerController.m; sourceTree = "<group>"; };
 		36DB118329E4339F005E0231 /* SPInputOnlineLinkerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPInputOnlineLinkerController.h; sourceTree = "<group>"; };
+		36DB11C629E4F372005E0231 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		36DB11C729E4F372005E0231 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		36DB11CD29E51CEA005E0231 /* UIBarButtonItem+CYLBadgeExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+CYLBadgeExtention.m"; sourceTree = "<group>"; };
+		36DB11CE29E51CEA005E0231 /* CYLBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLBaseTableViewController.m; sourceTree = "<group>"; };
+		36DB11CF29E51CEA005E0231 /* UITabBarItem+CYLBadgeExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+CYLBadgeExtention.h"; sourceTree = "<group>"; };
+		36DB11D029E51CEA005E0231 /* UIImage+CYLTabBarControllerExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CYLTabBarControllerExtention.h"; sourceTree = "<group>"; };
+		36DB11D129E51CEA005E0231 /* UIColor+CYLTabBarControllerExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CYLTabBarControllerExtention.m"; sourceTree = "<group>"; };
+		36DB11D229E51CEA005E0231 /* CYLPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLPlusButton.h; sourceTree = "<group>"; };
+		36DB11D329E51CEA005E0231 /* CYLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLTabBar.h; sourceTree = "<group>"; };
+		36DB11D429E51CEA005E0231 /* CYLTabBar+CYLTabBarControllerExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CYLTabBar+CYLTabBarControllerExtention.h"; sourceTree = "<group>"; };
+		36DB11D529E51CEA005E0231 /* CAAnimation+CYLBadgeExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+CYLBadgeExtention.h"; sourceTree = "<group>"; };
+		36DB11D629E51CEA005E0231 /* UIView+CYLBadgeExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CYLBadgeExtention.h"; sourceTree = "<group>"; };
+		36DB11D729E51CEA005E0231 /* UIControl+CYLTabBarControllerExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+CYLTabBarControllerExtention.h"; sourceTree = "<group>"; };
+		36DB11D829E51CEA005E0231 /* UIView+CYLTabBarControllerExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CYLTabBarControllerExtention.m"; sourceTree = "<group>"; };
+		36DB11D929E51CEA005E0231 /* NSObject+CYLTabBarControllerExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CYLTabBarControllerExtention.m"; sourceTree = "<group>"; };
+		36DB11DA29E51CEA005E0231 /* CYLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLBaseViewController.h; sourceTree = "<group>"; };
+		36DB11DB29E51CEA005E0231 /* UITabBarItem+CYLTabBarControllerExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+CYLTabBarControllerExtention.m"; sourceTree = "<group>"; };
+		36DB11DC29E51CEA005E0231 /* CYLConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLConstants.h; sourceTree = "<group>"; };
+		36DB11DD29E51CEA005E0231 /* UIViewController+CYLNavigationControllerExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CYLNavigationControllerExtention.h"; sourceTree = "<group>"; };
+		36DB11DE29E51CEA005E0231 /* CYLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLTabBarController.m; sourceTree = "<group>"; };
+		36DB11DF29E51CEA005E0231 /* CYLBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLBaseNavigationController.m; sourceTree = "<group>"; };
+		36DB11E029E51CEA005E0231 /* UIViewController+CYLTabBarControllerExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CYLTabBarControllerExtention.h"; sourceTree = "<group>"; };
+		36DB11E129E51CEA005E0231 /* UITabBarItem+CYLBadgeExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+CYLBadgeExtention.m"; sourceTree = "<group>"; };
+		36DB11E229E51CEA005E0231 /* CYLBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLBaseTableViewController.h; sourceTree = "<group>"; };
+		36DB11E329E51CEA005E0231 /* UIBarButtonItem+CYLBadgeExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+CYLBadgeExtention.h"; sourceTree = "<group>"; };
+		36DB11E429E51CEA005E0231 /* UIView+CYLBadgeExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CYLBadgeExtention.m"; sourceTree = "<group>"; };
+		36DB11E529E51CEA005E0231 /* CAAnimation+CYLBadgeExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+CYLBadgeExtention.m"; sourceTree = "<group>"; };
+		36DB11E629E51CEA005E0231 /* CYLTabBar+CYLTabBarControllerExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CYLTabBar+CYLTabBarControllerExtention.m"; sourceTree = "<group>"; };
+		36DB11E729E51CEA005E0231 /* CYLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLTabBar.m; sourceTree = "<group>"; };
+		36DB11E829E51CEA005E0231 /* CYLPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLPlusButton.m; sourceTree = "<group>"; };
+		36DB11E929E51CEA005E0231 /* UIColor+CYLTabBarControllerExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CYLTabBarControllerExtention.h"; sourceTree = "<group>"; };
+		36DB11EA29E51CEA005E0231 /* UIImage+CYLTabBarControllerExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CYLTabBarControllerExtention.m"; sourceTree = "<group>"; };
+		36DB11EB29E51CEA005E0231 /* UIViewController+CYLNavigationControllerExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CYLNavigationControllerExtention.m"; sourceTree = "<group>"; };
+		36DB11EC29E51CEA005E0231 /* UITabBarItem+CYLTabBarControllerExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+CYLTabBarControllerExtention.h"; sourceTree = "<group>"; };
+		36DB11ED29E51CEA005E0231 /* CYLBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLBaseViewController.m; sourceTree = "<group>"; };
+		36DB11EE29E51CEA005E0231 /* CYLBadgeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLBadgeProtocol.h; sourceTree = "<group>"; };
+		36DB11EF29E51CEA005E0231 /* UIView+CYLTabBarControllerExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CYLTabBarControllerExtention.h"; sourceTree = "<group>"; };
+		36DB11F029E51CEA005E0231 /* UIControl+CYLTabBarControllerExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+CYLTabBarControllerExtention.m"; sourceTree = "<group>"; };
+		36DB11F129E51CEA005E0231 /* NSObject+CYLTabBarControllerExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CYLTabBarControllerExtention.h"; sourceTree = "<group>"; };
+		36DB11F229E51CEA005E0231 /* UIViewController+CYLTabBarControllerExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CYLTabBarControllerExtention.m"; sourceTree = "<group>"; };
+		36DB11F329E51CEA005E0231 /* CYLBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLBaseNavigationController.h; sourceTree = "<group>"; };
+		36DB11F429E51CEA005E0231 /* CYLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLTabBarController.h; sourceTree = "<group>"; };
+		36DB120B29E54716005E0231 /* SPAppThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAppThemeManager.h; sourceTree = "<group>"; };
+		36DB120C29E54716005E0231 /* SPAppThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAppThemeManager.m; sourceTree = "<group>"; };
+		36DB120E29E584B1005E0231 /* SPBaseButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBaseButton.h; sourceTree = "<group>"; };
+		36DB120F29E584B1005E0231 /* SPBaseButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPBaseButton.m; sourceTree = "<group>"; };
 		36DB3F0C27990BD20028D974 /* SPToastUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPToastUtil.h; sourceTree = "<group>"; };
 		36DB3F0D27990BD20028D974 /* SPToastUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPToastUtil.m; sourceTree = "<group>"; };
 		36DF00AA29779A300065F21D /* SPCustomPortraitControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCustomPortraitControlView.h; sourceTree = "<group>"; };
@@ -825,6 +890,7 @@
 		3698A46B274E2E590046FD68 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				36DB120A29E54716005E0231 /* AppTheme */,
 				36F02FD628F960EA0080D92B /* Download */,
 				36857A722786877800D4C5D0 /* Manager */,
 				368D97C0276AE71000D29812 /* GCDWebServer */,
@@ -870,8 +936,8 @@
 				3698A493274F308C0046FD68 /* SPEmptyControl.h */,
 				3698A4A4274F308C0046FD68 /* SPEmptyControl.m */,
 				3698A495274F308C0046FD68 /* Navigation */,
-				3698A49F274F308C0046FD68 /* SPTabbarController.m */,
-				3698A491274F308C0046FD68 /* SPTabbarController.h */,
+				36DB11C629E4F372005E0231 /* MainTabBarController.h */,
+				36DB11C729E4F372005E0231 /* MainTabBarController.m */,
 				3698A4A0274F308C0046FD68 /* XCTextField.h */,
 				3698A4A1274F308C0046FD68 /* SPTableViewCell.h */,
 				3698A490274F308C0046FD68 /* SPTableViewCell.m */,
@@ -923,6 +989,7 @@
 		3698A4B3274F308C0046FD68 /* ThirdUtils */ = {
 			isa = PBXGroup;
 			children = (
+				36DB11C929E51CEA005E0231 /* CYLTabBarController */,
 				36938596279559CD00B4361E /* JSONModel */,
 				3698A4C5274F308C0046FD68 /* YYText */,
 				3698A4FA274F308D0046FD68 /* HUD */,
@@ -1126,6 +1193,8 @@
 				36857A802786B85600D4C5D0 /* DisableTouchView.m */,
 				3627387C2757750E00BE2D9E /* ZHWebController.h */,
 				3627387D2757750E00BE2D9E /* ZHWebController.m */,
+				36DB120E29E584B1005E0231 /* SPBaseButton.h */,
+				36DB120F29E584B1005E0231 /* SPBaseButton.m */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -1139,6 +1208,70 @@
 				3698A594274F6A920046FD68 /* NetCache.m */,
 			);
 			path = "网络请求";
+			sourceTree = "<group>";
+		};
+		36DB11C929E51CEA005E0231 /* CYLTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				36DB11CC29E51CEA005E0231 /* CYLTabBarController */,
+			);
+			path = CYLTabBarController;
+			sourceTree = "<group>";
+		};
+		36DB11CC29E51CEA005E0231 /* CYLTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				36DB11CD29E51CEA005E0231 /* UIBarButtonItem+CYLBadgeExtention.m */,
+				36DB11CE29E51CEA005E0231 /* CYLBaseTableViewController.m */,
+				36DB11CF29E51CEA005E0231 /* UITabBarItem+CYLBadgeExtention.h */,
+				36DB11D029E51CEA005E0231 /* UIImage+CYLTabBarControllerExtention.h */,
+				36DB11D129E51CEA005E0231 /* UIColor+CYLTabBarControllerExtention.m */,
+				36DB11D229E51CEA005E0231 /* CYLPlusButton.h */,
+				36DB11D329E51CEA005E0231 /* CYLTabBar.h */,
+				36DB11D429E51CEA005E0231 /* CYLTabBar+CYLTabBarControllerExtention.h */,
+				36DB11D529E51CEA005E0231 /* CAAnimation+CYLBadgeExtention.h */,
+				36DB11D629E51CEA005E0231 /* UIView+CYLBadgeExtention.h */,
+				36DB11D729E51CEA005E0231 /* UIControl+CYLTabBarControllerExtention.h */,
+				36DB11D829E51CEA005E0231 /* UIView+CYLTabBarControllerExtention.m */,
+				36DB11D929E51CEA005E0231 /* NSObject+CYLTabBarControllerExtention.m */,
+				36DB11DA29E51CEA005E0231 /* CYLBaseViewController.h */,
+				36DB11DB29E51CEA005E0231 /* UITabBarItem+CYLTabBarControllerExtention.m */,
+				36DB11DC29E51CEA005E0231 /* CYLConstants.h */,
+				36DB11DD29E51CEA005E0231 /* UIViewController+CYLNavigationControllerExtention.h */,
+				36DB11DE29E51CEA005E0231 /* CYLTabBarController.m */,
+				36DB11DF29E51CEA005E0231 /* CYLBaseNavigationController.m */,
+				36DB11E029E51CEA005E0231 /* UIViewController+CYLTabBarControllerExtention.h */,
+				36DB11E129E51CEA005E0231 /* UITabBarItem+CYLBadgeExtention.m */,
+				36DB11E229E51CEA005E0231 /* CYLBaseTableViewController.h */,
+				36DB11E329E51CEA005E0231 /* UIBarButtonItem+CYLBadgeExtention.h */,
+				36DB11E429E51CEA005E0231 /* UIView+CYLBadgeExtention.m */,
+				36DB11E529E51CEA005E0231 /* CAAnimation+CYLBadgeExtention.m */,
+				36DB11E629E51CEA005E0231 /* CYLTabBar+CYLTabBarControllerExtention.m */,
+				36DB11E729E51CEA005E0231 /* CYLTabBar.m */,
+				36DB11E829E51CEA005E0231 /* CYLPlusButton.m */,
+				36DB11E929E51CEA005E0231 /* UIColor+CYLTabBarControllerExtention.h */,
+				36DB11EA29E51CEA005E0231 /* UIImage+CYLTabBarControllerExtention.m */,
+				36DB11EB29E51CEA005E0231 /* UIViewController+CYLNavigationControllerExtention.m */,
+				36DB11EC29E51CEA005E0231 /* UITabBarItem+CYLTabBarControllerExtention.h */,
+				36DB11ED29E51CEA005E0231 /* CYLBaseViewController.m */,
+				36DB11EE29E51CEA005E0231 /* CYLBadgeProtocol.h */,
+				36DB11EF29E51CEA005E0231 /* UIView+CYLTabBarControllerExtention.h */,
+				36DB11F029E51CEA005E0231 /* UIControl+CYLTabBarControllerExtention.m */,
+				36DB11F129E51CEA005E0231 /* NSObject+CYLTabBarControllerExtention.h */,
+				36DB11F229E51CEA005E0231 /* UIViewController+CYLTabBarControllerExtention.m */,
+				36DB11F329E51CEA005E0231 /* CYLBaseNavigationController.h */,
+				36DB11F429E51CEA005E0231 /* CYLTabBarController.h */,
+			);
+			path = CYLTabBarController;
+			sourceTree = "<group>";
+		};
+		36DB120A29E54716005E0231 /* AppTheme */ = {
+			isa = PBXGroup;
+			children = (
+				36DB120B29E54716005E0231 /* SPAppThemeManager.h */,
+				36DB120C29E54716005E0231 /* SPAppThemeManager.m */,
+			);
+			path = AppTheme;
 			sourceTree = "<group>";
 		};
 		36DF01082977F7E20065F21D /* HWDownloadManager */ = {
@@ -1320,10 +1453,12 @@
 				365A24282769F03100671EBC /* TZAssetCell.m in Sources */,
 				3698A543274F308E0046FD68 /* SPNavigationAnimation.m in Sources */,
 				36857A752786879E00D4C5D0 /* SPVersionManager.m in Sources */,
+				36DB11FF29E51CEA005E0231 /* UITabBarItem+CYLBadgeExtention.m in Sources */,
 				36DB112D29E3C792005E0231 /* SPBaseView.m in Sources */,
-				3698A546274F308E0046FD68 /* SPTabbarController.m in Sources */,
 				3698A562274F308E0046FD68 /* YYTextParser.m in Sources */,
 				36F02FD528F804F50080D92B /* SPCustomControlView.m in Sources */,
+				36DB120029E51CEA005E0231 /* UIView+CYLBadgeExtention.m in Sources */,
+				36DB11C829E4F372005E0231 /* MainTabBarController.m in Sources */,
 				362738C0275E2DCB00BE2D9E /* PrivacyController.m in Sources */,
 				368D97EF276AE71000D29812 /* GCDWebServerStreamedResponse.m in Sources */,
 				369385B7279559CD00B4361E /* JSONValueTransformer.m in Sources */,
@@ -1336,6 +1471,7 @@
 				365A242C2769F03100671EBC /* TZAssetModel.m in Sources */,
 				3698A576274F308E0046FD68 /* UIView+ExtendHitArea.m in Sources */,
 				368D97EE276AE71000D29812 /* GCDWebServerDataResponse.m in Sources */,
+				36DB11F829E51CEA005E0231 /* CYLBaseTableViewController.m in Sources */,
 				365A24272769F03100671EBC /* TZImageCropManager.m in Sources */,
 				3698A583274F308E0046FD68 /* SPVideoPlayerController.m in Sources */,
 				368D97F2276AE71000D29812 /* GCDWebServerDataRequest.m in Sources */,
@@ -1344,6 +1480,7 @@
 				3683EE7127B360B5006A2E6C /* SPActionSheet.m in Sources */,
 				360A540D27605A5A00F50621 /* UIViewController+topViewController.m in Sources */,
 				3698A48D274F307F0046FD68 /* AppDelegate.m in Sources */,
+				36DB120929E51CEA005E0231 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				3698A54C274F308E0046FD68 /* SPAllLocalFoldersController.m in Sources */,
 				36205778278538120010EFA5 /* SPGoodCommentManager.m in Sources */,
 				362738B8275DAECB00BE2D9E /* SPIAPItemView.m in Sources */,
@@ -1357,19 +1494,24 @@
 				368D97E7276AE71000D29812 /* GCDWebServerResponse.m in Sources */,
 				3698A55B274F308E0046FD68 /* YYTextLayout.m in Sources */,
 				3698A577274F308E0046FD68 /* NSString+stringUtil.m in Sources */,
+				36DB11FB29E51CEA005E0231 /* NSObject+CYLTabBarControllerExtention.m in Sources */,
 				3698A549274F308E0046FD68 /* SPLocalFileManager.m in Sources */,
 				3698A56F274F308E0046FD68 /* SPScreenLockController.m in Sources */,
 				3627387B27576CA900BE2D9E /* SPTagListView.m in Sources */,
 				3698A54A274F308E0046FD68 /* SPFileCell.m in Sources */,
+				36DB11F929E51CEA005E0231 /* UIColor+CYLTabBarControllerExtention.m in Sources */,
 				36DB112A29E3C792005E0231 /* SPBaseTableView.m in Sources */,
+				36DB120129E51CEA005E0231 /* CAAnimation+CYLBadgeExtention.m in Sources */,
 				365A24292769F03100671EBC /* TZVideoEditedPreviewController.m in Sources */,
 				362738B22759FD5700BE2D9E /* SPSettingCellContainerView.m in Sources */,
 				362738902759F5C300BE2D9E /* SPIAPManager.m in Sources */,
 				3698A54D274F308E0046FD68 /* SPFolderDetailController.m in Sources */,
 				369385BA279559CD00B4361E /* SPJSONModelError.m in Sources */,
+				36DB120329E51CEA005E0231 /* CYLTabBar.m in Sources */,
 				3698A55E274F308E0046FD68 /* YYTextKeyboardManager.m in Sources */,
 				365A242D2769F03100671EBC /* NSBundle+TZImagePicker.m in Sources */,
 				365A24312769F03100671EBC /* TZImageManager.m in Sources */,
+				36DB11FE29E51CEA005E0231 /* CYLBaseNavigationController.m in Sources */,
 				368D97F1276AE71000D29812 /* GCDWebServerMultiPartFormRequest.m in Sources */,
 				3698A559274F308E0046FD68 /* YYTextEffectWindow.m in Sources */,
 				362738B5275A1B7400BE2D9E /* SPIAPController.m in Sources */,
@@ -1381,6 +1523,7 @@
 				362738AD2759FD5700BE2D9E /* SPCellItem.m in Sources */,
 				36DF01152977F7E20065F21D /* NSURLSession+CorrectedResumeData.m in Sources */,
 				369385BB279559CD00B4361E /* SPJSONModelArray.m in Sources */,
+				36DB120D29E54716005E0231 /* SPAppThemeManager.m in Sources */,
 				3698A573274F308E0046FD68 /* UIView+mainThread.m in Sources */,
 				36DB112E29E3C792005E0231 /* SPBaseTableViewCell.m in Sources */,
 				3698A55A274F308E0046FD68 /* YYTextInput.m in Sources */,
@@ -1398,8 +1541,14 @@
 				3698A542274F308E0046FD68 /* SPNavigationBar.m in Sources */,
 				368D97EA276AE71000D29812 /* GCDWebServer.m in Sources */,
 				362738AF2759FD5700BE2D9E /* SPSwitchItem.m in Sources */,
+				36DB120829E51CEA005E0231 /* UIControl+CYLTabBarControllerExtention.m in Sources */,
+				36DB120529E51CEA005E0231 /* UIImage+CYLTabBarControllerExtention.m in Sources */,
 				368D99E8276C90BC00D29812 /* SPMultiSpeedView.m in Sources */,
+				36DB11F729E51CEA005E0231 /* UIBarButtonItem+CYLBadgeExtention.m in Sources */,
+				36DB11FA29E51CEA005E0231 /* UIView+CYLTabBarControllerExtention.m in Sources */,
 				36DB112C29E3C792005E0231 /* SPBaseLabel.m in Sources */,
+				36DB120729E51CEA005E0231 /* CYLBaseViewController.m in Sources */,
+				36DB120229E51CEA005E0231 /* CYLTabBar+CYLTabBarControllerExtention.m in Sources */,
 				368D97E9276AE71000D29812 /* GCDWebServerFunctions.m in Sources */,
 				3698A557274F308E0046FD68 /* YYTextMagnifier.m in Sources */,
 				3627388127578F6D00BE2D9E /* UIView+gradient.m in Sources */,
@@ -1407,6 +1556,7 @@
 				365A24342769F03100671EBC /* UIView+TZLayout.m in Sources */,
 				3698A596274F6A920046FD68 /* NetCache.m in Sources */,
 				3698A582274F308E0046FD68 /* SPLockedController.m in Sources */,
+				36DB120429E51CEA005E0231 /* CYLPlusButton.m in Sources */,
 				3698A56A274F308E0046FD68 /* YYTextTransaction.m in Sources */,
 				36DF00AF29779A450065F21D /* SPCustomLandscapeControlView.m in Sources */,
 				36F02FDC28F961720080D92B /* ZHDownloadCell.m in Sources */,
@@ -1424,8 +1574,10 @@
 				3698A565274F308E0046FD68 /* YYTextRubyAnnotation.m in Sources */,
 				3698A547274F308E0046FD68 /* SPBaseController.m in Sources */,
 				3698A56E274F308E0046FD68 /* MBProgressHUD.m in Sources */,
+				36DB11FC29E51CEA005E0231 /* UITabBarItem+CYLTabBarControllerExtention.m in Sources */,
 				36F02FDF28F961840080D92B /* ZHDownloadController.m in Sources */,
 				365A24372769F03100671EBC /* TZGifPhotoPreviewController.m in Sources */,
+				36DB121029E584B1005E0231 /* SPBaseButton.m in Sources */,
 				3698A55C274F308E0046FD68 /* YYTextLine.m in Sources */,
 				365A24362769F03100671EBC /* TZLocationManager.m in Sources */,
 				36DB113C29E3CB8F005E0231 /* SPHWToolBox.m in Sources */,
@@ -1437,6 +1589,8 @@
 				3627387E2757750E00BE2D9E /* ZHWebController.m in Sources */,
 				3698A56C274F308E0046FD68 /* YYTextAsyncLayer.m in Sources */,
 				3698A54B274F308E0046FD68 /* SPFilesModel.m in Sources */,
+				36DB11FD29E51CEA005E0231 /* CYLTabBarController.m in Sources */,
+				36DB120629E51CEA005E0231 /* UIViewController+CYLNavigationControllerExtention.m in Sources */,
 				365A24322769F03100671EBC /* TZPhotoPickerController.m in Sources */,
 				3698A578274F308E0046FD68 /* UIView+coordinate.m in Sources */,
 				3698A561274F308E0046FD68 /* YYTextRunDelegate.m in Sources */,
@@ -1634,12 +1788,12 @@
 					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
 				);
 				INFOPLIST_FILE = Player/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "4K播放器";
+				INFOPLIST_KEY_CFBundleDisplayName = "妙播";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSCameraUsageDescription = "以便您能将照片中的视频上传到该App中";
+				INFOPLIST_KEY_NSCameraUsageDescription = "以便您能将照片中的视频上传到App中";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "以方便您在拍照时定位自己的位置";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "以便您能将照片中的视频上传到该App中";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "以便您能将照片中的视频上传到该App中";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "以便您能将照片中的视频上传到App中";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
@@ -1702,12 +1856,12 @@
 					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
 				);
 				INFOPLIST_FILE = Player/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "4K播放器";
+				INFOPLIST_KEY_CFBundleDisplayName = "妙播";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				INFOPLIST_KEY_NSCameraUsageDescription = "以便您能将照片中的视频上传到该App中";
+				INFOPLIST_KEY_NSCameraUsageDescription = "以便您能将照片中的视频上传到App中";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "以方便您在拍照时定位自己的位置";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "以便您能将照片中的视频上传到该App中";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "以便您能将照片中的视频上传到该App中";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "以便您能将照片中的视频上传到App中";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;

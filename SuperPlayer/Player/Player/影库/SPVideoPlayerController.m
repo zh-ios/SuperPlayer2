@@ -2,7 +2,7 @@
 //  SPVideoPlayerController.m
 //  Player
 //
-//  Created by hz on 2021/11/15.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/11/15.
 //
 
 #import "SPVideoPlayerController.h"
@@ -32,9 +32,9 @@ static NSString *kVideoProgressCache = @"videoProgressCache";
 
 @property (nonatomic, strong) SPCustomControlView *customControlView;
 
-@property (nonatomic, strong) UIButton *oprateButton;
+@property (nonatomic, strong) SPBaseButton *oprateButton;
 @property (nonatomic, assign) BOOL isLandScape;
-@property (nonatomic, strong) UIButton *replayBtn;
+@property (nonatomic, strong) SPBaseButton *replayBtn;
 
 // 播放当前进度的缓存,用于追踪播放历史进度
 @property (nonatomic, strong) YYCache *playCache;
@@ -235,7 +235,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 //    NSString *ext = [url pathExtension];
 //    model.fileName = [name stringByAppendingPathExtension:ext];
 //    model.url = url;
-//    NSString *targetPath = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:[model.fileName stringByDeletingPathExtension]];
+//    NSString *targetPath = [[[SPLocalFileManager sharedMgr] getDocumentPath] stringByAppendingPathComponent:[model.fileName stringByDeletingPathExtension]];
 ////    model.localPath = targetPath;
 ////    model.vid = [url MD5Str];
 //    [[SPHWDownloadManager shareManager] startDownloadTask:model];

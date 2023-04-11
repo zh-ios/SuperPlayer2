@@ -5,12 +5,11 @@
       "scale" : "1x"
     },
     {
-      "filename" : "123icon_wifi_upload@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "11icon_wifi_upload@3x.png",
+      "filename" : "wifi.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

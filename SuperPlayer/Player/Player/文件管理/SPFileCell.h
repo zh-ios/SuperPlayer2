@@ -2,7 +2,7 @@
 //  SPFileCell.h
 //  Player
 //
-//  Created by hz on 2021/11/10.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/11/10.
 //
 
 #import "SPTableViewCell.h"
@@ -11,12 +11,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SPFileCell : SPTableViewCell
 
-@property (nonatomic, strong) UIButton *operateBtn;
+@property (nonatomic, strong) SPBaseButton *operateBtn;
 
 
-- (void)updateCellWithFileModel:(SPFilesModel *)model;
+- (void)updateCellWithModel:(SPFilesModel *)model;
 
-@property (nonatomic, copy) void (^operateBtnOnClicked)(SPFilesModel *model, UIButton *btn);
+@property (nonatomic, copy) void (^operateBtnOnClicked)(SPFilesModel *model, SPBaseButton *btn);
 
 @end
 

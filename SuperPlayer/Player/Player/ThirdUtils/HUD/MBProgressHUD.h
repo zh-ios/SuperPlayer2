@@ -300,7 +300,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * A button that is placed below the labels. Visible only if a target / action is added. 
  */
-@property (strong, nonatomic, readonly) UIButton *button;
+@property (strong, nonatomic, readonly) SPBaseButton *button;
 
 @end
 

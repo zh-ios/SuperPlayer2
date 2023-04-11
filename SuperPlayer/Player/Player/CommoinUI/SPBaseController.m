@@ -3,7 +3,7 @@
 //  ZHProject
 //
 //  Created by zhxxxx  ondfasd 2018/9/27.
-//  Copyright © 2018年 autohome. All rights reserved.
+//  Copyright © 2023 zhsxx. All rights reserved.
 //
 
 #import "SPBaseController.h"
@@ -48,7 +48,7 @@
 // 如果要想微信 导航条不动，渐变的那种需要使用原生导航
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [SPAppThemeManager sharedMgr].viewBgColor;
     self.panGestureEnabled = YES;
     
     self.showNavBottomLine = NO;
@@ -58,7 +58,7 @@
     @weakify(self)
     [self.view addSubview:self.customNavView];
     
-    self.customNavView.backOnClick = ^(UIButton *btn) {
+    self.customNavView.backOnClick = ^(SPBaseButton *btn) {
     @strongify(self)
     [self backBtnOnClicked:btn];
     };
@@ -86,7 +86,7 @@
     return currVC;
 }
 
-- (void)backBtnOnClicked:(UIButton *)btn {
+- (void)backBtnOnClicked:(SPBaseButton *)btn {
     if ([self.navigationController respondsToSelector:@selector(popViewControllerAnimated:)]) {
         [self.navigationController popViewControllerAnimated:YES];
         return;

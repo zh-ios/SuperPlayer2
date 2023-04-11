@@ -135,7 +135,7 @@
     }
 }
 
-- (void)selectPhotoButtonClick:(UIButton *)sender {
+- (void)selectPhotoButtonClick:(SPBaseButton *)sender {
     if (self.didSelectPhotoBlock) {
         self.didSelectPhotoBlock(sender.isSelected);
     }
@@ -247,9 +247,9 @@
 
 #pragma mark - Lazy load
 
-- (UIButton *)selectPhotoButton {
+- (SPBaseButton *)selectPhotoButton {
     if (_selectPhotoButton == nil) {
-        UIButton *selectPhotoButton = [[UIButton alloc] init];
+        SPBaseButton *selectPhotoButton = [[SPBaseButton alloc] init];
         [selectPhotoButton addTarget:self action:@selector(selectPhotoButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:selectPhotoButton];
         _selectPhotoButton = selectPhotoButton;
@@ -295,9 +295,9 @@
     return _bottomView;
 }
 
-- (UIButton *)cannotSelectLayerButton {
+- (SPBaseButton *)cannotSelectLayerButton {
     if (_cannotSelectLayerButton == nil) {
-        UIButton *cannotSelectLayerButton = [[UIButton alloc] init];
+        SPBaseButton *cannotSelectLayerButton = [[SPBaseButton alloc] init];
         [self.contentView addSubview:cannotSelectLayerButton];
         _cannotSelectLayerButton = cannotSelectLayerButton;
     }
@@ -479,9 +479,9 @@
     return _titleLabel;
 }
 
-- (UIButton *)selectedCountButton {
+- (SPBaseButton *)selectedCountButton {
     if (_selectedCountButton == nil) {
-        UIButton *selectedCountButton = [[UIButton alloc] init];
+        SPBaseButton *selectedCountButton = [[SPBaseButton alloc] init];
         selectedCountButton.titleLabel.adjustsFontSizeToFitWidth = YES;
         selectedCountButton.layer.cornerRadius = 12;
         selectedCountButton.clipsToBounds = YES;

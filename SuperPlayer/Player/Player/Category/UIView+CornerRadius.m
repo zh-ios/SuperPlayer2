@@ -2,7 +2,7 @@
 //  UIView+CornerRadius.m
 //  Player
 //
-//  Created by hz on 2022/2/11.
+//  Cressssated by hzdddddd sxxxx on sky dat 2022/2/11.
 //
 
 #import "UIView+CornerRadius.h"

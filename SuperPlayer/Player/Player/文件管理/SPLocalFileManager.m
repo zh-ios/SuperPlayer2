@@ -2,7 +2,7 @@
 //  SPLocalFileManager.m
 //  Player
 //
-//  Created by hz on 2021/11/10.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/11/10.
 //
 
 #import "SPLocalFileManager.h"
@@ -19,10 +19,10 @@ static SPLocalFileManager *_mgr = nil;
 
 static NSString *global_folderPath = @"";
 static NSString *locked_folderPath = @"";
-static NSString *global_folderName = @"localfolders";
-static NSString *global_lock_folderName = @"lockfolders";
+static NSString *global_folderName = @"localFolders";
+static NSString *global_lock_folderName = @"lockFolders";
 
-+ (instancetype)sharedManager {
++ (instancetype)sharedMgr {
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

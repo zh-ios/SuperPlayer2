@@ -18,7 +18,7 @@
 
 @interface TZGifPhotoPreviewController () {
     UIView *_toolBar;
-    UIButton *_doneButton;
+    SPBaseButton *_doneButton;
     UIProgressView *_progress;
     
     TZPhotoPreviewView *_previewView;

@@ -18,14 +18,14 @@
 @interface TZSPVideoPlayerController () {
     AVPlayer *_player;
     AVPlayerLayer *_playerLayer;
-    UIButton *_playButton;
+    SPBaseButton *_playButton;
     UIImage *_cover;
     NSString *_outputPath;
     NSString *_errorMsg;
     
     UIView *_toolBar;
-    UIButton *_doneButton;
-    UIButton *_editButton;
+    SPBaseButton *_doneButton;
+    SPBaseButton *_editButton;
     UIProgressView *_progress;
     
     UIStatusBarStyle _originStatusBarStyle;

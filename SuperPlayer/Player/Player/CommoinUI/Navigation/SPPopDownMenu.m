@@ -12,7 +12,7 @@
 #define kPopDownMenuPadding           (1.0f)
 @interface SPPopDownMenu ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic, strong) UIButton *coverBtn;
+@property (nonatomic, strong) SPBaseButton *coverBtn;
 @property (nonatomic, strong) UITableView *talbeView;
 @property (nonatomic, strong) UIView *menuView;
 @property (nonatomic, strong) NSArray *titles;

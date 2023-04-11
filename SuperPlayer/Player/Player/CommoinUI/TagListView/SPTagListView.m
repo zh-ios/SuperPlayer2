@@ -54,7 +54,7 @@
 - (void)addTags:(NSArray<NSString *> *)tags {
     self.tags = [tags mutableCopy];
     // 先清除之前的内容
-    for (UIButton *btn in self.containerView.subviews) {
+    for (SPBaseButton *btn in self.containerView.subviews) {
         [btn removeFromSuperview];
     }
     [self.btns removeAllObjects];
@@ -66,7 +66,7 @@
 
 - (void)addBtnAtIndex:(NSInteger)index title:(NSString *)title {
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    SPBaseButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.tag = index;
     [self.btns addObject:btn];
     [self updateBtnFrame:btn title:title type:self.layoutType];
@@ -100,9 +100,9 @@
     }
 }
 
-- (void)updateBtnFrame:(UIButton *)btn title:(NSString *)title type:(TagListViewLayoutType)type{
+- (void)updateBtnFrame:(SPBaseButton *)btn title:(NSString *)title type:(TagListViewLayoutType)type{
     if (type == TagListViewLayoutType_selfAdjust) {
-        UIButton *previousBtn = nil;
+        SPBaseButton *previousBtn = nil;
         if (btn.tag != 0) {
             previousBtn = self.btns[btn.tag-1];
         }
@@ -142,9 +142,9 @@
     }
 }
 
-- (void)updateBtnsFrameFromIndex:(NSInteger)index  selectedBtn:(UIButton *)b{
+- (void)updateBtnsFrameFromIndex:(NSInteger)index  selectedBtn:(SPBaseButton *)b{
     for (NSInteger i = index; i<self.btns.count; i++) {
-        UIButton *btn = (UIButton *)self.btns[i];
+        SPBaseButton *btn = (SPBaseButton *)self.btns[i];
         if (btn == b) continue;
         [self updateBtnFrame:btn title:btn.titleLabel.text type:TagListViewLayoutType_default];
     }
@@ -152,22 +152,22 @@
 
 - (void)updateBtnTags {
     for (int i = 0; i<self.btns.count; i++) {
-        UIButton *btn = (UIButton *)self.btns[i];
+        SPBaseButton *btn = (SPBaseButton *)self.btns[i];
         btn.tag = i;
     }
 }
 
-- (void)scaleBtn:(UIButton *)btn {
+- (void)scaleBtn:(SPBaseButton *)btn {
     btn.transform = CGAffineTransformMakeScale(1.1, 1.1);
 }
-- (void)resetBtn:(UIButton *)btn {
+- (void)resetBtn:(SPBaseButton *)btn {
     btn.transform = CGAffineTransformIdentity;
     [btn setBackgroundImage:[UIImage imageFromColor:[UIColor colorWithHexString:@"f5f5f5"] size:CGSizeMake(1, 1)] forState:UIControlStateNormal];
 }
 
 // 获取需要移动的目标按钮
-- (UIButton *)getTargetBtn:(UIButton *)btn {
-    for (UIButton *b in self.btns) {
+- (SPBaseButton *)getTargetBtn:(SPBaseButton *)btn {
+    for (SPBaseButton *b in self.btns) {
         if (b == btn) continue;
         if (CGRectContainsPoint(b.frame, btn.center)) {
             return b;
@@ -178,14 +178,14 @@
 
 #pragma mark --- targetAction
 
-- (void)btnOnClicked:(UIButton *)btn {
+- (void)btnOnClicked:(SPBaseButton *)btn {
     if (self.btnOnClicked) {
         self.btnOnClicked(btn.titleLabel.text);
     }
 }
 
 - (void)pan:(UIPanGestureRecognizer *)pan {
-    UIButton *btn = (UIButton *)pan.view;
+    SPBaseButton *btn = (SPBaseButton *)pan.view;
     [self bringSubviewToFront:btn];
     CGPoint translation = [pan translationInView:self];
     btn.x += translation.x;
@@ -194,7 +194,7 @@
     
     if (pan.state == UIGestureRecognizerStateBegan){}
     if (pan.state == UIGestureRecognizerStateChanged) {
-        UIButton *targetBtn = [self getTargetBtn:btn];
+        SPBaseButton *targetBtn = [self getTargetBtn:btn];
         if (targetBtn) {
             self.targetRect = targetBtn.frame;
             [self.tags removeObjectAtIndex:btn.tag];
@@ -225,7 +225,7 @@
 
 - (void)longPress:(UILongPressGestureRecognizer *)longP {
     self.longPressed = YES;
-    UIButton *btn = (UIButton *)longP.view;
+    SPBaseButton *btn = (SPBaseButton *)longP.view;
     if (longP.state == UIGestureRecognizerStateBegan) {
         self.originRect = btn.frame;
         [self scaleBtn:btn];

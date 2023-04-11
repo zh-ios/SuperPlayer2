@@ -3,7 +3,7 @@
 //  PerformanceMonitor
 //
 //  Created by autohome on 2018/3/6.
-//  Copyright © 2018年 autohome. All rights reserved.
+//  Copyright © 2023 zhsxx. All rights reserved.
 //  检测view展示是否在主线程中进行
 
 #import "UIView+mainThread.h"

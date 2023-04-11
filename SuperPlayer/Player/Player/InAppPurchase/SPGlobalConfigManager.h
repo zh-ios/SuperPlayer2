@@ -35,23 +35,13 @@ NS_ASSUME_NONNULL_BEGIN
 // 是否付费解锁全部功能了
 // !!!!
 @property (nonatomic, assign) BOOL hadUnlockAllFunc;
-
-
-
-
 // 是否开启全屏锁，开启后进入app需要输入密码才能进入app
 @property (nonatomic, assign) BOOL openAllScreenLockStatus;
 
 // 是否永久解锁全部功能
 @property (nonatomic, assign) BOOL hadUnlockAllFunctionForeverStatus;
-
-
-@property (nonatomic, assign) BOOL speedupStatus;
-
 @property (nonatomic, assign, readonly) long long iapExpireTs;
-
 @property (nonatomic, assign) BOOL hadClickGoodCmt;
-
 @property (nonatomic, assign) BOOL hadHideVipVideos;
 // 是否启用 摇动隐藏func
 @property (nonatomic, assign) BOOL enalbleShakeToHideFunc;

@@ -17,14 +17,14 @@
 /// 顶部工具栏
 @property (nonatomic, strong) UIView *topToolView;
 /// 返回按钮
-@property (nonatomic, strong) UIButton *backBtn;
-@property (nonatomic, strong) UIButton *downloadButton;
+@property (nonatomic, strong) SPBaseButton *backBtn;
+@property (nonatomic, strong) SPBaseButton *downloadButton;
 /// 标题
 @property (nonatomic, strong) UILabel *titleLabel;
 /// 底部工具栏
 @property (nonatomic, strong) UIView *bottomToolView;
 /// 播放或暂停按钮
-@property (nonatomic, strong) UIButton *playOrPauseBtn;
+@property (nonatomic, strong) SPBaseButton *playOrPauseBtn;
 /// 播放的当前时间
 @property (nonatomic, strong) UILabel *currentTimeLabel;
 /// 滑杆
@@ -32,7 +32,7 @@
 /// 视频总时间
 @property (nonatomic, strong) UILabel *totalTimeLabel;
 /// 锁定屏幕按钮
-@property (nonatomic, strong) UIButton *lockBtn;
+@property (nonatomic, strong) SPBaseButton *lockBtn;
 
 @property (nonatomic, assign) BOOL isShow;
 
@@ -186,7 +186,7 @@
     [self setNeedsLayout];
 }
 
-- (void)backBtnClickAction:(UIButton *)sender {
+- (void)backBtnClickAction:(SPBaseButton *)sender {
     self.lockBtn.selected = NO;
     self.player.lockedScreen = NO;
     self.lockBtn.selected = NO;
@@ -198,7 +198,7 @@
     }
 }
 
-- (void)playPauseButtonClickAction:(UIButton *)sender {
+- (void)playPauseButtonClickAction:(SPBaseButton *)sender {
     [self playOrPause];
 }
 
@@ -212,7 +212,7 @@
     self.playOrPauseBtn.selected = selected;
 }
 
-- (void)lockButtonClickAction:(UIButton *)sender {
+- (void)lockButtonClickAction:(SPBaseButton *)sender {
     sender.selected = !sender.selected;
     self.player.lockedScreen = sender.selected;
 }
@@ -410,7 +410,7 @@
     return _topToolView;
 }
 
-- (UIButton *)backBtn {
+- (SPBaseButton *)backBtn {
     if (!_backBtn) {
         _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_backBtn setImage:[UIImage imageNamed:@"sp_icon_back"] forState:UIControlStateNormal];
@@ -436,7 +436,7 @@
     return _bottomToolView;
 }
 
-- (UIButton *)playOrPauseBtn {
+- (SPBaseButton *)playOrPauseBtn {
     if (!_playOrPauseBtn) {
         _playOrPauseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_playOrPauseBtn setImage:ZFPlayer_Image(@"ZFPlayer_play") forState:UIControlStateNormal];
@@ -478,7 +478,7 @@
     return _totalTimeLabel;
 }
 
-- (UIButton *)lockBtn {
+- (SPBaseButton *)lockBtn {
     if (!_lockBtn) {
         _lockBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_lockBtn setImage:ZFPlayer_Image(@"ZFPlayer_unlock-nor") forState:UIControlStateNormal];
@@ -487,9 +487,9 @@
     return _lockBtn;
 }
 
-- (UIButton *)downloadButton {
+- (SPBaseButton *)downloadButton {
     if (!_downloadButton) {
-        _downloadButton = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth - 45, 0, 40, 40)];
+        _downloadButton = [[SPBaseButton alloc] initWithFrame:CGRectMake(kScreenWidth - 45, 0, 40, 40)];
         [_downloadButton setImage:kResizedImage(@"sp_icon_download_white", 27) forState:UIControlStateNormal];
         [_downloadButton addTarget:self action:@selector(downloadCurrentVideo) forControlEvents:UIControlEventTouchUpInside];
         _downloadButton.hidden = YES;

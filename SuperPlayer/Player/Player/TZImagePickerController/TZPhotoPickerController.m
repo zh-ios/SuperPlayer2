@@ -23,11 +23,11 @@
     NSMutableArray *_models;
     
     UIView *_bottomToolBar;
-    UIButton *_previewButton;
-    UIButton *_doneButton;
+    SPBaseButton *_previewButton;
+    SPBaseButton *_doneButton;
     UIImageView *_numberImageView;
     UILabel *_numberLabel;
-    UIButton *_originalPhotoButton;
+    SPBaseButton *_originalPhotoButton;
     UILabel *_originalPhotoLabel;
     UIView *_divideLine;
     
@@ -95,7 +95,7 @@ static CGFloat itemMargin = 5;
     [TZCommonTools configBarButtonItem:cancelItem tzImagePickerVc:tzImagePickerVc];
     self.navigationItem.rightBarButtonItem = cancelItem;
     if (tzImagePickerVc.navLeftBarButtonSettingBlock) {
-        UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        SPBaseButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
         leftButton.frame = CGRectMake(0, 0, 44, 44);
         [leftButton addTarget:self action:@selector(navLeftBarButtonClick) forControlEvents:UIControlEventTouchUpInside];
         tzImagePickerVc.navLeftBarButtonSettingBlock(leftButton);

@@ -24,13 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 /// 顶部工具栏
 @property (nonatomic, strong, readonly) UIView *topToolView;
 
-@property (nonatomic, strong) UIButton *closeButton;
+@property (nonatomic, strong) SPBaseButton *closeButton;
 
 /// 标题
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
 
 /// 播放或暂停按钮
-@property (nonatomic, strong, readonly) UIButton *playOrPauseBtn;
+@property (nonatomic, strong, readonly) SPBaseButton *playOrPauseBtn;
 
 /// 播放的当前时间
 @property (nonatomic, strong, readonly) UILabel *currentTimeLabel;
@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UILabel *totalTimeLabel;
 
 /// 全屏按钮
-@property (nonatomic, strong, readonly) UIButton *fullScreenBtn;
+@property (nonatomic, strong, readonly) SPBaseButton *fullScreenBtn;
 
 /// 播放器
 @property (nonatomic, weak) ZFPlayerController *player;

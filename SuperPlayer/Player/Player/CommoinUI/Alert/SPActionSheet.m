@@ -94,7 +94,7 @@
     
     for (int i = 0; i<datas.count; i++) {
         SPActionSheetItem *item = datas[i];
-        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 50*i, kScreenWidth, btnH)];
+        SPBaseButton *btn = [[SPBaseButton alloc] initWithFrame:CGRectMake(0, 50*i, kScreenWidth, btnH)];
         [btn setBackgroundImage:[UIImage imageFromColor:[UIColor whiteColor]] forState:UIControlStateNormal];
         [btn setBackgroundImage:[UIImage imageFromColor:RGBA(242, 242, 242, 1)] forState:UIControlStateHighlighted];
         if (item.style == SPActionSheetItemStyle_Title) {
@@ -133,7 +133,7 @@
         [_containerView addSubview:btn];
     }
     
-    UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, btnH*dataSource.count+5, kScreenWidth, btnH+kBottomSafeArea)];
+    SPBaseButton *cancelBtn = [[SPBaseButton alloc] initWithFrame:CGRectMake(0, btnH*dataSource.count+5, kScreenWidth, btnH+kBottomSafeArea)];
     [cancelBtn setBackgroundImage:[UIImage imageFromColor:[UIColor clearColor]] forState:UIControlStateNormal];
     [cancelBtn setBackgroundImage:[UIImage imageFromColor:RGBA(242, 242, 242, 1)] forState:UIControlStateHighlighted];
     [cancelBtn setTitleColor:TEXT_COLOR forState:UIControlStateNormal];
@@ -149,14 +149,14 @@
     cancelLabel.text = [self cancelItemName];
 }
 
-- (void)btnOnClicked:(UIButton *)btn {
+- (void)btnOnClicked:(SPBaseButton *)btn {
     if (self.selectRowBlock) {
         SPActionSheetItem *it = self.dataSource[btn.tag-1];
         self.selectRowBlock(self, it.title, btn.tag-1);
     }
 }
 
-- (void)cancel:(UIButton *)btn {
+- (void)cancel:(SPBaseButton *)btn {
     [self hide];
 }
 

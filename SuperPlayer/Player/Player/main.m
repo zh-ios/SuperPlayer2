@@ -1,8 +1,5 @@
 //
-//  main.m
-//  Player
-//
-//  Created by hz on 2021/11/24.
+
 //
 
 #import <UIKit/UIKit.h>

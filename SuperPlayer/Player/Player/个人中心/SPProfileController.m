@@ -2,7 +2,7 @@
 //  SPProfileController.m
 //  SMPlayer
 //
-//  Created by hz on 2021/10/21.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/10/21.
 //
 
 #import "SPProfileController.h"
@@ -53,7 +53,7 @@
     SPInputOnlineLinkerController *onlineVC = [[SPInputOnlineLinkerController alloc] init];
     onlineVC.hidesBottomBarWhenPushed = YES;
     onlinePlay.onClicked = ^(SPCellItem * _Nullable item, UISwitch * _Nullable sw) {
-        @weakify(self);
+        @strongify(self);
         [self.navigationController pushViewController:onlineVC animated:YES];
     };
     
@@ -67,11 +67,7 @@
         feedVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:feedVC animated:YES];
     };
-    
-    
-    BOOL speedupStatus = [SPGlobalConfigManager shareManager].speedupStatus;
-    
-    
+
     BOOL openAllFuncForeverStatus = [SPGlobalConfigManager shareManager].hadUnlockAllFunctionForeverStatus;
     BOOL subscribeStatus = [SPGlobalConfigManager shareManager].hadUnlockAllFunc;
     

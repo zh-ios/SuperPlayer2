@@ -19,12 +19,12 @@
 @interface TZImagePickerController () {
     NSTimer *_timer;
     UILabel *_tipLabel;
-    UIButton *_settingBtn;
+    SPBaseButton *_settingBtn;
     BOOL _pushPhotoPickerVc;
     BOOL _didPushPhotoPickerVc;
     CGRect _cropRect;
     
-    UIButton *_progressHUD;
+    SPBaseButton *_progressHUD;
     UIView *_HUDContainer;
     UIActivityIndicatorView *_HUDIndicatorView;
     UILabel *_HUDLabel;

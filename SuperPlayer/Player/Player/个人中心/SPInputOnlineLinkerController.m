@@ -45,14 +45,14 @@
     shim.contentView = label;
     shim.shimmering = YES;
     NSString *tipStr = kZHLocalizedString(@"输入视频URL链接🔗在线播放");
-    if ([SPVersionManager sharedManager].isNewVersionAvailable) {
+    if ([SPVersionManager sharedMgr].isNewVersionAvailable) {
         tipStr = kZHLocalizedString(@"输入视频链接🔗在线播放");
     }
 
     label.text = tipStr;
     
 //    CGFloat downloadBtnWH = 28;
-//    UIButton *downloadBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth-50, shim.top, downloadBtnWH, downloadBtnWH)];
+//    SPBaseButton *downloadBtn = [[SPBaseButton alloc] initWithFrame:CGRectMake(kScreenWidth-50, shim.top, downloadBtnWH, downloadBtnWH)];
 //    downloadBtn.centerY = shim.centerY;
 //    [container addSubview:downloadBtn];
 //    [downloadBtn setImage:[UIImage imageNamed:@"searh_download"] forState:UIControlStateNormal];
@@ -76,7 +76,7 @@
     urlView.layer.masksToBounds = NO;
     
     
-    UIButton *playerBtn = [[UIButton alloc] initWithFrame:CGRectMake(15, urlView.bottom+20, kScreenWidth-15*2, 50)];
+    SPBaseButton *playerBtn = [[SPBaseButton alloc] initWithFrame:CGRectMake(15, urlView.bottom+20, kScreenWidth-15*2, 50)];
     UIImage *bgImage = [UIView gradientImageFromColor:nil toColor:nil size:playerBtn.bounds.size];
     [playerBtn setBackgroundImage:bgImage forState:UIControlStateNormal];
     [playerBtn setTitle:kZHLocalizedString(@"开始在线播放开启精彩之旅 =>") forState:UIControlStateNormal];
@@ -97,7 +97,7 @@
     [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
 }
 
-- (void)playOnLineVideo:(UIButton *)btn {
+- (void)playOnLineVideo:(SPBaseButton *)btn {
     BOOL unlockAllFunc = [SPGlobalConfigManager shareManager].hadUnlockAllFunc;
 //#ifdef DEBUG
 //    unlockAllFunc = YES;

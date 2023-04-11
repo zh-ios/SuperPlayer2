@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  Player
 //
-//  Created by hz on 2021/10/21.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/10/21.
 //
 
 #import "AppDelegate.h"
@@ -14,12 +14,9 @@
 #import <StoreKit/StoreKit.h>
 #import "SPGoodCommentManager.h"
 #import "SPVersionManager.h"
-#import "SDImageWebPCoder.h"
+//#import "SDImageWebPCoder.h"
 
 #import "ZFLandscapeRotationManager.h"
-#import <UMCommon/UMCommon.h>
-
-#import <UMAPM/UMCrashConfigure.h>
 //#import "LOTAnimationView.h"
 #import "SPHWNetworkReachabilityManager.h"
 #import "SPHWDownloadManager.h"
@@ -43,7 +40,7 @@
     
     // 初始化iap
     [[SPIAPManager shareManager] startMagager];
-    [[SPVersionManager sharedManager] getAppVersionInfo];
+    [[SPVersionManager sharedMgr] getAppVersionInfo];
     
     NSInteger ts = 20;
 #ifdef DEBUG
@@ -54,7 +51,7 @@
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(ts * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [[SPGoodCommentManager shareManager] startGoodCmt];
-//        if ([SPVersionManager sharedManager].isNewVersionAvailable) {
+//        if ([SPVersionManager sharedMgr].isNewVersionAvailable) {
 //            [[SPGoodCommentManager shareManager] startGoodCmt];
 //        }
     });
@@ -64,15 +61,10 @@
      webp支持
      */
     // Override point for customization after application launch.
-    SDImageWebPCoder *webPCoder = [SDImageWebPCoder sharedCoder];
-    [[SDImageCodersManager sharedManager] addCoder:webPCoder];
-    
+//    SDImageWebPCoder *webPCoder = [SDImageWebPCoder sharedCoder];
+//    [[SDImageCodersManager sharedMgr] addCoder:webPCoder];
+//    
     [self initWindow];
-    
-    [UMConfigure initWithAppkey:kUMengAppKey channel:@"App Store"];
-    [UMCrashConfigure setCrashCBBlock:^NSString*_Nullable{
-        return kZHLocalizedString(@"程序崩溃了");
-    }];
     
     // 开启网络监听
     [[SPHWNetworkReachabilityManager shareManager] monitorNetworkStatus];

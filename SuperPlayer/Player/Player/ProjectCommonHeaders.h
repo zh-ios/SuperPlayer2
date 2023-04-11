@@ -2,7 +2,7 @@
 //  ProjectCommonHeaders.h
 //  Player
 //
-//  Created by hz on 2021/12/7.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/12/7.
 //
 
 #ifndef ProjectCommonHeaders_h
@@ -14,7 +14,7 @@
 #import "SPBaseView.h"
 #import "SPBaseTableView.h"
 #import "SPBaseTableViewCell.h"
-
+#import "SPBaseButton.h"
 // 公用库
 #import "Masonry.h"
 #import "SPEmptyControl.h"
@@ -34,5 +34,7 @@
 #import "UIView+gradient.h"
 #import "YYCache.h"
 #import "UIView+CornerRadius.h"
+
+#import "SPAppThemeManager.h"
 
 #endif /* ProjectCommonHeaders_h */

@@ -14,7 +14,7 @@
 //
 //- (void)updateUIWithModel:(SPHWDownloadModel *)model;
 //
-//@property (nonatomic, copy) void (^downloadBtnOnClickBlock)(UIButton *downloadBtn, ZHDownloadCell *cell ,SPHWDownloadModel *model);
+//@property (nonatomic, copy) void (^downloadBtnOnClickBlock)(SPBaseButton *downloadBtn, ZHDownloadCell *cell ,SPHWDownloadModel *model);
 //
 //@end
 //

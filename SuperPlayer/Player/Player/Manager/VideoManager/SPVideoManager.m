@@ -2,7 +2,7 @@
 //  SPVideoManager.m
 //  Player
 //
-//  Created by hz on 2021/11/12.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/11/12.
 //
 
 #import "SPVideoManager.h"
@@ -13,7 +13,7 @@
 
 static SPVideoManager *_mgr = nil;
 
-+ (instancetype)sharedManager {
++ (instancetype)sharedMgr {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if (!_mgr) {

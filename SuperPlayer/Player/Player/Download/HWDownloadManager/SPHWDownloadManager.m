@@ -269,7 +269,7 @@
     
     // 移动文件，原路径文件由系统自动删除
     NSError *error = nil;
-    NSString *targetPath = [[[SPLocalFileManager sharedManager] getDocumentPath] stringByAppendingPathComponent:[model.fileName stringByDeletingPathExtension]];
+    NSString *targetPath = [[[SPLocalFileManager sharedMgr] getDocumentPath] stringByAppendingPathComponent:[model.fileName stringByDeletingPathExtension]];
     
     // 警告⚠️
     // 源程序localpathbug没有入口，取得是默认值，设置localPath这里取到的也是nil，这里设置成app的根目录

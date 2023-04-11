@@ -2,7 +2,7 @@
 //  SPAllLocalFoldersController.m
 //  Player
 //
-//  Created by hz on 2021/11/15.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/11/15.
 //
 
 #import "SPAllLocalFoldersController.h"
@@ -30,9 +30,9 @@
 
 - (void)reloadController {
     if (self.model.isLocked) {
-        self.folders = [[SPLocalFileManager sharedManager] getLockedFolders];
+        self.folders = [[SPLocalFileManager sharedMgr] getLockedFolders];
     } else {
-        self.folders = [[SPLocalFileManager sharedManager] getLocalFolders];
+        self.folders = [[SPLocalFileManager sharedMgr] getLocalFolders];
     }
     
     if (self.folders.count == 0) {
@@ -87,7 +87,7 @@
     if (!cell) {
         cell = [[SPFileCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID cellFrame:CGRectMake(0, 0, kScreenWidth, 80)];
     }
-    [cell updateCellWithFileModel:self.folders[indexPath.row]];
+    [cell updateCellWithModel:self.folders[indexPath.row]];
     cell.operateBtn.hidden = YES;
     return cell;
 }
@@ -95,7 +95,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     SPFilesModel *folder = self.folders[indexPath.row];
-    BOOL success = [[SPLocalFileManager sharedManager] moveFileFromPath:self.model.fullPath toPath:folder.fullPath];
+    BOOL success = [[SPLocalFileManager sharedMgr] moveFileFromPath:self.model.fullPath toPath:folder.fullPath];
     if (success) {
         [SPToastUtil showToast:kZHLocalizedString(@"已放入该文件夹,将自动返回上一页面") completed:^{
             [self.navigationController popViewControllerAnimated:YES];

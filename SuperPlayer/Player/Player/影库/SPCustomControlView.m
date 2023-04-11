@@ -41,7 +41,7 @@
 /// 快进快退ImageView
 @property (nonatomic, strong) UIImageView *fastImageView;
 /// 加载失败按钮
-@property (nonatomic, strong) UIButton *failBtn;
+@property (nonatomic, strong) SPBaseButton *failBtn;
 /// 底部播放进度
 @property (nonatomic, strong) ZFSliderView *bottomPgrogress;
 /// 是否显示了控制层
@@ -245,7 +245,6 @@
 }
 
 - (void)hideRateView {
-    CGFloat maxW = MAX(kScreenWidth, kScreenHeight);
     if (self.player.isFullScreen) {
         [UIView animateWithDuration:self.autoFadeTimeInterval  animations:^{
             self.rateView.alpha = 0.2;
@@ -663,7 +662,7 @@
 }
 
 /// 加载失败
-- (void)failBtnClick:(UIButton *)sender {
+- (void)failBtnClick:(SPBaseButton *)sender {
     [self.player.currentPlayerManager reloadPlayer];
 }
 
@@ -760,10 +759,10 @@
     return _portraitControlView;
 }
 
-- (SPCustomPortraitControlView *)landScapeControlView {
+- (SPCustomLandscapeControlView *)landScapeControlView {
     if (!_landScapeControlView) {
         @zf_weakify(self)
-        _landScapeControlView = [[SPCustomPortraitControlView alloc] init];
+        _landScapeControlView = [[SPCustomLandscapeControlView alloc] init];
         _landScapeControlView.sliderValueChanging = ^(CGFloat value, BOOL forward) {
             @zf_strongify(self)
             NSString *draggedTime = [ZFUtilities convertTimeSecond:self.player.totalTime*value];
@@ -839,9 +838,9 @@
     return _fastProgressView;
 }
 
-- (UIButton *)failBtn {
+- (SPBaseButton *)failBtn {
     if (!_failBtn) {
-        _failBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        _failBtn = [SPBaseButton buttonWithType:UIButtonTypeSystem];
         [_failBtn setTitle:kZHLocalizedString(@"加载失败,点击重试") forState:UIControlStateNormal];
         [_failBtn addTarget:self action:@selector(failBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [_failBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -899,7 +898,7 @@
     if (!_rateView) {
         _rateView = [[SPMultiSpeedView alloc] initWithFrame:CGRectMake(kScreenWidth, 0, kRateViewW, kRateViewH)];
         @weakify(self)
-        _rateView.multiSpeedBtnOnClicked = ^(UIButton * _Nonnull btn, CGFloat speed) {
+        _rateView.multiSpeedBtnOnClicked = ^(SPBaseButton * _Nonnull btn, CGFloat speed) {
         @strongify(self)
             self.player.currentPlayerManager.rate = speed;
         };

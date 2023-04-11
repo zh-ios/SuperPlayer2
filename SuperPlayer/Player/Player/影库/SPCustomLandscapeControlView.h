@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UIView *topToolView;
 
 /// 返回按钮
-@property (nonatomic, strong, readonly) UIButton *backBtn;
+@property (nonatomic, strong, readonly) SPBaseButton *backBtn;
 
 /// 标题
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UIView *bottomToolView;
 
 /// 播放或暂停按钮
-@property (nonatomic, strong, readonly) UIButton *playOrPauseBtn;
+@property (nonatomic, strong, readonly) SPBaseButton *playOrPauseBtn;
 
 /// 播放的当前时间
 @property (nonatomic, strong, readonly) UILabel *currentTimeLabel;
@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UILabel *totalTimeLabel;
 
 /// 锁定屏幕按钮
-@property (nonatomic, strong, readonly) UIButton *lockBtn;
+@property (nonatomic, strong, readonly) SPBaseButton *lockBtn;
 
 /// 横屏时候是否显示自定义状态栏(iOS13+)，默认 NO.
 @property (nonatomic, assign) BOOL showCustomStatusBar;

@@ -16,13 +16,13 @@
 @interface TZVideoCropController ()<TZVideoEditViewDelegate,UICollectionViewDelegate, UICollectionViewDataSource> {
     AVPlayer *_player;
     AVPlayerLayer *_playerLayer;
-    UIButton *_playButton;
+    SPBaseButton *_playButton;
     UIImage *_cover;
     NSString *_outputPath;
     NSString *_errorMsg;
     
-    UIButton *_cancelButton;
-    UIButton *_doneButton;
+    SPBaseButton *_cancelButton;
+    SPBaseButton *_doneButton;
     UIProgressView *_progress;
     UILabel *_cropVideoDurationLabel;
     

@@ -21,15 +21,15 @@
     NSArray *_assetsTemp;
     
     UIView *_naviBar;
-    UIButton *_backButton;
-    UIButton *_selectButton;
+    SPBaseButton *_backButton;
+    SPBaseButton *_selectButton;
     UILabel *_indexLabel;
     
     UIView *_toolBar;
-    UIButton *_doneButton;
+    SPBaseButton *_doneButton;
     UIImageView *_numberImageView;
     UILabel *_numberLabel;
-    UIButton *_originalPhotoButton;
+    SPBaseButton *_originalPhotoButton;
     UILabel *_originalPhotoLabel;
     
     CGFloat _offsetItemCount;
@@ -105,12 +105,12 @@
     _naviBar = [[SPBaseView alloc] initWithFrame:CGRectZero];
     _naviBar.backgroundColor = [UIColor colorWithRed:(34/255.0) green:(34/255.0)  blue:(34/255.0) alpha:0.7];
     
-    _backButton = [[UIButton alloc] initWithFrame:CGRectZero];
+    _backButton = [[SPBaseButton alloc] initWithFrame:CGRectZero];
     [_backButton setImage:[UIImage tz_imageNamedFromMyBundle:@"navi_back"] forState:UIControlStateNormal];
     [_backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_backButton addTarget:self action:@selector(backButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
-    _selectButton = [[UIButton alloc] initWithFrame:CGRectZero];
+    _selectButton = [[SPBaseButton alloc] initWithFrame:CGRectZero];
     [_selectButton setImage:tzImagePickerVc.photoDefImage forState:UIControlStateNormal];
     [_selectButton setImage:tzImagePickerVc.photoSelImage forState:UIControlStateSelected];
     _selectButton.imageView.clipsToBounds = YES;
@@ -310,11 +310,11 @@
 
 #pragma mark - Click Event
 
-- (void)select:(UIButton *)selectButton {
+- (void)select:(SPBaseButton *)selectButton {
     [self select:selectButton refreshCount:YES];
 }
 
-- (void)select:(UIButton *)selectButton refreshCount:(BOOL)refreshCount {
+- (void)select:(SPBaseButton *)selectButton refreshCount:(BOOL)refreshCount {
     TZImagePickerController *_tzImagePickerVc = (TZImagePickerController *)self.navigationController;
     TZAssetModel *model = _models[self.currentIndex];
     if (!selectButton.isSelected) {

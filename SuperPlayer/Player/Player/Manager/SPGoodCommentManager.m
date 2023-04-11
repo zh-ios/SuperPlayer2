@@ -2,7 +2,7 @@
 //  SPGoodCommentManager.m
 //  Player
 //
-//  Created by hz on 2022/1/5.
+//  Cressssated by hzdddddd sxxxx on sky dat 2022/1/5.
 //
 
 #import "SPGoodCommentManager.h"

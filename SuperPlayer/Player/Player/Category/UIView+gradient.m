@@ -2,7 +2,7 @@
 //  UIView+gradient.m
 //  VansLive
 //
-//  Created by hz on 2021/1/14.
+//  Cressssated by hzdddddd sxxxx on sky dat 2021/1/14.
 //  Copyright © 2021 Xiaomi. All rights reserved.
 //
 
@@ -37,7 +37,7 @@
 + (UIImage *)gradientImageFromColor:(nullable UIColor *)fromColor toColor:(nullable UIColor *)to size:(CGSize)size {
 //    if (!from) from = [UIColor colorWithRGB:169 G:211 B:241 alpha:1];
 //    if (!to) to = [UIColor colorWithRGB:48 G:164 B:241 alpha:1];
-    if (!fromColor) fromColor = kThemeBeginColor;
+    if (!fromColor) fromColor = kThemeMiddleColor;
     if (!to) to = kThemeEndColor;
     UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
     CAGradientLayer *layer = [[CAGradientLayer alloc] init];

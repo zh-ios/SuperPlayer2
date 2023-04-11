@@ -2,7 +2,7 @@
 //  SPVersionManager.m
 //  Player
 //
-//  Created by hz on 2022/1/6.
+//  Cressssated by hzdddddd sxxxx on sky dat 2022/1/6.
 //
 
 #import "SPVersionManager.h"
@@ -19,7 +19,7 @@
 
 static SPVersionManager *_mgr = nil;
 
-+ (instancetype)sharedManager {
++ (instancetype)sharedMgr {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if (!_mgr) {
