@@ -60,7 +60,7 @@
 
     // TODO 跳转到对应控制器
     SPArrowItem *subScribe =  [SPArrowItem itemWithIcon:@"sp_icon_unlock" title:kZHLocalizedString(@"激活 VIP ") subTitle:kZHLocalizedString(@"激活后可畅享全部功能") targetCls:nil];
-    SPArrowItem *feedback = [SPArrowItem itemWithIcon:@"sp_icon_feedback" title:kZHLocalizedString(@"🧲使用帮助~") subTitle:kZHLocalizedString(@"问题反馈及帮助~😘") targetCls:nil];
+    SPArrowItem *feedback = [SPArrowItem itemWithIcon:@"sp_icon_feedback" title:kZHLocalizedString(@"使用帮助和反馈~") subTitle:kZHLocalizedString(@"问题反馈及帮助~😘") targetCls:nil];
     feedback.onClicked = ^(SPCellItem * _Nullable item, UISwitch * _Nullable sw) {
     @strongify(self)
         SPFeedbackController *feedVC = [[SPFeedbackController alloc] init];

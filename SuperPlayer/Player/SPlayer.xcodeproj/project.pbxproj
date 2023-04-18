@@ -1788,7 +1788,7 @@
 					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
 				);
 				INFOPLIST_FILE = Player/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "妙播";
+				INFOPLIST_KEY_CFBundleDisplayName = "妙 播";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "以便您能将照片中的视频上传到App中";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "以方便您在拍照时定位自己的位置";
@@ -1807,7 +1807,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhsxx.playertest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.splayer.deepin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1856,7 +1856,7 @@
 					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
 				);
 				INFOPLIST_FILE = Player/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "妙播";
+				INFOPLIST_KEY_CFBundleDisplayName = "妙 播";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSCameraUsageDescription = "以便您能将照片中的视频上传到App中";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "以方便您在拍照时定位自己的位置";
@@ -1875,7 +1875,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhsxx.playertest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.splayer.deepin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
