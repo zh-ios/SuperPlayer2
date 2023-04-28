@@ -25,11 +25,11 @@
 //    [super viewDidLoad];
 //    self.downloadDatas = @[].mutableCopy;
 //    
-//    [self initSubviews];
+//    [self setupSubviews];
 //    [self addNotifications];
 //}
 //
-//- (void)initSubviews {
+//- (void)setupSubviews {
 //    self.tableView = [[SPBaseTableView alloc] initWithFrame:CGRectMake(0, kNavbarHeight, kScreenWidth, kScreenHeight - kNavbarHeight) style:UITableViewStylePlain];
 //    [self.view addSubview:self.tableView];
 //    self.tableView.delegate = self;

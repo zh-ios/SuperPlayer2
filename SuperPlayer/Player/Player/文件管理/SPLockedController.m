@@ -18,7 +18,7 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *filesArray;
-@property (nonatomic, strong) SPEmptyControl *emptyView;
+@property (nonatomic, strong) SPEmptyControl *currentEmptyView;
 @property (nonatomic, strong) SPScreenLockController *SPScreenLockController;
 
 // 是否是push到了下一个页面 ，这种情况下调用viewWillApper 不需要弹出加密弹窗
@@ -52,7 +52,7 @@
     if (!ret && hadSetPWD && !self.isPushedToNextPage) {
         if (!self.SPScreenLockController) {
             SPScreenLockController *screenLockVC = [[SPScreenLockController alloc] init];
-            screenLockVC.customNavView.backBtn.hidden = YES;
+            screenLockVC.customNaviView.backBtn.hidden = YES;
             screenLockVC.view.frame = CGRectMake(0, 0, self.view.width, kScreenHeight-kTabbarHeight);
             [self.view addSubview:screenLockVC.view];
             [self addChildViewController:screenLockVC];
@@ -85,19 +85,19 @@
     }
 }
 
-- (SPEmptyControl *)emptyView {
-    if (!_emptyView) {
-       _emptyView = [SPEmptyControl showEmptyViewOnView:self.view inset:UIEdgeInsetsMake(kNavbarHeight, 0, kTabbarHeight, 0)];
-        _emptyView.titleLabel.text = kZHLocalizedString(@"空空如也，点击上传视频 ~_~");
-        [self.view addSubview:_emptyView];
-        _emptyView.hidden = YES;
-        _emptyView.emptyViewOnClicked = ^{
+- (SPEmptyControl *)currentEmptyView {
+    if (!_currentEmptyView) {
+       _currentEmptyView = [SPEmptyControl showEmptyViewOnView:self.view inset:UIEdgeInsetsMake(kNavbarHeight, 0, kTabbarHeight, 0)];
+        _currentEmptyView.titleLabel.text = kZHLocalizedString(@"空空如也，点击上传视频 ~_~");
+        [self.view addSubview:_currentEmptyView];
+        _currentEmptyView.hidden = YES;
+        _currentEmptyView.emptyViewOnClicked = ^{
             [SPToastUtil showToast:kZHLocalizedString(@"请到首页上传视频")];
             AppDelegate *appDelegate = kAppDelegate;
             appDelegate.tabbar.selectedIndex = 0;
         };
     }
-    return _emptyView;
+    return _currentEmptyView;
 }
 
 - (void)reloadViewController:(NSNotification *)noti {
@@ -109,11 +109,11 @@
     NSArray *localFolders = [[SPLocalFileManager sharedMgr] getLocalLockedFiles];
     self.filesArray = [NSMutableArray arrayWithArray:localFolders];
     if (localFolders.count == 0) {
-        self.emptyView.hidden = NO;
+        self.currentEmptyView.hidden = NO;
         self.tableView.hidden = YES;
     } else {
         self.tableView.hidden = NO;
-        self.emptyView.hidden = YES;
+        self.currentEmptyView.hidden = YES;
     }
 }
 
@@ -309,7 +309,7 @@
     [self.tableView deleteRowsAtIndexPaths:@[deletedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     if (self.filesArray.count == 0) {
-        self.emptyView.hidden = NO;
+        self.currentEmptyView.hidden = NO;
         self.tableView.hidden = YES;
     }
 }

@@ -19,12 +19,12 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.btns = @[].mutableCopy;
-        [self initSubviews];
+        [self setupSubviews];
     }
     return self;
 }
 
-- (void)initSubviews {
+- (void)setupSubviews {
 
     NSArray *titles = @[@"0.5 X",@"1.0 X",@"1.5 X",@"2.0 X"];
     CGFloat btnW = self.width;

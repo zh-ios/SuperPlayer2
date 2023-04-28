@@ -20,7 +20,7 @@
 
 //- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
 //    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-//        [self initSubviews];
+//        [self setupSubviews];
 //    }
 //    return self;
 //}
@@ -28,12 +28,12 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier cellWidth:(CGFloat)width {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.width = width;
-        [self initSubviews];
+        [self setupSubviews];
     }
     return self;
 }
 
-- (void)initSubviews {
+- (void)setupSubviews {
     // width 取屏幕宽，这个是拿到的width是320,高44。
     self.containerView = [[SPSettingCellContainerView alloc] initWithFrame:CGRectMake(0, 0, self.width, 52)];
     [self.contentView addSubview:self.containerView];

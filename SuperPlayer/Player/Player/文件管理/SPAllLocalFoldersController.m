@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSArray *folders;
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) SPEmptyControl *emptyView;
+@property (nonatomic, strong) SPEmptyControl *currentEmptyView;
 
 @end
 
@@ -36,19 +36,19 @@
     }
     
     if (self.folders.count == 0) {
-        if (!self.emptyView) {
+        if (!self.currentEmptyView) {
             SPEmptyControl *control = [SPEmptyControl showEmptyViewOnView:self.view inset:UIEdgeInsetsMake(kNavbarHeight, 0, kTabbarHeight, 0)];
-            self.emptyView = control;
-            self.emptyView.titleLabel.text = kZHLocalizedString(@"当前目录没有文件夹~_~");
+            self.currentEmptyView = control;
+            self.currentEmptyView.titleLabel.text = kZHLocalizedString(@"当前目录没有文件夹~_~");
             [self.view addSubview:control];
         } else {
-            self.emptyView.hidden = NO;
+            self.currentEmptyView.hidden = NO;
             self.tableView.hidden = YES;
         }
        
     } else {
         self.tableView.hidden = NO;
-        self.emptyView.hidden = YES;
+        self.currentEmptyView.hidden = YES;
         if (![self.view.subviews containsObject:self.tableView]) {
             [self.view addSubview:self.tableView];
         }

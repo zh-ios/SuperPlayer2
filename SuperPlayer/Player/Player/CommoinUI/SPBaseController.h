@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NaviAnimationType animationType;
 
-@property (nonatomic, strong) SPNavigationBar *customNavView;
+@property (nonatomic, strong) SPNavigationBar *customNaviView;
 
 
 /**

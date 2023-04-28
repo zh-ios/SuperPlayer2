@@ -501,12 +501,12 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self =  [super initWithFrame:frame];
     if (self) {
-        [self initSubViews];
+        [self setupSubviews];
     }
     return self;
 }
 
-- (void)initSubViews {
+- (void)setupSubviews {
     _indicatorLine = UIView.new;
     _indicatorLine.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
     [self addSubview:_indicatorLine];
@@ -658,12 +658,12 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initSubViews];
+        [self setupSubviews];
     }
     return self;
 }
 
-- (void)initSubViews {
+- (void)setupSubviews {
     _imgView = [[UIImageView alloc] initWithFrame:self.bounds];
     _imgView.contentMode = UIViewContentModeScaleAspectFill;
     _imgView.clipsToBounds = YES;

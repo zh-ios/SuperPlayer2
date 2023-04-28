@@ -75,7 +75,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     self.panGestureEnabled = NO;
       
     [self.view addSubview:self.containerView];
-    self.customNavView.hidden = YES;
+    self.customNaviView.hidden = YES;
 
     self.customControlView.portraitControlView.closeButtonOnClikedCallbackBlock = ^{
         @strongify(self)

@@ -26,12 +26,12 @@
 //
 //- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
 //    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-//        [self initSubviews];
+//        [self setupSubviews];
 //    }
 //    return self;
 //}
 //
-//- (void)initSubviews {
+//- (void)setupSubviews {
 //    // 18 + 10 + 10 + 15 + 10 /// 
 //    self.nameLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(kDownloadCellLeftPadding, 10, kScreenWidth - 150, 18)];
 //    self.nameLabel.font = [UIFont systemFontOfSize:15];

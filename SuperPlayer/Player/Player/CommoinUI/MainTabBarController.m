@@ -140,16 +140,16 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
 
 - (NSArray *)viewControllersForTabBar {
     SPFileManagerController *firstViewController = [[SPFileManagerController alloc] init];
-    firstViewController.customNavView.backBtn.hidden = YES;
+    firstViewController.customNaviView.backBtn.hidden = YES;
     UIViewController *firstNavigationController = [[SPNavigationController alloc]
                                                    initWithRootViewController:firstViewController];
     SPLockedController *secondViewController = [[SPLockedController alloc] init];
-    secondViewController.customNavView.backBtn.hidden = YES;
+    secondViewController.customNaviView.backBtn.hidden = YES;
     UIViewController *secondNavigationController = [[SPNavigationController alloc]
                                                     initWithRootViewController:secondViewController];
 
     SPProfileController *thirdViewController = [[SPProfileController alloc] init];
-    thirdViewController.customNavView.backBtn.hidden = YES;
+    thirdViewController.customNaviView.backBtn.hidden = YES;
     UIViewController *thirdNavigationController = [[SPNavigationController alloc]
                                                    initWithRootViewController:thirdViewController];
     

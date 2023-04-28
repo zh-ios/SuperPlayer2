@@ -22,11 +22,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initSubviews];
+    [self setupSubviews];
     self.title = kZHLocalizedString(@"在线播");
 }
 
-- (void)initSubviews {
+- (void)setupSubviews {
     UILabel *line = [[SPBaseLabel alloc] initWithFrame:CGRectMake(15, kNavbarHeight+50, self.view.width-15*2, 5)];
     [self.view addSubview:line];
     [line addGradientColorsFrom:nil toColor:nil];

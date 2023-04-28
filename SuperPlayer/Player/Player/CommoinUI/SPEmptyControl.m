@@ -15,14 +15,14 @@
 
 + (instancetype)showEmptyViewOnView:(UIView *)SPBaseView  inset:(UIEdgeInsets)inset {
     
-    SPEmptyControl *emptyView = [SPBaseView viewWithTag:333333];
-    if (!emptyView) {
-        emptyView = [[SPEmptyControl alloc] init];
-        [SPBaseView addSubview:emptyView];
+    SPEmptyControl *currentEmptyView = [SPBaseView viewWithTag:333333];
+    if (!currentEmptyView) {
+        currentEmptyView = [[SPEmptyControl alloc] init];
+        [SPBaseView addSubview:currentEmptyView];
     }else {
-        [SPBaseView bringSubviewToFront:emptyView];
+        [SPBaseView bringSubviewToFront:currentEmptyView];
     }
-    [emptyView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [currentEmptyView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.edges.equalTo(SPBaseView).insets(inset);
         make.edges.equalTo(SPBaseView).insets(UIEdgeInsetsMake(inset.top+80, inset.left, inset.bottom, inset.right));
 
@@ -30,13 +30,13 @@
     
     
     
-    return emptyView;
+    return currentEmptyView;
 }
 
 + (void)removeEmptyViewOnView:(UIView *)SPBaseView{
     
-    UIView *emptyView = [SPBaseView viewWithTag:333333];
-    [emptyView removeFromSuperview];
+    UIView *currentEmptyView = [SPBaseView viewWithTag:333333];
+    [currentEmptyView removeFromSuperview];
 }
 
 - (instancetype)init{

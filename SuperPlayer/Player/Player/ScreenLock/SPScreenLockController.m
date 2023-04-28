@@ -22,11 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.inpuNumbers = @[].mutableCopy;
-    [self initSubviews];
+    [self setupSubviews];
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
-- (void)initSubviews {
+- (void)setupSubviews {
     UILabel *inputTipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, kNavbarHeight+40, self.view.width, 20)];
     inputTipLabel.textColor = kScreenLockThemeColor;
     inputTipLabel.textAlignment = NSTextAlignmentCenter;

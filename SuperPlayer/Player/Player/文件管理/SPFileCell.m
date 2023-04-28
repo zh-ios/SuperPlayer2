@@ -23,12 +23,12 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier cellFrame:(CGRect)frame {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier cellFrame:frame]) {
-        [self initSubViews];
+        [self setupSubviews];
     }
     return self;
 }
 
-- (void)initSubViews {
+- (void)setupSubviews {
     CGFloat leftPadding = 15;
     CGFloat topPadding = 15;
     self.coverImageView = [[UIImageView alloc] initWithFrame:CGRectMake(leftPadding, topPadding+3, 80, 60)];

@@ -32,7 +32,7 @@
     
     [self addContainerView];
     
-    [self initSubViews];
+    [self setupSubviews];
     
     [self addrestoreIAPBtn];
     if ([SPGlobalConfigManager shareManager].configModel.is_new_version_online) {
@@ -44,7 +44,7 @@
 
 - (void)addrestoreIAPBtn {
     SPBaseButton *restoreBtn = [[SPBaseButton alloc] initWithFrame:CGRectMake(self.view.width-90, kTopSafeArea, 90, 44)];
-    [self.customNavView addSubview:restoreBtn];
+    [self.customNaviView addSubview:restoreBtn];
     [restoreBtn addTarget:self action:@selector(restore) forControlEvents:UIControlEventTouchUpInside];
     [restoreBtn setTitle:kZHLocalizedString(@"恢复购买") forState:UIControlStateNormal];
     [restoreBtn setTitleColor:[UIColor whiteColor]  forState:UIControlStateNormal];
@@ -70,7 +70,7 @@
     });
 }
 
-- (void)initSubViews {
+- (void)setupSubviews {
     CGFloat leftPadding = 15;
 
     UILabel *tipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftPadding , kNavbarHeight+15, 250, 80)];
@@ -92,7 +92,7 @@
         
     SPBaseButton *playBtn = [self createBtnWithIcon:@"sp_icon_iap_play" title:kZHLocalizedString(@"全格式视频快速流畅播放不卡顿") highlightText:kZHLocalizedString(@"流畅") highlightColor:kThemeEndColor frame:CGRectMake(onLineBtn.left, wifiBtn.bottom+btnMargin, onLineBtn.width, onLineBtn.height)];
     
-    SPBaseButton *adBtn = [self createBtnWithIcon:@"sp_icon_ad" title:kZHLocalizedString(@"干净清爽无广告、视频加密不受限") highlightText:kZHLocalizedString(@"清爽") highlightColor:[UIColor colorWithRGB:72 G:168 B:35 alpha:1] frame:CGRectMake(onLineBtn.left, playBtn.bottom+btnMargin, onLineBtn.width, onLineBtn.height)];
+    SPBaseButton *adBtn = [self createBtnWithIcon:@"sp_icon_ad" title:kZHLocalizedString(@"干净清爽无广告、视频加密个数不受限") highlightText:kZHLocalizedString(@"清爽") highlightColor:[UIColor colorWithRGB:72 G:168 B:35 alpha:1] frame:CGRectMake(onLineBtn.left, playBtn.bottom+btnMargin, onLineBtn.width, onLineBtn.height)];
     
     [self.containerView addSubview:onLineBtn];
     [self.containerView addSubview:lockBtn];

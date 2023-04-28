@@ -22,12 +22,12 @@
         
         self.backgroundColor = [UIColor whiteColor];
         
-        [self initSubviews];
+        [self setupSubviews];
     }
     return self;
 }
 
-- (void)initSubviews {
+- (void)setupSubviews {
     
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];

@@ -24,11 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.imageItems = @[@"vip_preview_1",@"vip_preview_4",@"vip_preview_2",@"vip_preview_3", @"vip_preview_unlock"];
-    [self initSubviews];
+    [self setupSubviews];
     [SPIAPManager shareManager].delegate = self;
 }
 
-- (void)initSubviews {
+- (void)setupSubviews {
     self.containerScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kNavbarHeight, kScreenWidth, kScreenHeight - kNavbarHeight)];
     self.containerScrollView.delegate = self;
     [self.view addSubview:self.containerScrollView];

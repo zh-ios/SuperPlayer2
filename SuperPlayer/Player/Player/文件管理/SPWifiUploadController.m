@@ -25,7 +25,7 @@
     self.title = kZHLocalizedString(@"Wifi/iTunes 上传");
     
     [self uploadByWifi];
-    [self initSubViews];
+    [self setupSubviews];
 
 }
 
@@ -37,7 +37,7 @@
     [super viewDidDisappear:animated];
 }
 
-- (void)initSubViews {
+- (void)setupSubviews {
     
     UIScrollView *containerScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kNavbarHeight, self.view.width, kScreenHeight-kNavbarHeight)];
     [self.view addSubview:containerScrollView];

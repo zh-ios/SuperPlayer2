@@ -51,12 +51,12 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self initSubviews];
+        [self setupSubviews];
     }
     return self;
 }
 
-- (void)initSubviews {
+- (void)setupSubviews {
     self.img = [[UIImageView alloc] init];
     [self addSubview:self.img];
     self.img.hidden = YES;

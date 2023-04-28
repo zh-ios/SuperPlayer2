@@ -18,7 +18,7 @@
 @implementation SPBaseController
 
 - (void)setTitle:(NSString *)title {
-    self.customNavView.titleL.text = title?:@"";
+    self.customNaviView.titleL.text = title?:@"";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -34,14 +34,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.view bringSubviewToFront:self.customNavView];
+    [self.view bringSubviewToFront:self.customNaviView];
 }
 
-- (SPNavigationBar *)customNavView {
-    if (!_customNavView) {
-        _customNavView = [[SPNavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, kNavbarHeight)];
+- (SPNavigationBar *)customNaviView {
+    if (!_customNaviView) {
+        _customNaviView = [[SPNavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, kNavbarHeight)];
     }
-    return _customNavView;
+    return _customNaviView;
 }
 
 // 将 customnaviView 添加到每个页面控制器上，滑动返回的时候，navivie 也会跟着返回
@@ -56,9 +56,9 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     @weakify(self)
-    [self.view addSubview:self.customNavView];
+    [self.view addSubview:self.customNaviView];
     
-    self.customNavView.backOnClick = ^(SPBaseButton *btn) {
+    self.customNaviView.backOnClick = ^(SPBaseButton *btn) {
     @strongify(self)
     [self backBtnOnClicked:btn];
     };
@@ -119,7 +119,7 @@
 
 - (void)setShowNavBottomLine:(BOOL)showNavBottomLine {
     _showNavBottomLine = showNavBottomLine;
-    self.customNavView.bottomLine.hidden = !showNavBottomLine;
+    self.customNaviView.bottomLine.hidden = !showNavBottomLine;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

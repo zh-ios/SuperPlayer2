@@ -28,7 +28,7 @@
 
 @property (nonatomic, strong) UITableView *fileManagerTableView;
 @property (nonatomic, strong) NSMutableArray *filesArray;
-@property (nonatomic, strong) SPEmptyControl *emptyView;
+@property (nonatomic, strong) SPEmptyControl *currentEmptyView;
 @property (nonatomic, strong) GCDWebUploader *webServer;
 @property (nonatomic, assign) BOOL shouldReloadData;
 
@@ -55,48 +55,7 @@
     [self moveVideoFromDocPathToLocalfoldersIfNeeded];
     [self reloadController];
     [self.fileManagerTableView reloadData];
-//    UILongPressGestureRecognizer *longP = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longP)];
-//    longP.minimumPressDuration = 6;
-//    [self.customNavView addGestureRecognizer:longP];
 }
-
-//- (void)longP {
-//    if (self.webVC) return;
-//    if (![SPGlobalConfigManager shareManager].hadUnlockAllFunc) return;
-//    NSString *url = @"https://cn.bing.com/?mkt=zh-CN";
-//    NSString *webURL = [SPGlobalConfigManager shareManager].configModel.webview_url;
-//    if (kSTR_IS_VALID(webURL)) {
-//        url = webURL;
-//    }
-//    if (![SPGlobalConfigManager shareManager].configModel) {
-//        url = @"https://goto.sofan.in";
-//    }
-//
-//    AXWebViewController *webVC = [[AXWebViewController alloc] initWithURL:[NSURL URLWithString:url]];
-//    webVC.showsToolBar = YES;
-//    webVC.webView.allowsLinkPreview = YES;
-//    webVC.hidesBottomBarWhenPushed = YES;
-//    self.webVC = webVC;
-//    [[UIViewController currentVC].navigationController pushViewController:webVC animated:YES];
-//}
-
-
-//- (void)moveDemoVideoToDocPathIfNeeded {
-//    if ([[NSUserDefaults standardUserDefaults] boolForKey:kHadShowDemoVideos]) return;
-//    NSString *video1Path = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"mp4"];
-//    NSString *video2Path = [[NSBundle mainBundle] pathForResource:@"2" ofType:@"mp4"];
-//    NSString *video3Path = [[NSBundle mainBundle] pathForResource:@"3" ofType:@"mp4"];
-//
-//    NSString *newPath1 = [[[SPLocalFileManager sharedMgr] getDocumentPath] stringByAppendingPathComponent:@"/示例Mp4视频：短裤热舞٩(๑>◡<๑)۶.MP4"];
-//    NSString *newPath2 = [[[SPLocalFileManager sharedMgr] getDocumentPath] stringByAppendingPathComponent:@"/示例RMVB视频：猫耳超短裙~😘.RMVB"];
-//    NSString *newPath3 = [[[SPLocalFileManager sharedMgr] getDocumentPath] stringByAppendingPathComponent:@"/示例MKV视频：猫耳双马尾(￣ＴＴ￣).MKV"];
-//
-//    [[SPLocalFileManager sharedMgr] copyFileFromPath:video1Path toPath:newPath1];
-//    [[SPLocalFileManager sharedMgr] copyFileFromPath:video2Path toPath:newPath2];
-//    [[SPLocalFileManager sharedMgr] copyFileFromPath:video3Path toPath:newPath3];
-//    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kHadShowDemoVideos];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
-//}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -155,10 +114,10 @@
     NSArray *localFolders = [[SPLocalFileManager sharedMgr] getLocalFiles];
     self.filesArray = [NSMutableArray arrayWithArray:localFolders];
     if (localFolders.count == 0) {
-        if (!self.emptyView) {
+        if (!self.currentEmptyView) {
             SPEmptyControl *control = [SPEmptyControl showEmptyViewOnView:self.view inset:UIEdgeInsetsMake(kNavbarHeight, 0, kTabbarHeight, 0)];
-            self.emptyView = control;
-            self.emptyView.titleLabel.text = kZHLocalizedString(@"空空如也，点击上传视频 ~_~ ");
+            self.currentEmptyView = control;
+            self.currentEmptyView.titleLabel.text = kZHLocalizedString(@"空空如也，点击上传视频 ~_~ ");
             [self.view addSubview:control];
             @weakify(self)
             control.emptyViewOnClicked = ^{
@@ -166,13 +125,13 @@
                 [self showPopView:nil];
             };
         } else {
-            self.emptyView.hidden = NO;
+            self.currentEmptyView.hidden = NO;
             self.fileManagerTableView.hidden = YES;
         }
        
     } else {
         self.fileManagerTableView.hidden = NO;
-        self.emptyView.hidden = YES;
+        self.currentEmptyView.hidden = YES;
         
         if (![self.view.subviews containsObject:self.fileManagerTableView]) {
             [self.view addSubview:self.fileManagerTableView];
@@ -268,11 +227,11 @@
 - (void)initNaviView {
     SPBaseButton *btn = [[SPBaseButton alloc] init];
     [btn setImage:[UIImage imageNamed:@"sp_icon_add_white"] forState:UIControlStateNormal];
-    [self.customNavView addSubview:btn];
+    [self.customNaviView addSubview:btn];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(48, 48));
-        make.centerY.mas_equalTo(self.customNavView).offset(20);
-        make.right.mas_equalTo(self.customNavView).offset(-6);
+        make.centerY.mas_equalTo(self.customNaviView).offset(20);
+        make.right.mas_equalTo(self.customNaviView).offset(-6);
     }];
     [btn addTarget:self action:@selector(showPopView:) forControlEvents:UIControlEventTouchUpInside];
 }
