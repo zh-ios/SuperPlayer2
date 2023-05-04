@@ -23,7 +23,7 @@
     label.font = [UIFont systemFontOfSize:17];
     label.numberOfLines = 0;
     label.textColor = kThemeMiddleColor;
-    label.text = kZHLocalizedString(@"感谢支持和反馈! \n\n 请将反馈内容编辑后发送至 1069916339@qq.com 进行反馈，我们会认真对待您的反馈内容，并基于此作出改进和优化~");
+    label.text = kZHLocalizedString(@"感谢支持和反馈! \n\n 如有疑问可以邮件咨询 cili1024studio@163.com 进行反馈或者获取帮助😘~");
     [self.view addSubview:label];
     [label sizeToFit];
 }

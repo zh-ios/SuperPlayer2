@@ -45,9 +45,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSMutableArray *iapInfos;
 
-
-- (BOOL)isMainland;
-
 - (void)getIAPInfo;
 @end
 

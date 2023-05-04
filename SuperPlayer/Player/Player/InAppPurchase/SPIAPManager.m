@@ -322,12 +322,4 @@ static SPIAPManager *_mgr = nil;
     [req start];
 }
 
-- (BOOL)isMainland {
-    // iOS 获取设备当前语言和地区的代码
-    NSString *currentLanguageRegion = [[[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"] firstObject];
-    if ([currentLanguageRegion isEqualToString:@"zh-Hans-CN"]) {
-        return YES;
-    }
-    return NO;
-}
 @end

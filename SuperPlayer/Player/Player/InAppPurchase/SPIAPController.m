@@ -35,10 +35,7 @@
     [self setupSubviews];
     
     [self addrestoreIAPBtn];
-    if ([SPGlobalConfigManager shareManager].configModel.is_new_version_online) {
-        [[SPIAPManager shareManager] requestProductWithPid:kunlockForever];
-    }
-    
+
     [SPIAPManager shareManager].delegate = self;
 }
 

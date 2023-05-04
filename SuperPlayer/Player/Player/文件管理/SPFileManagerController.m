@@ -433,12 +433,10 @@
     BOOL hadUnlockAllFunc = [SPGlobalConfigManager shareManager].hadUnlockAllFunc;
     // 大于免费加密数量且没有付费且没有好评过
     NSInteger maxCount = kLockVideoMaxCount;
-    if ([SPGlobalConfigManager shareManager].hadClickGoodCmt) {
-        maxCount = 1000;
-    }
+    maxCount = NSIntegerMax;
     if (lockedFilesCount>=maxCount&&!hadUnlockAllFunc) {
         
-        [SPToastUtil showToast:kZHLocalizedString(@"免费视频加密额度已用尽，即将前往激活 PRO 模式") duration:2 completed:^{
+        [SPToastUtil showToast:kZHLocalizedString(@"免费视频加密额度已用尽，即将前往激活 VIP") duration:1.5 completed:^{
             SPIAPController *iapVC = [[SPIAPController alloc] init];
             iapVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:iapVC animated:YES];
