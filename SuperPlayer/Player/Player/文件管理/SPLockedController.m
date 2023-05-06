@@ -16,7 +16,7 @@
 
 @interface  SPLockedController()<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UITableView *lockedTableView;
 @property (nonatomic, strong) NSMutableArray *filesArray;
 @property (nonatomic, strong) SPEmptyControl *currentEmptyView;
 @property (nonatomic, strong) SPScreenLockController *SPScreenLockController;
@@ -42,7 +42,7 @@
     [super viewDidLoad];
     self.title = kZHLocalizedString(@"Vip视频");
     [self reloadController];
-    [self.tableView reloadData];
+    [self.lockedTableView reloadData];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadViewController:) name:@"lockedFilesUpdatedNoti" object:nil];
 }
 
@@ -72,7 +72,7 @@
     [super viewWillAppear:animated];
     if (self.shouldReloadData) {
         [self reloadController];
-        [self.tableView reloadData];
+        [self.lockedTableView reloadData];
         self.shouldReloadData = NO;
     }
     [self showLockView];
@@ -102,7 +102,7 @@
 
 - (void)reloadViewController:(NSNotification *)noti {
     [self reloadController];
-    [self.tableView reloadData];
+    [self.lockedTableView reloadData];
 }
 
 - (void)reloadController {
@@ -110,27 +110,27 @@
     self.filesArray = [NSMutableArray arrayWithArray:localFolders];
     if (localFolders.count == 0) {
         self.currentEmptyView.hidden = NO;
-        self.tableView.hidden = YES;
+        self.lockedTableView.hidden = YES;
     } else {
-        self.tableView.hidden = NO;
+        self.lockedTableView.hidden = NO;
         self.currentEmptyView.hidden = YES;
     }
 }
 
-- (UITableView *)tableView {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavbarHeight, kScreenWidth, kScreenHeight-kNavbarHeight-kTabbarHeight)];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.rowHeight = 90;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.tableFooterView = [[SPBaseView alloc] init];
-        _tableView.estimatedSectionFooterHeight = 0;
-        _tableView.estimatedSectionHeaderHeight = 0;
-        _tableView.estimatedRowHeight = 0;
-        [self.view addSubview:_tableView];
+- (UITableView *)llockedTableView {
+    if (!_lockedTableView) {
+        _lockedTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, kNavbarHeight, kScreenWidth, kScreenHeight-kNavbarHeight-kTabbarHeight)];
+        _lockedTableView.delegate = self;
+        _lockedTableView.dataSource = self;
+        _lockedTableView.rowHeight = 90;
+        _lockedTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _lockedTableView.tableFooterView = [[SPBaseView alloc] init];
+        _lockedTableView.estimatedSectionFooterHeight = 0;
+        _lockedTableView.estimatedSectionHeaderHeight = 0;
+        _lockedTableView.estimatedRowHeight = 0;
+        [self.view addSubview:_lockedTableView];
     }
-    return _tableView;
+    return _lockedTableView;
 }
 
 #pragma mark --- tableViewDelegate and datasource
@@ -306,11 +306,11 @@
     NSInteger index = [self.filesArray indexOfObject:file];
     [self.filesArray removeObject:file];
     NSIndexPath *deletedIndexPath = [NSIndexPath indexPathForRow:index inSection:0];
-    [self.tableView deleteRowsAtIndexPaths:@[deletedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.lockedTableView deleteRowsAtIndexPaths:@[deletedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     if (self.filesArray.count == 0) {
         self.currentEmptyView.hidden = NO;
-        self.tableView.hidden = YES;
+        self.lockedTableView.hidden = YES;
     }
 }
 
@@ -338,7 +338,7 @@
         model.fullPath = [model.fullPath stringByReplacingOccurrencesOfString:model.name withString:targetName];
 
         model.name = targetName;
-        [self.tableView reloadRowsAtIndexPaths:@[reloadIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.lockedTableView reloadRowsAtIndexPaths:@[reloadIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 

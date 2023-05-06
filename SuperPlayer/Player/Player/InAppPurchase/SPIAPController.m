@@ -157,6 +157,7 @@
     [self.containerView addSubview:previewBtn];
     previewBtn.layer.cornerRadius = previewBtn.height*0.5;
     previewBtn.clipsToBounds = YES;
+    previewBtn.hidden = YES;
     [previewBtn addTarget:self action:@selector(preview:) forControlEvents:UIControlEventTouchUpInside];
     
     SPBaseLabel *declarationLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(iapLeftPadding, previewBtn.bottom+30, self.subscribeBtn.width, 40)];

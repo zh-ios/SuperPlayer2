@@ -10,10 +10,10 @@
 
 @interface SPFileCell ()
 
-@property (nonatomic, strong) UIImageView *coverImageView;
-@property (nonatomic, strong) UIImageView *lockImageView;
-@property (nonatomic, strong) SPBaseLabel *titleL;
-@property (nonatomic, strong) SPBaseLabel *sizeLabel;
+@property (nonatomic, strong) UIImageView *coverImgView;
+@property (nonatomic, strong) UIImageView *lockImgView;
+@property (nonatomic, strong) SPBaseLabel *titleLabel;
+@property (nonatomic, strong) SPBaseLabel *sizeLbl;
 @property (nonatomic, strong) SPFilesModel *SPFilesModel;
 
 @end
@@ -31,34 +31,34 @@
 - (void)setupSubviews {
     CGFloat leftPadding = 15;
     CGFloat topPadding = 15;
-    self.coverImageView = [[SPBaseImageView alloc] initWithFrame:CGRectMake(leftPadding, topPadding+3, 80, 60)];
-    self.coverImageView.contentMode = UIViewContentModeScaleAspectFill;
-    self.coverImageView.clipsToBounds = YES;
-    [self.contentView addSubview:self.coverImageView];
-    self.coverImageView.clipsToBounds = YES;
-    self.coverImageView.layer.cornerRadius = 4;
+    self.coverImgView = [[SPBaseImageView alloc] initWithFrame:CGRectMake(leftPadding, topPadding+3, 80, 60)];
+    self.coverImgView.contentMode = UIViewContentModeScaleAspectFill;
+    self.coverImgView.clipsToBounds = YES;
+    [self.contentView addSubview:self.coverImgView];
+    self.coverImgView.clipsToBounds = YES;
+    self.coverImgView.layer.cornerRadius = 4;
     
-    self.lockImageView = [[SPBaseImageView alloc] initWithFrame:CGRectMake(self.coverImageView.width-20, self.coverImageView.height-20, 20, 20)];
-    self.lockImageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.lockImageView.image = [UIImage imageNamed:@"sp_icon_lock"];
-    [self.coverImageView addSubview:self.lockImageView];
-    self.lockImageView.hidden = YES;
+    self.lockImgView = [[SPBaseImageView alloc] initWithFrame:CGRectMake(self.coverImgView.width-20, self.coverImgView.height-20, 20, 20)];
+    self.lockImgView.contentMode = UIViewContentModeScaleAspectFit;
+    self.lockImgView.image = [UIImage imageNamed:@"sp_icon_lock"];
+    [self.coverImgView addSubview:self.lockImgView];
+    self.lockImgView.hidden = YES;
     
-    self.titleL = [[SPBaseLabel alloc] initWithFrame:CGRectMake(self.coverImageView.right+10, self.coverImageView.top+5, kScreenWidth-10*2-self.coverImageView.right- 50, 0)];
-    self.titleL.font = [UIFont systemFontOfSize:14];
-    self.titleL.numberOfLines = 2;
-//    self.titleL.height = self.titleL.font.lineHeight+1;
-    self.titleL.textColor = kTextColor3;
-    [self.contentView addSubview:self.titleL];
-    self.titleL.lineBreakMode = NSLineBreakByTruncatingMiddle;
+    self.titleLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(self.coverImgView.right+10, self.coverImgView.top+5, kScreenWidth-10*2-self.coverImgView.right- 50, 0)];
+    self.titleLabel.font = [UIFont systemFontOfSize:14];
+    self.titleLabel.numberOfLines = 2;
+//    self.titleLabel.height = self.titleLabel.font.lineHeight+1;
+    self.titleLabel.textColor = kTextColor3;
+    [self.contentView addSubview:self.titleLabel];
+    self.titleLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
     
-    self.sizeLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(self.coverImageView.right+10, self.coverImageView.bottom+10, self.titleL.width, 0)];
+    self.sizeLbl = [[SPBaseLabel alloc] initWithFrame:CGRectMake(self.coverImgView.right+10, self.coverImgView.bottom+10, self.titleLabel.width, 0)];
     
-    self.sizeLabel.font = [UIFont systemFontOfSize:12];
-    self.sizeLabel.height = self.sizeLabel.font.lineHeight+1;
-    self.sizeLabel.bottom = self.coverImageView.bottom-5;
-    self.sizeLabel.textColor = kTextColor9;
-    [self.contentView addSubview:self.sizeLabel];
+    self.sizeLbl.font = [UIFont systemFontOfSize:12];
+    self.sizeLbl.height = self.sizeLbl.font.lineHeight+1;
+    self.sizeLbl.bottom = self.coverImgView.bottom-5;
+    self.sizeLbl.textColor = kTextColor9;
+    [self.contentView addSubview:self.sizeLbl];
     
     self.operateBtn = [[SPBaseButton alloc] initWithFrame:CGRectMake(kScreenWidth-60, 15, 50, 50)];
     [self.operateBtn setImage:[UIImage imageNamed:@"sp_icon_operate"] forState:UIControlStateNormal];
@@ -75,32 +75,32 @@
 - (void)updateCellWithModel:(SPFilesModel *)model {
     self.SPFilesModel = model;
     if (model.isFolder) {
-        self.coverImageView.image = [UIImage imageNamed:@"sp_icon_file"];
-        self.sizeLabel.text = [NSString stringWithFormat:kZHLocalizedString(@"%@ 共%@个视频"),model.fileSizeStringValue, @(model.filesCount)];
+        self.coverImgView.image = [UIImage imageNamed:@"sp_icon_file"];
+        self.sizeLbl.text = [NSString stringWithFormat:kZHLocalizedString(@"%@ 共%@个视频"),model.fileSizeStringValue, @(model.filesCount)];
     } else {
         // TODO 由于加载图片需要时间，显示上会有问题， 会先显示文件夹图片然后再显示 封面图
         [[SPVideoManager sharedMgr] getThumbnailImage:model.fullPath completion:^(UIImage * _Nullable image) {
             if (image) {
-                self.coverImageView.image = image;
+                self.coverImgView.image = image;
             } else {
-                self.coverImageView.image = [UIImage imageFromColor:[UIColor blackColor]];
+                self.coverImgView.image = [UIImage imageFromColor:[UIColor blackColor]];
             }
         }];
-        self.sizeLabel.text = model.fileSizeStringValue;
+        self.sizeLbl.text = model.fileSizeStringValue;
         // 先用黑色照片覆盖
-        self.coverImageView.image = [UIImage imageFromColor:[UIColor blackColor]];
+        self.coverImgView.image = [UIImage imageFromColor:[UIColor blackColor]];
     }
-    self.titleL.text = model.name;
+    self.titleLabel.text = model.name;
     // 设置原始最大宽度 ，防止重用的时候，宽度变小的问题
-    self.titleL.width = kScreenWidth-10*2-self.coverImageView.right- 50;
-    [self.titleL sizeToFit];
+    self.titleLabel.width = kScreenWidth-10*2-self.coverImgView.right- 50;
+    [self.titleLabel sizeToFit];
     
-    self.lockImageView.hidden = !model.isLocked;
+    self.lockImgView.hidden = !model.isLocked;
     
     if (model.isFolder) {
-        self.coverImageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.coverImgView.contentMode = UIViewContentModeScaleAspectFit;
     } else {
-        self.coverImageView.contentMode = UIViewContentModeScaleAspectFill
+        self.coverImgView.contentMode = UIViewContentModeScaleAspectFill
         ;
     }
 }

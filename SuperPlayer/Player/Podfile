@@ -35,10 +35,6 @@ target 'SPlayer' do
 #  pod 'SDWebImageWebPCoder'
   pod 'Masonry'
   pod 'LMJHorizontalScrollText'
-  pod 'MJRefresh', '~> 3.7.5'
-      
-  pod 'FMDB', '~> 2.7.5'
-      
 
   # 下载文件
 #  pod 'MZDownloadManager', '~> 3.6'

@@ -7,7 +7,6 @@
 //
 
 #import "SPBaseController.h"
-#import "SPNavigationAnimation.h"
 #import "SPNavigationController.h"
 #import "SPNavigationBar.h"
 @interface SPBaseController ()<UINavigationControllerDelegate>

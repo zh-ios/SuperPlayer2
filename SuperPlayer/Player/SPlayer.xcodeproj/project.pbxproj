@@ -87,8 +87,6 @@
 		3698A53F274F308E0046FD68 /* XCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A48F274F308C0046FD68 /* XCTextField.m */; };
 		3698A540274F308E0046FD68 /* SPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A490274F308C0046FD68 /* SPTableViewCell.m */; };
 		3698A542274F308E0046FD68 /* SPNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A498274F308C0046FD68 /* SPNavigationBar.m */; };
-		3698A543274F308E0046FD68 /* SPNavigationAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A49C274F308C0046FD68 /* SPNavigationAnimation.m */; };
-		3698A544274F308E0046FD68 /* SPPopDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A49D274F308C0046FD68 /* SPPopDownMenu.m */; };
 		3698A545274F308E0046FD68 /* SPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A49E274F308C0046FD68 /* SPNavigationController.m */; };
 		3698A547274F308E0046FD68 /* SPBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A4A3274F308C0046FD68 /* SPBaseController.m */; };
 		3698A548274F308E0046FD68 /* SPEmptyControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A4A4274F308C0046FD68 /* SPEmptyControl.m */; };
@@ -125,7 +123,6 @@
 		3698A56E274F308E0046FD68 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A4FB274F308D0046FD68 /* MBProgressHUD.m */; };
 		3698A56F274F308E0046FD68 /* SPScreenLockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A4FF274F308D0046FD68 /* SPScreenLockController.m */; };
 		3698A572274F308E0046FD68 /* NSDate+AHDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A506274F308D0046FD68 /* NSDate+AHDateUtil.m */; };
-		3698A573274F308E0046FD68 /* UIView+mainThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A508274F308D0046FD68 /* UIView+mainThread.m */; };
 		3698A576274F308E0046FD68 /* UIView+ExtendHitArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A50D274F308D0046FD68 /* UIView+ExtendHitArea.m */; };
 		3698A577274F308E0046FD68 /* NSString+stringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A50E274F308D0046FD68 /* NSString+stringUtil.m */; };
 		3698A578274F308E0046FD68 /* UIView+coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698A511274F308D0046FD68 /* UIView+coordinate.m */; };
@@ -342,14 +339,10 @@
 		3698A490274F308C0046FD68 /* SPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTableViewCell.m; sourceTree = "<group>"; };
 		3698A493274F308C0046FD68 /* SPEmptyControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEmptyControl.h; sourceTree = "<group>"; };
 		3698A494274F308C0046FD68 /* SPBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBaseController.h; sourceTree = "<group>"; };
-		3698A496274F308C0046FD68 /* SPNavigationAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNavigationAnimation.h; sourceTree = "<group>"; };
 		3698A497274F308C0046FD68 /* SPNavigationDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNavigationDefine.h; sourceTree = "<group>"; };
 		3698A498274F308C0046FD68 /* SPNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNavigationBar.m; sourceTree = "<group>"; };
-		3698A499274F308C0046FD68 /* SPPopDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPopDownMenu.h; sourceTree = "<group>"; };
 		3698A49A274F308C0046FD68 /* SPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNavigationController.h; sourceTree = "<group>"; };
 		3698A49B274F308C0046FD68 /* SPNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPNavigationBar.h; sourceTree = "<group>"; };
-		3698A49C274F308C0046FD68 /* SPNavigationAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNavigationAnimation.m; sourceTree = "<group>"; };
-		3698A49D274F308C0046FD68 /* SPPopDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPopDownMenu.m; sourceTree = "<group>"; };
 		3698A49E274F308C0046FD68 /* SPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPNavigationController.m; sourceTree = "<group>"; };
 		3698A4A0274F308C0046FD68 /* XCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCTextField.h; sourceTree = "<group>"; };
 		3698A4A1274F308C0046FD68 /* SPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTableViewCell.h; sourceTree = "<group>"; };
@@ -423,12 +416,10 @@
 		3698A4FF274F308D0046FD68 /* SPScreenLockController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPScreenLockController.m; sourceTree = "<group>"; };
 		3698A506274F308D0046FD68 /* NSDate+AHDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+AHDateUtil.m"; sourceTree = "<group>"; };
 		3698A507274F308D0046FD68 /* UIView+coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+coordinate.h"; sourceTree = "<group>"; };
-		3698A508274F308D0046FD68 /* UIView+mainThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+mainThread.m"; sourceTree = "<group>"; };
 		3698A509274F308D0046FD68 /* UIImage+color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+color.h"; sourceTree = "<group>"; };
 		3698A50D274F308D0046FD68 /* UIView+ExtendHitArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ExtendHitArea.m"; sourceTree = "<group>"; };
 		3698A50E274F308D0046FD68 /* NSString+stringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+stringUtil.m"; sourceTree = "<group>"; };
 		3698A50F274F308D0046FD68 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
-		3698A510274F308D0046FD68 /* UIView+mainThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+mainThread.h"; sourceTree = "<group>"; };
 		3698A511274F308D0046FD68 /* UIView+coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+coordinate.m"; sourceTree = "<group>"; };
 		3698A512274F308D0046FD68 /* NSDate+AHDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+AHDateUtil.h"; sourceTree = "<group>"; };
 		3698A516274F308D0046FD68 /* UIImage+color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+color.m"; sourceTree = "<group>"; };
@@ -913,15 +904,11 @@
 		3698A495274F308C0046FD68 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				3698A496274F308C0046FD68 /* SPNavigationAnimation.h */,
-				3698A49C274F308C0046FD68 /* SPNavigationAnimation.m */,
 				3698A49B274F308C0046FD68 /* SPNavigationBar.h */,
 				3698A498274F308C0046FD68 /* SPNavigationBar.m */,
 				3698A49A274F308C0046FD68 /* SPNavigationController.h */,
 				3698A49E274F308C0046FD68 /* SPNavigationController.m */,
 				3698A497274F308C0046FD68 /* SPNavigationDefine.h */,
-				3698A499274F308C0046FD68 /* SPPopDownMenu.h */,
-				3698A49D274F308C0046FD68 /* SPPopDownMenu.m */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -1077,8 +1064,6 @@
 				3698A50D274F308D0046FD68 /* UIView+ExtendHitArea.m */,
 				3627388027578F6D00BE2D9E /* UIView+gradient.h */,
 				3627387F27578F6D00BE2D9E /* UIView+gradient.m */,
-				3698A510274F308D0046FD68 /* UIView+mainThread.h */,
-				3698A508274F308D0046FD68 /* UIView+mainThread.m */,
 				360A540C27605A5A00F50621 /* UIViewController+topViewController.h */,
 				360A540B27605A5A00F50621 /* UIViewController+topViewController.m */,
 			);
@@ -1381,7 +1366,6 @@
 			files = (
 				368D97F0276AE71000D29812 /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 				365A24282769F03100671EBC /* TZAssetCell.m in Sources */,
-				3698A543274F308E0046FD68 /* SPNavigationAnimation.m in Sources */,
 				36DB11FF29E51CEA005E0231 /* UITabBarItem+CYLBadgeExtention.m in Sources */,
 				36DB112D29E3C792005E0231 /* SPBaseView.m in Sources */,
 				3698A562274F308E0046FD68 /* YYTextParser.m in Sources */,
@@ -1450,7 +1434,6 @@
 				362738AD2759FD5700BE2D9E /* SPCellItem.m in Sources */,
 				369385BB279559CD00B4361E /* SPJSONModelArray.m in Sources */,
 				36DB120D29E54716005E0231 /* SPAppThemeManager.m in Sources */,
-				3698A573274F308E0046FD68 /* UIView+mainThread.m in Sources */,
 				36DB112E29E3C792005E0231 /* SPBaseTableViewCell.m in Sources */,
 				3698A55A274F308E0046FD68 /* YYTextInput.m in Sources */,
 				365A242B2769F03100671EBC /* TZVideoPlayerController.m in Sources */,
@@ -1525,7 +1508,6 @@
 				3698A569274F308E0046FD68 /* UIPasteboard+YYText.m in Sources */,
 				3698A47F274E2E5C0046FD68 /* main.m in Sources */,
 				3683EE8B27B6309C006A2E6C /* UIView+CornerRadius.m in Sources */,
-				3698A544274F308E0046FD68 /* SPPopDownMenu.m in Sources */,
 				368D97F3276AE71000D29812 /* GCDWebServerFileRequest.m in Sources */,
 				3698A48C274F307F0046FD68 /* AppDelegate+Service.m in Sources */,
 				3698A556274F308E0046FD68 /* YYTextView.m in Sources */,

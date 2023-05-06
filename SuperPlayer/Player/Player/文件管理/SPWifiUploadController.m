@@ -53,13 +53,13 @@
     
     SPBaseLabel *titleLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(wifi.right+13, 10, btnWH, btnWH)];
     titleLabel.font = [UIFont systemFontOfSize:28 weight:UIFontWeightLight];
-    titleLabel.text = kZHLocalizedString(@"Wifi 快速传输");
+    titleLabel.text = kZHLocalizedString(@"Wifi快速传输");
     [titleLabel sizeToFit];
     titleLabel.textColor = kThemeMiddleColor;
     [containerScrollView addSubview:titleLabel];
     
     SPBaseLabel *tipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, wifi.bottom+15, self.view.width-leftpadding, 18)];
-    tipLabel.text = kZHLocalizedString(@"请在浏览器里输入以下地址：");
+    tipLabel.text = kZHLocalizedString(@"在浏览器里输入以下地址：");
     tipLabel.textColor = kTextColor3;
     [containerScrollView addSubview:tipLabel];
     

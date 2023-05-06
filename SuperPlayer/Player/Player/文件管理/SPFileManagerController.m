@@ -27,7 +27,7 @@
 @interface SPFileManagerController ()<UITableViewDelegate,UITableViewDataSource,TZImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UITableView *fileManagerTableView;
-@property (nonatomic, strong) NSMutableArray *filesArray;
+@property (nonatomic, strong) NSMutableArray *fileArray;
 @property (nonatomic, strong) SPEmptyControl *currentEmptyView;
 @property (nonatomic, strong) GCDWebUploader *webServer;
 @property (nonatomic, assign) BOOL shouldReloadData;
@@ -36,17 +36,11 @@
 
 @implementation SPFileManagerController
 
-- (NSMutableArray *)filesArray {
-    if (!_filesArray) {
-        _filesArray = @[].mutableCopy;
-    }
-    return _filesArray;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = kZHLocalizedString(@"本地视频");
-    
+    self.fileArray = @[].mutableCopy;
     [self initNaviView];
     
 //    [self moveDemoVideoToDocPathIfNeeded];
@@ -112,7 +106,7 @@
 
 - (void)reloadController {
     NSArray *localFolders = [[SPLocalFileManager sharedMgr] getLocalFiles];
-    self.filesArray = [NSMutableArray arrayWithArray:localFolders];
+    self.fileArray = [NSMutableArray arrayWithArray:localFolders];
     if (localFolders.count == 0) {
         if (!self.currentEmptyView) {
             SPEmptyControl *control = [SPEmptyControl showEmptyViewOnView:self.view inset:UIEdgeInsetsMake(kNavbarHeight, 0, kTabbarHeight, 0)];
@@ -158,7 +152,7 @@
 #pragma mark --- tableViewDelegate and datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.filesArray.count;
+    return self.fileArray.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -171,7 +165,7 @@
     if (!cell) {
         cell = [[SPFileCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID cellFrame:CGRectMake(0, 0, kScreenWidth, 80)];
     }
-    [cell updateCellWithModel:self.filesArray[indexPath.row]];
+    [cell updateCellWithModel:self.fileArray[indexPath.row]];
     @weakify(self)
     cell.operateBtnOnClicked = ^(SPFilesModel * _Nonnull model, SPBaseButton *btn){
         @strongify(self)
@@ -187,7 +181,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        SPFilesModel *model = [self.filesArray objectAtIndex:indexPath.row];
+        SPFilesModel *model = [self.fileArray objectAtIndex:indexPath.row];
         if (model.isFolder) {
             [self deleteFolders:model indexPath:indexPath];
         } else {
@@ -202,7 +196,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    SPFilesModel *model = self.filesArray[indexPath.row];
+    SPFilesModel *model = self.fileArray[indexPath.row];
     if (model.isFolder) {
         SPFolderDetailController *detailVC = [[SPFolderDetailController alloc] init];
         detailVC.folderModel = model;
@@ -211,7 +205,7 @@
         [self.navigationController pushViewController:detailVC animated:YES];
     } else {
         NSMutableArray *fileURLArr = @[].mutableCopy;
-        for (SPFilesModel *m in self.filesArray) {
+        for (SPFilesModel *m in self.fileArray) {
             if (!m.isFolder) {
                 [fileURLArr addObject:m.fullPath];
             }
@@ -241,7 +235,7 @@
 #pragma mark --- alert
 - (void)showOperateAlert:(SPFilesModel *)model indexPath:(NSIndexPath *)indexPath sourceBtn:(SPBaseButton *)btn {
     
-    SPActionSheetItem *disableItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"选择您想要进行的操作") style:SPActionSheetItemStyle_Title];
+    SPActionSheetItem *disableItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"选择您的操作") style:SPActionSheetItemStyle_Title];
     SPActionSheetItem *lockItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"加密") style:SPActionSheetItemStyle_Default];
     SPActionSheetItem *deleteItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"删除") style:SPActionSheetItemStyle_Default];
     SPActionSheetItem *renameItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"重命名") style:SPActionSheetItemStyle_Default];
@@ -280,7 +274,7 @@
             }
             if (index == 4) {
                 SPAllLocalFoldersController *folders = [[SPAllLocalFoldersController alloc] init];
-                folders.model = self.filesArray[indexPath.row];
+                folders.model = self.fileArray[indexPath.row];
                 folders.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:folders animated:YES];
                 self.shouldReloadData = YES;
@@ -291,7 +285,7 @@
 
 - (void)showPopView:(SPBaseButton *)btn {
     
-    SPActionSheetItem *disableItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"选择您想要进行的操作") style:SPActionSheetItemStyle_Title];
+    SPActionSheetItem *disableItem = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"选择您的操作") style:SPActionSheetItemStyle_Title];
     SPActionSheetItem *createFolder = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"新建文件夹") style:SPActionSheetItemStyle_Default];
     SPActionSheetItem *album = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"上传相册视频") style:SPActionSheetItemStyle_Default];
     SPActionSheetItem *wifi = [SPActionSheetItem makeSPActionSheetItemWithTitle:kZHLocalizedString(@"通过 Wifi/iTunes 上传") style:SPActionSheetItemStyle_Default];
@@ -376,7 +370,7 @@
 }
 
 - (void)reNameFiles:(SPFilesModel *)model indexPath:(NSIndexPath *)indexpath{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:kZHLocalizedString(@"请重新输入文件的名字") message:model.name preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:kZHLocalizedString(@"重新输入文件的名字") message:model.name preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:kZHLocalizedString(@"确定") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSString *fileName = [alert.textFields firstObject].text;
         [self reNameFileOp:fileName fileModel:model];
@@ -451,19 +445,19 @@
         repeated = [[SPLocalFileManager sharedMgr] hasSameNameFile:model.name folderPath:[[SPLocalFileManager sharedMgr] getLockedFilePath]];
     }
     if (repeated) {
-        [SPToastUtil showToast:kZHLocalizedString(@"已存在同名文件，请重命名后再进行操作！")];
+        [SPToastUtil showToast:kZHLocalizedString(@"已存在同名文件，重命名后再进行操作！")];
         return;
     } else {
         [[SPLocalFileManager sharedMgr] moveFileFromPath:model.fullPath toPath:[[SPLocalFileManager sharedMgr] getLockedFilePath]];
         
-        NSInteger deleteIndex = [self.filesArray indexOfObject:model];
-        [self.filesArray removeObject:model];
+        NSInteger deleteIndex = [self.fileArray indexOfObject:model];
+        [self.fileArray removeObject:model];
         NSIndexPath *deletedIndexPath = [NSIndexPath indexPathForRow:deleteIndex inSection:0];
         [self.fileManagerTableView deleteRowsAtIndexPaths:@[deletedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         // 发送更新通知
         [[NSNotificationCenter defaultCenter] postNotificationName:@"lockedFilesUpdatedNoti" object:nil];
         
-        if (self.filesArray.count == 0) {
+        if (self.fileArray.count == 0) {
             [self reloadController];
         }
     }
@@ -537,12 +531,12 @@
 
 #pragma mark ----文件各种操作
 - (void)showCreateFolderAlert {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:kZHLocalizedString(@"请输入文件夹名字") message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:kZHLocalizedString(@"输入文件夹名字") message:nil preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:kZHLocalizedString(@"确定") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSString *folderName = [alert.textFields firstObject].text;
         BOOL repeated = [[SPLocalFileManager sharedMgr] hasSameNameFolders:folderName folderPath:[[SPLocalFileManager sharedMgr] getGlobalFilePath]];
         if (repeated) {
-            [SPToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
+            [SPToastUtil showToast:kZHLocalizedString(@"重名了，请换一个名字吧~")];
         } else {
             [[SPLocalFileManager sharedMgr] createFolders:folderName];
             [self reloadController];
@@ -559,12 +553,12 @@
 
 - (void)deleteOption:(SPFilesModel *)file {
     [[SPLocalFileManager sharedMgr] deleteFolders:file.fullPath];
-    NSInteger index = [self.filesArray indexOfObject:file];
-    [self.filesArray removeObject:file];
+    NSInteger index = [self.fileArray indexOfObject:file];
+    [self.fileArray removeObject:file];
     NSIndexPath *deletedIndexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.fileManagerTableView deleteRowsAtIndexPaths:@[deletedIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
-    if (self.filesArray.count == 0) {
+    if (self.fileArray.count == 0) {
         [self reloadController];
     }
 }
@@ -572,7 +566,7 @@
 
 - (void)reNameFileOp:(NSString *)fileName fileModel:(SPFilesModel *)model {
     if ([fileName trimingWhiteSpaceAndNewline].length == 0) {
-        [SPToastUtil showToast:kZHLocalizedString(@"请输入有效文件名")];
+        [SPToastUtil showToast:kZHLocalizedString(@"输入有效文件名")];
         return;
     }
     BOOL repeated = NO;
@@ -583,10 +577,10 @@
     }
      
     if (repeated) {
-        [SPToastUtil showToast:kZHLocalizedString(@"重名了，换一个名字吧~")];
+        [SPToastUtil showToast:kZHLocalizedString(@"重名了，请换一个名字吧~")];
         return;
     } else {
-        NSInteger index = [self.filesArray indexOfObject:model];
+        NSInteger index = [self.fileArray indexOfObject:model];
         NSIndexPath *reloadIndexPath = [NSIndexPath indexPathForRow:index inSection:0];
         [[SPLocalFileManager sharedMgr] reNameFoldersWithName:fileName folderPath:model.fullPath];
         NSString *targetName = [fileName stringByAppendingPathExtension:[model.fullPath pathExtension]];

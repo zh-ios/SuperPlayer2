@@ -45,7 +45,11 @@
 //    [[SDImageCodersManager sharedMgr] addCoder:webPCoder];
 //    
     [self initWindow];
-
+    
+    NSInteger ts = arc4random_uniform(160);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(ts * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SKStoreReviewController requestReview];
+    });
     return YES;
 }
 
