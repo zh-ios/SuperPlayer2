@@ -30,14 +30,14 @@
 - (void)setupSubviews {
     
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+    UIImageView *imageView = [[SPBaseImageView alloc] initWithFrame:self.bounds];
     [self addSubview:imageView];
     UIImage *image = [UIView gradientImageFromColor:nil toColor:nil size:CGSizeMake(kScreenWidth, kNavbarHeight)];
     imageView.image = image;
     self.backgroundImageView = imageView;
     
     
-    UILabel *titleL = [[SPBaseLabel alloc] initWithFrame:CGRectMake(80, kTopSafeArea + 10, self.frame.size.width-80*2, 20)];
+    SPBaseLabel *titleL = [[SPBaseLabel alloc] initWithFrame:CGRectMake(80, kTopSafeArea + 10, self.frame.size.width-80*2, 20)];
     titleL.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
     self.titleL = titleL;
     self.titleL.textAlignment = NSTextAlignmentCenter;

@@ -9,7 +9,7 @@
 
 @interface SPScreenLockController ()
 
-@property (nonatomic, strong) UILabel *pwdLabel;
+@property (nonatomic, strong) SPBaseLabel *pwdLabel;
 @property (nonatomic, copy) NSString *currentInputPwd;
 @property (nonatomic, strong) NSMutableArray *inpuNumbers;
 @property (nonatomic, strong) SPBaseButton *dtShowBtn;
@@ -27,7 +27,7 @@
 }
 
 - (void)setupSubviews {
-    UILabel *inputTipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, kNavbarHeight+40, self.view.width, 20)];
+    SPBaseLabel *inputTipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, kNavbarHeight+40, self.view.width, 20)];
     inputTipLabel.textColor = kScreenLockThemeColor;
     inputTipLabel.textAlignment = NSTextAlignmentCenter;
     inputTipLabel.text = kZHLocalizedString(@"请 输 入 密 码");

@@ -18,7 +18,7 @@
 
 @interface TZImagePickerController () {
     NSTimer *_timer;
-    UILabel *_tipLabel;
+    SPBaseLabel *_tipLabel;
     SPBaseButton *_settingBtn;
     BOOL _pushPhotoPickerVc;
     BOOL _didPushPhotoPickerVc;
@@ -27,7 +27,7 @@
     SPBaseButton *_progressHUD;
     UIView *_HUDContainer;
     UIActivityIndicatorView *_HUDIndicatorView;
-    UILabel *_HUDLabel;
+    SPBaseLabel *_HUDLabel;
     
     UIStatusBarStyle _originStatusBarStyle;
 }

@@ -15,7 +15,6 @@ static CGFloat const CYLTabBarControllerHeight = 40.f;
 #import "SPProfileController.h"
 #import "SPFileManagerController.h"
 #import "SPLockedController.h"
-#import "SPVersionManager.h"
 #import <CoreMotion/CoreMotion.h>
 #import <CoreMotion/CoreMotion.h>
 

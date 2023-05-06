@@ -290,12 +290,12 @@ NS_ASSUME_NONNULL_BEGIN
  * A label that holds an optional short message to be displayed below the activity indicator. The HUD is automatically resized to fit
  * the entire text.
  */
-@property (strong, nonatomic, readonly) UILabel *label;
+@property (strong, nonatomic, readonly) SPBaseLabel *label;
 
 /**
  * A label that holds an optional details message displayed below the labelText message. The details text can span multiple lines.
  */
-@property (strong, nonatomic, readonly) UILabel *detailsLabel;
+@property (strong, nonatomic, readonly) SPBaseLabel *detailsLabel;
 
 /**
  * A button that is placed below the labels. Visible only if a target / action is added. 

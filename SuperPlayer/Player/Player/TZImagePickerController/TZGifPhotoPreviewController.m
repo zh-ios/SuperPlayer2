@@ -85,7 +85,7 @@
     }
     [_toolBar addSubview:_doneButton];
     
-    UILabel *byteLabel = [[SPBaseLabel alloc] init];
+    SPBaseLabel *byteLabel = [[SPBaseLabel alloc] init];
     byteLabel.textColor = [UIColor whiteColor];
     byteLabel.font = [UIFont systemFontOfSize:13];
     byteLabel.frame = CGRectMake(10, 0, 100, 44);

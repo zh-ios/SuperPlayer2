@@ -20,17 +20,17 @@
 @property (nonatomic, strong) SPBaseButton *backBtn;
 @property (nonatomic, strong) SPBaseButton *downloadButton;
 /// 标题
-@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) SPBaseLabel *titleLabel;
 /// 底部工具栏
 @property (nonatomic, strong) UIView *bottomToolView;
 /// 播放或暂停按钮
 @property (nonatomic, strong) SPBaseButton *playOrPauseBtn;
 /// 播放的当前时间
-@property (nonatomic, strong) UILabel *currentTimeLabel;
+@property (nonatomic, strong) SPBaseLabel *currentTimeLabel;
 /// 滑杆
 @property (nonatomic, strong) ZFSliderView *slider;
 /// 视频总时间
-@property (nonatomic, strong) UILabel *totalTimeLabel;
+@property (nonatomic, strong) SPBaseLabel *totalTimeLabel;
 /// 锁定屏幕按钮
 @property (nonatomic, strong) SPBaseButton *lockBtn;
 
@@ -418,7 +418,7 @@
     return _backBtn;
 }
 
-- (UILabel *)titleLabel {
+- (SPBaseLabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[SPBaseLabel alloc] init];
         _titleLabel.textColor = [UIColor whiteColor];
@@ -445,7 +445,7 @@
     return _playOrPauseBtn;
 }
 
-- (UILabel *)currentTimeLabel {
+- (SPBaseLabel *)currentTimeLabel {
     if (!_currentTimeLabel) {
         _currentTimeLabel = [[SPBaseLabel alloc] init];
         _currentTimeLabel.textColor = [UIColor whiteColor];
@@ -468,7 +468,7 @@
     return _slider;
 }
 
-- (UILabel *)totalTimeLabel {
+- (SPBaseLabel *)totalTimeLabel {
     if (!_totalTimeLabel) {
         _totalTimeLabel = [[SPBaseLabel alloc] init];
         _totalTimeLabel.textColor = [UIColor whiteColor];

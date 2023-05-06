@@ -10,7 +10,6 @@
 #import "UIView+gradient.h"
 #import "PrivacyController.h"
 #import "SPIAPManager.h"
-#import "SPVersionManager.h"
 #import "SPVIPPreviewController.h"
 #import <StoreKit/StoreKit.h>
 
@@ -70,7 +69,7 @@
 - (void)setupSubviews {
     CGFloat leftPadding = 15;
 
-    UILabel *tipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftPadding , kNavbarHeight+15, 250, 80)];
+    SPBaseLabel *tipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftPadding , kNavbarHeight+15, 250, 80)];
     tipLabel.text = [NSString stringWithFormat:kZHLocalizedString(@"  欢迎使用\n                     %@！"),kZHLocalizedString(@"妙播")];
     tipLabel.font = [UIFont boldSystemFontOfSize:25];
     tipLabel.numberOfLines = 2;
@@ -160,11 +159,7 @@
     previewBtn.clipsToBounds = YES;
     [previewBtn addTarget:self action:@selector(preview:) forControlEvents:UIControlEventTouchUpInside];
     
-    if(![SPVersionManager sharedMgr].isNewVersionAvailable) {
-        previewBtn.hidden = YES;
-    }
-    
-    UILabel *declarationLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(iapLeftPadding, previewBtn.bottom+30, self.subscribeBtn.width, 40)];
+    SPBaseLabel *declarationLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(iapLeftPadding, previewBtn.bottom+30, self.subscribeBtn.width, 40)];
     declarationLabel.textColor = kTextColor9;
     declarationLabel.font = [UIFont systemFontOfSize:9];
     [self.containerView addSubview:declarationLabel];

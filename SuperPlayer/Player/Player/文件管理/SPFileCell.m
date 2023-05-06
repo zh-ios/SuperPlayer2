@@ -12,8 +12,8 @@
 
 @property (nonatomic, strong) UIImageView *coverImageView;
 @property (nonatomic, strong) UIImageView *lockImageView;
-@property (nonatomic, strong) UILabel *titleL;
-@property (nonatomic, strong) UILabel *sizeLabel;
+@property (nonatomic, strong) SPBaseLabel *titleL;
+@property (nonatomic, strong) SPBaseLabel *sizeLabel;
 @property (nonatomic, strong) SPFilesModel *SPFilesModel;
 
 @end
@@ -31,14 +31,14 @@
 - (void)setupSubviews {
     CGFloat leftPadding = 15;
     CGFloat topPadding = 15;
-    self.coverImageView = [[UIImageView alloc] initWithFrame:CGRectMake(leftPadding, topPadding+3, 80, 60)];
+    self.coverImageView = [[SPBaseImageView alloc] initWithFrame:CGRectMake(leftPadding, topPadding+3, 80, 60)];
     self.coverImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.coverImageView.clipsToBounds = YES;
     [self.contentView addSubview:self.coverImageView];
     self.coverImageView.clipsToBounds = YES;
     self.coverImageView.layer.cornerRadius = 4;
     
-    self.lockImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.coverImageView.width-20, self.coverImageView.height-20, 20, 20)];
+    self.lockImageView = [[SPBaseImageView alloc] initWithFrame:CGRectMake(self.coverImageView.width-20, self.coverImageView.height-20, 20, 20)];
     self.lockImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.lockImageView.image = [UIImage imageNamed:@"sp_icon_lock"];
     [self.coverImageView addSubview:self.lockImageView];

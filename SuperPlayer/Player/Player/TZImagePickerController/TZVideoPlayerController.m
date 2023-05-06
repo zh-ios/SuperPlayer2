@@ -297,11 +297,11 @@
 - (UIView *)iCloudErrorView{
     if (!_iCloudErrorView) {
         _iCloudErrorView = [[SPBaseView alloc] initWithFrame:CGRectMake(0, [TZCommonTools tz_statusBarHeight] + 44 + 10, self.view.tz_width, 28)];
-        UIImageView *icloud = [[UIImageView alloc] init];
+        UIImageView *icloud = [[SPBaseImageView alloc] init];
         icloud.image = [UIImage tz_imageNamedFromMyBundle:@"iCloudError"];
         icloud.frame = CGRectMake(20, 0, 28, 28);
         [_iCloudErrorView addSubview:icloud];
-        UILabel *label = [[SPBaseLabel alloc] init];
+        SPBaseLabel *label = [[SPBaseLabel alloc] init];
         label.frame = CGRectMake(53, 0, self.view.tz_width - 63, 28);
         label.font = [UIFont systemFontOfSize:10];
         label.textColor = [UIColor whiteColor];

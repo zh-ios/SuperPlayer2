@@ -8,7 +8,6 @@
 #import "SPInputOnlineLinkerController.h"
 #import "YYTextView.h"
 #import "FBShimmeringView.h"
-#import "SPVersionManager.h"
 #import "SPIAPController.h"
 #import "SPVideoPlayerController.h"
 
@@ -27,11 +26,11 @@
 }
 
 - (void)setupSubviews {
-    UILabel *line = [[SPBaseLabel alloc] initWithFrame:CGRectMake(15, kNavbarHeight+50, self.view.width-15*2, 5)];
+    SPBaseLabel *line = [[SPBaseLabel alloc] initWithFrame:CGRectMake(15, kNavbarHeight+50, self.view.width-15*2, 5)];
     [self.view addSubview:line];
     [line addGradientColorsFrom:nil toColor:nil];
     
-    UIImageView *playIcon = [[UIImageView alloc] initWithFrame:CGRectMake(15, kNavbarHeight+60, 30, 30)];
+    UIImageView *playIcon = [[SPBaseImageView alloc] initWithFrame:CGRectMake(15, kNavbarHeight+60, 30, 30)];
     playIcon.image = [UIImage imageNamed:@"sp_icon_search_play"];
     [self.view addSubview:playIcon];
     [self rotateView:playIcon];
@@ -39,16 +38,12 @@
     FBShimmeringView *shim = [[FBShimmeringView alloc] initWithFrame:CGRectMake(playIcon.right+5, playIcon.top, kScreenWidth-playIcon.right-30, 30)];
     [self.view addSubview:shim];
     
-    UILabel *label = [[SPBaseLabel alloc] initWithFrame:shim.bounds];
+    SPBaseLabel *label = [[SPBaseLabel alloc] initWithFrame:shim.bounds];
     label.font = [UIFont systemFontOfSize:18];
     label.textColor = kThemeMiddleColor;
     shim.contentView = label;
     shim.shimmering = YES;
     NSString *tipStr = kZHLocalizedString(@"输入视频URL链接🔗在线播放");
-    if ([SPVersionManager sharedMgr].isNewVersionAvailable) {
-        tipStr = kZHLocalizedString(@"输入视频链接🔗在线播放");
-    }
-
     label.text = tipStr;
     
 //    CGFloat downloadBtnWH = 28;

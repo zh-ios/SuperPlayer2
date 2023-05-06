@@ -329,7 +329,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     _bezelView = bezelView;
     [self updateBezelMotionEffects];
 
-    UILabel *label = [UILabel new];
+    SPBaseLabel *label = [UILabel new];
     label.adjustsFontSizeToFitWidth = NO;
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = defaultColor;
@@ -338,7 +338,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     label.backgroundColor = [UIColor clearColor];
     _label = label;
 
-    UILabel *detailsLabel = [UILabel new];
+    SPBaseLabel *detailsLabel = [UILabel new];
     detailsLabel.adjustsFontSizeToFitWidth = NO;
     detailsLabel.textAlignment = NSTextAlignmentCenter;
     detailsLabel.textColor = defaultColor;

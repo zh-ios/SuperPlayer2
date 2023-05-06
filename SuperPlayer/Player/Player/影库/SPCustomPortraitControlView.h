@@ -27,19 +27,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) SPBaseButton *closeButton;
 
 /// 标题
-@property (nonatomic, strong, readonly) UILabel *titleLabel;
+@property (nonatomic, strong, readonly) SPBaseLabel *titleLabel;
 
 /// 播放或暂停按钮
 @property (nonatomic, strong, readonly) SPBaseButton *playOrPauseBtn;
 
 /// 播放的当前时间
-@property (nonatomic, strong, readonly) UILabel *currentTimeLabel;
+@property (nonatomic, strong, readonly) SPBaseLabel *currentTimeLabel;
 
 /// 滑杆
 @property (nonatomic, strong, readonly) ZFSliderView *slider;
 
 /// 视频总时间
-@property (nonatomic, strong, readonly) UILabel *totalTimeLabel;
+@property (nonatomic, strong, readonly) SPBaseLabel *totalTimeLabel;
 
 /// 全屏按钮
 @property (nonatomic, strong, readonly) SPBaseButton *fullScreenBtn;

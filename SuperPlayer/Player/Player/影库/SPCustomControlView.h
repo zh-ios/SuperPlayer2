@@ -37,7 +37,7 @@
 @property (nonatomic, strong, readonly) ZFSliderView *fastProgressView;
 
 /// 快进快退时间
-@property (nonatomic, strong, readonly) UILabel *fastTimeLabel;
+@property (nonatomic, strong, readonly) SPBaseLabel *fastTimeLabel;
 
 /// 快进快退ImageView
 @property (nonatomic, strong, readonly) UIImageView *fastImageView;

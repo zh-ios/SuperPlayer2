@@ -45,32 +45,32 @@
     CGFloat leftpadding = 15;
 
     CGFloat btnWH = 30;
-    UIImageView *wifi = [[UIImageView alloc] initWithFrame:CGRectMake(leftpadding, 10, btnWH, btnWH)];
+    UIImageView *wifi = [[SPBaseImageView alloc] initWithFrame:CGRectMake(leftpadding, 10, btnWH, btnWH)];
     wifi.image = [UIImage imageNamed:@"sp_icon_wifi_upload"];
     wifi.contentMode = UIViewContentModeScaleAspectFit;
     [containerScrollView addSubview:wifi];
 
     
-    UILabel *titleLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(wifi.right+13, 10, btnWH, btnWH)];
+    SPBaseLabel *titleLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(wifi.right+13, 10, btnWH, btnWH)];
     titleLabel.font = [UIFont systemFontOfSize:28 weight:UIFontWeightLight];
     titleLabel.text = kZHLocalizedString(@"Wifi 快速传输");
     [titleLabel sizeToFit];
     titleLabel.textColor = kThemeMiddleColor;
     [containerScrollView addSubview:titleLabel];
     
-    UILabel *tipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, wifi.bottom+15, self.view.width-leftpadding, 18)];
+    SPBaseLabel *tipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, wifi.bottom+15, self.view.width-leftpadding, 18)];
     tipLabel.text = kZHLocalizedString(@"请在浏览器里输入以下地址：");
     tipLabel.textColor = kTextColor3;
     [containerScrollView addSubview:tipLabel];
     
-    UILabel *ipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, tipLabel.bottom+15, self.view.width-leftpadding*2, 30)];
+    SPBaseLabel *ipLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, tipLabel.bottom+15, self.view.width-leftpadding*2, 30)];
     ipLabel.font = [UIFont boldSystemFontOfSize:25];
     ipLabel.text = [self.webServer.serverURL absoluteString];
     ipLabel.textColor = kTextColor3;
     [containerScrollView addSubview:ipLabel];
     ipLabel.backgroundColor = kThemeBeginColor;
     
-    UILabel *attentionLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, ipLabel.bottom+15, self.view.width-leftpadding*2, 200)];
+    SPBaseLabel *attentionLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, ipLabel.bottom+15, self.view.width-leftpadding*2, 200)];
     attentionLabel.textColor = kTextColor6;
     attentionLabel.numberOfLines = 0;
     attentionLabel.font = [UIFont systemFontOfSize:14];
@@ -86,20 +86,20 @@
     ////////////////////////////
     ///
     
-    UIImageView *itunesImage = [[UIImageView alloc] initWithFrame:CGRectMake(leftpadding, lineView.bottom+10, btnWH, btnWH)];
+    UIImageView *itunesImage = [[SPBaseImageView alloc] initWithFrame:CGRectMake(leftpadding, lineView.bottom+10, btnWH, btnWH)];
     itunesImage.image = [UIImage imageNamed:@"sp_icon_itunes"];
     itunesImage.contentMode = UIViewContentModeScaleAspectFit;
     [containerScrollView addSubview:itunesImage];
 
     
-    UILabel *itunesTitleLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(itunesImage.right+13, lineView.bottom+10, btnWH, btnWH)];
+    SPBaseLabel *itunesTitleLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(itunesImage.right+13, lineView.bottom+10, btnWH, btnWH)];
     itunesTitleLabel.font = [UIFont systemFontOfSize:28 weight:UIFontWeightLight];
     itunesTitleLabel.text = kZHLocalizedString(@"iTunes 快速传输");
     [itunesTitleLabel sizeToFit];
     itunesTitleLabel.textColor = kThemeMiddleColor;
     [containerScrollView addSubview:itunesTitleLabel];
     
-    UILabel *itunesLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, itunesTitleLabel.bottom+10, lineView.width, 200)];
+    SPBaseLabel *itunesLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(leftpadding, itunesTitleLabel.bottom+10, lineView.width, 200)];
     itunesLabel.numberOfLines = 0;
     itunesLabel.font = [UIFont systemFontOfSize:14];
     itunesLabel.textColor = kTextColor6;
@@ -107,7 +107,7 @@
     [itunesLabel sizeToFit];
     [containerScrollView addSubview:itunesLabel];
     
-    UIImageView *tipImageView = [[UIImageView alloc] initWithFrame:CGRectMake(leftpadding, itunesLabel.bottom+5, kScreenWidth-leftpadding*2, (kScreenWidth-leftpadding*2)/7*5)];
+    UIImageView *tipImageView = [[SPBaseImageView alloc] initWithFrame:CGRectMake(leftpadding, itunesLabel.bottom+5, kScreenWidth-leftpadding*2, (kScreenWidth-leftpadding*2)/7*5)];
     tipImageView.image = [UIImage imageNamed:@"Itunes_chuanshu"];
     [containerScrollView addSubview:tipImageView];
     

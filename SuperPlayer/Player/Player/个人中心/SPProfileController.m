@@ -11,7 +11,6 @@
 #import "NSDate+AHDateUtil.h"
 #import "SPFeedbackController.h"
 #import <StoreKit/StoreKit.h>
-#import "SPVersionManager.h"
 #import "SPInputOnlineLinkerController.h"
 @interface SPProfileController ()<SPIAPManagerDelegate>
 @end

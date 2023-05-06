@@ -10,7 +10,6 @@
 		360739F4295DAC2000C36AE9 /* SPVIPPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 360739F3295DAC2000C36AE9 /* SPVIPPreviewController.m */; };
 		360A5407275F347300F50621 /* SPWifiUploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 360A5406275F347300F50621 /* SPWifiUploadController.m */; };
 		360A540D27605A5A00F50621 /* UIViewController+topViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 360A540B27605A5A00F50621 /* UIViewController+topViewController.m */; };
-		36205778278538120010EFA5 /* SPGoodCommentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36205777278538120010EFA5 /* SPGoodCommentManager.m */; };
 		3620577B27853D0D0010EFA5 /* AppInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3620577927853D0D0010EFA5 /* AppInfoTool.m */; };
 		3627387B27576CA900BE2D9E /* SPTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3627387A27576CA900BE2D9E /* SPTagListView.m */; };
 		3627387E2757750E00BE2D9E /* ZHWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3627387D2757750E00BE2D9E /* ZHWebController.m */; };
@@ -54,7 +53,6 @@
 		3683EE7127B360B5006A2E6C /* SPActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683EE6D27B360B5006A2E6C /* SPActionSheet.m */; };
 		3683EE7427B4EA9B006A2E6C /* playerchina.png in Resources */ = {isa = PBXBuildFile; fileRef = 3683EE7327B4EA9B006A2E6C /* playerchina.png */; };
 		3683EE8B27B6309C006A2E6C /* UIView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683EE8A27B6309C006A2E6C /* UIView+CornerRadius.m */; };
-		36857A752786879E00D4C5D0 /* SPVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36857A742786879E00D4C5D0 /* SPVersionManager.m */; };
 		36857A812786B85600D4C5D0 /* DisableTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36857A802786B85600D4C5D0 /* DisableTouchView.m */; };
 		368D97E7276AE71000D29812 /* GCDWebServerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 368D97C5276AE71000D29812 /* GCDWebServerResponse.m */; };
 		368D97E8276AE71000D29812 /* GCDWebServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 368D97C8276AE71000D29812 /* GCDWebServerRequest.m */; };
@@ -149,11 +147,6 @@
 		36DB112D29E3C792005E0231 /* SPBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB112529E3C791005E0231 /* SPBaseView.m */; };
 		36DB112E29E3C792005E0231 /* SPBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB112629E3C791005E0231 /* SPBaseTableViewCell.m */; };
 		36DB112F29E3C792005E0231 /* SPBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB112829E3C791005E0231 /* SPBaseCollectionViewCell.m */; };
-		36DB113B29E3CB8F005E0231 /* SPHWDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB113229E3CB8F005E0231 /* SPHWDownloadModel.m */; };
-		36DB113C29E3CB8F005E0231 /* SPHWToolBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB113429E3CB8F005E0231 /* SPHWToolBox.m */; };
-		36DB113D29E3CB8F005E0231 /* SPHWDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB113529E3CB8F005E0231 /* SPHWDownloadManager.m */; };
-		36DB113E29E3CB8F005E0231 /* SPHWNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB113729E3CB8F005E0231 /* SPHWNetworkReachabilityManager.m */; };
-		36DB113F29E3CB8F005E0231 /* SPHWDataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB113A29E3CB8F005E0231 /* SPHWDataBaseManager.m */; };
 		36DB118429E4339F005E0231 /* SPInputOnlineLinkerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB118229E4339F005E0231 /* SPInputOnlineLinkerController.m */; };
 		36DB11C829E4F372005E0231 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11C729E4F372005E0231 /* MainTabBarController.m */; };
 		36DB11F729E51CEA005E0231 /* UIBarButtonItem+CYLBadgeExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB11CD29E51CEA005E0231 /* UIBarButtonItem+CYLBadgeExtention.m */; };
@@ -180,10 +173,7 @@
 		36DB3F0E27990BD30028D974 /* SPToastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DB3F0D27990BD20028D974 /* SPToastUtil.m */; };
 		36DF00AC29779A300065F21D /* SPCustomPortraitControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DF00AB29779A300065F21D /* SPCustomPortraitControlView.m */; };
 		36DF00AF29779A450065F21D /* SPCustomLandscapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DF00AE29779A450065F21D /* SPCustomLandscapeControlView.m */; };
-		36DF01152977F7E20065F21D /* NSURLSession+CorrectedResumeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DF01102977F7E20065F21D /* NSURLSession+CorrectedResumeData.m */; };
 		36F02FD528F804F50080D92B /* SPCustomControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F02FD328F804F50080D92B /* SPCustomControlView.m */; };
-		36F02FDC28F961720080D92B /* ZHDownloadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F02FDB28F961720080D92B /* ZHDownloadCell.m */; };
-		36F02FDF28F961840080D92B /* ZHDownloadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F02FDE28F961840080D92B /* ZHDownloadController.m */; };
 		F29A7239BB234B9CDBA13804 /* libPods-SPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D4FF6AAA4BB2D62696C381 /* libPods-SPlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -198,8 +188,6 @@
 		360A5406275F347300F50621 /* SPWifiUploadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPWifiUploadController.m; sourceTree = "<group>"; };
 		360A540B27605A5A00F50621 /* UIViewController+topViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+topViewController.m"; sourceTree = "<group>"; };
 		360A540C27605A5A00F50621 /* UIViewController+topViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+topViewController.h"; sourceTree = "<group>"; };
-		36205776278538120010EFA5 /* SPGoodCommentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPGoodCommentManager.h; sourceTree = "<group>"; };
-		36205777278538120010EFA5 /* SPGoodCommentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPGoodCommentManager.m; sourceTree = "<group>"; };
 		3620577927853D0D0010EFA5 /* AppInfoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoTool.m; sourceTree = "<group>"; };
 		3620577A27853D0D0010EFA5 /* AppInfoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoTool.h; sourceTree = "<group>"; };
 		362627C1298CF22800D2F408 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -283,8 +271,6 @@
 		3683EE7327B4EA9B006A2E6C /* playerchina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerchina.png; sourceTree = "<group>"; };
 		3683EE8927B6309C006A2E6C /* UIView+CornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CornerRadius.h"; sourceTree = "<group>"; };
 		3683EE8A27B6309C006A2E6C /* UIView+CornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CornerRadius.m"; sourceTree = "<group>"; };
-		36857A732786879E00D4C5D0 /* SPVersionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPVersionManager.h; sourceTree = "<group>"; };
-		36857A742786879E00D4C5D0 /* SPVersionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPVersionManager.m; sourceTree = "<group>"; };
 		36857A7F2786B85600D4C5D0 /* DisableTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisableTouchView.h; sourceTree = "<group>"; };
 		36857A802786B85600D4C5D0 /* DisableTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisableTouchView.m; sourceTree = "<group>"; };
 		368D97C3276AE71000D29812 /* GCDWebServerFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDWebServerFunctions.h; sourceTree = "<group>"; };
@@ -478,17 +464,6 @@
 		36DB112729E3C791005E0231 /* SPBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBaseCollectionViewCell.h; sourceTree = "<group>"; };
 		36DB112829E3C791005E0231 /* SPBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBaseCollectionViewCell.m; sourceTree = "<group>"; };
 		36DB112929E3C791005E0231 /* SPBaseImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBaseImageView.h; sourceTree = "<group>"; };
-		36DB113029E3CB8F005E0231 /* SPHWToolBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHWToolBox.h; sourceTree = "<group>"; };
-		36DB113129E3CB8F005E0231 /* SPHWDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHWDownload.h; sourceTree = "<group>"; };
-		36DB113229E3CB8F005E0231 /* SPHWDownloadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHWDownloadModel.m; sourceTree = "<group>"; };
-		36DB113329E3CB8F005E0231 /* SPHWNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHWNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		36DB113429E3CB8F005E0231 /* SPHWToolBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHWToolBox.m; sourceTree = "<group>"; };
-		36DB113529E3CB8F005E0231 /* SPHWDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHWDownloadManager.m; sourceTree = "<group>"; };
-		36DB113629E3CB8F005E0231 /* SPHWDataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHWDataBaseManager.h; sourceTree = "<group>"; };
-		36DB113729E3CB8F005E0231 /* SPHWNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHWNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		36DB113829E3CB8F005E0231 /* SPHWDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHWDownloadManager.h; sourceTree = "<group>"; };
-		36DB113929E3CB8F005E0231 /* SPHWDownloadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPHWDownloadModel.h; sourceTree = "<group>"; };
-		36DB113A29E3CB8F005E0231 /* SPHWDataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPHWDataBaseManager.m; sourceTree = "<group>"; };
 		36DB118229E4339F005E0231 /* SPInputOnlineLinkerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPInputOnlineLinkerController.m; sourceTree = "<group>"; };
 		36DB118329E4339F005E0231 /* SPInputOnlineLinkerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPInputOnlineLinkerController.h; sourceTree = "<group>"; };
 		36DB11C629E4F372005E0231 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
@@ -543,15 +518,8 @@
 		36DF00AB29779A300065F21D /* SPCustomPortraitControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCustomPortraitControlView.m; sourceTree = "<group>"; };
 		36DF00AD29779A450065F21D /* SPCustomLandscapeControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCustomLandscapeControlView.h; sourceTree = "<group>"; };
 		36DF00AE29779A450065F21D /* SPCustomLandscapeControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCustomLandscapeControlView.m; sourceTree = "<group>"; };
-		36DF00C32977E0440065F21D /* Player-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Player-Bridging-Header.h"; sourceTree = "<group>"; };
-		36DF010A2977F7E20065F21D /* NSURLSession+CorrectedResumeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+CorrectedResumeData.h"; sourceTree = "<group>"; };
-		36DF01102977F7E20065F21D /* NSURLSession+CorrectedResumeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+CorrectedResumeData.m"; sourceTree = "<group>"; };
 		36F02FD328F804F50080D92B /* SPCustomControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCustomControlView.m; sourceTree = "<group>"; };
 		36F02FD428F804F50080D92B /* SPCustomControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCustomControlView.h; sourceTree = "<group>"; };
-		36F02FDA28F961720080D92B /* ZHDownloadCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHDownloadCell.h; sourceTree = "<group>"; };
-		36F02FDB28F961720080D92B /* ZHDownloadCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHDownloadCell.m; sourceTree = "<group>"; };
-		36F02FDD28F961830080D92B /* ZHDownloadController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHDownloadController.h; sourceTree = "<group>"; };
-		36F02FDE28F961840080D92B /* ZHDownloadController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHDownloadController.m; sourceTree = "<group>"; };
 		79105C676E944708CB12B91D /* Pods-Player.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Player.release.xcconfig"; path = "Target Support Files/Pods-Player/Pods-Player.release.xcconfig"; sourceTree = "<group>"; };
 		99D4FF6AAA4BB2D62696C381 /* libPods-SPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A83D282845DD3BB509DD04 /* Pods-SPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPlayer.debug.xcconfig"; path = "Target Support Files/Pods-SPlayer/Pods-SPlayer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -703,10 +671,6 @@
 			isa = PBXGroup;
 			children = (
 				3698A51D274F308D0046FD68 /* VideoManager */,
-				36857A732786879E00D4C5D0 /* SPVersionManager.h */,
-				36857A742786879E00D4C5D0 /* SPVersionManager.m */,
-				36205776278538120010EFA5 /* SPGoodCommentManager.h */,
-				36205777278538120010EFA5 /* SPGoodCommentManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -891,7 +855,6 @@
 			isa = PBXGroup;
 			children = (
 				36DB120A29E54716005E0231 /* AppTheme */,
-				36F02FD628F960EA0080D92B /* Download */,
 				36857A722786877800D4C5D0 /* Manager */,
 				368D97C0276AE71000D29812 /* GCDWebServer */,
 				365A24032769F03100671EBC /* TZImagePickerController */,
@@ -1274,39 +1237,6 @@
 			path = AppTheme;
 			sourceTree = "<group>";
 		};
-		36DF01082977F7E20065F21D /* HWDownloadManager */ = {
-			isa = PBXGroup;
-			children = (
-				36DB113629E3CB8F005E0231 /* SPHWDataBaseManager.h */,
-				36DB113A29E3CB8F005E0231 /* SPHWDataBaseManager.m */,
-				36DB113129E3CB8F005E0231 /* SPHWDownload.h */,
-				36DB113829E3CB8F005E0231 /* SPHWDownloadManager.h */,
-				36DB113529E3CB8F005E0231 /* SPHWDownloadManager.m */,
-				36DB113929E3CB8F005E0231 /* SPHWDownloadModel.h */,
-				36DB113229E3CB8F005E0231 /* SPHWDownloadModel.m */,
-				36DB113329E3CB8F005E0231 /* SPHWNetworkReachabilityManager.h */,
-				36DB113729E3CB8F005E0231 /* SPHWNetworkReachabilityManager.m */,
-				36DB113029E3CB8F005E0231 /* SPHWToolBox.h */,
-				36DB113429E3CB8F005E0231 /* SPHWToolBox.m */,
-				36DF010A2977F7E20065F21D /* NSURLSession+CorrectedResumeData.h */,
-				36DF01102977F7E20065F21D /* NSURLSession+CorrectedResumeData.m */,
-			);
-			path = HWDownloadManager;
-			sourceTree = "<group>";
-		};
-		36F02FD628F960EA0080D92B /* Download */ = {
-			isa = PBXGroup;
-			children = (
-				36DF01082977F7E20065F21D /* HWDownloadManager */,
-				36F02FDA28F961720080D92B /* ZHDownloadCell.h */,
-				36F02FDB28F961720080D92B /* ZHDownloadCell.m */,
-				36F02FDD28F961830080D92B /* ZHDownloadController.h */,
-				36F02FDE28F961840080D92B /* ZHDownloadController.m */,
-				36DF00C32977E0440065F21D /* Player-Bridging-Header.h */,
-			);
-			path = Download;
-			sourceTree = "<group>";
-		};
 		55E74848D138E852100FBC37 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1452,7 +1382,6 @@
 				368D97F0276AE71000D29812 /* GCDWebServerURLEncodedFormRequest.m in Sources */,
 				365A24282769F03100671EBC /* TZAssetCell.m in Sources */,
 				3698A543274F308E0046FD68 /* SPNavigationAnimation.m in Sources */,
-				36857A752786879E00D4C5D0 /* SPVersionManager.m in Sources */,
 				36DB11FF29E51CEA005E0231 /* UITabBarItem+CYLBadgeExtention.m in Sources */,
 				36DB112D29E3C792005E0231 /* SPBaseView.m in Sources */,
 				3698A562274F308E0046FD68 /* YYTextParser.m in Sources */,
@@ -1482,11 +1411,9 @@
 				3698A48D274F307F0046FD68 /* AppDelegate.m in Sources */,
 				36DB120929E51CEA005E0231 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				3698A54C274F308E0046FD68 /* SPAllLocalFoldersController.m in Sources */,
-				36205778278538120010EFA5 /* SPGoodCommentManager.m in Sources */,
 				362738B8275DAECB00BE2D9E /* SPIAPItemView.m in Sources */,
 				362738AE2759FD5700BE2D9E /* SPImageItem.m in Sources */,
 				36DF00AC29779A300065F21D /* SPCustomPortraitControlView.m in Sources */,
-				36DB113F29E3CB8F005E0231 /* SPHWDataBaseManager.m in Sources */,
 				3698A568274F308E0046FD68 /* NSAttributedString+YYText.m in Sources */,
 				362738AC2759FD5700BE2D9E /* SPCellGroupItem.m in Sources */,
 				3698A564274F308E0046FD68 /* YYTextArchiver.m in Sources */,
@@ -1521,7 +1448,6 @@
 				36DB112B29E3C792005E0231 /* SPBaseImageView.m in Sources */,
 				36857A812786B85600D4C5D0 /* DisableTouchView.m in Sources */,
 				362738AD2759FD5700BE2D9E /* SPCellItem.m in Sources */,
-				36DF01152977F7E20065F21D /* NSURLSession+CorrectedResumeData.m in Sources */,
 				369385BB279559CD00B4361E /* SPJSONModelArray.m in Sources */,
 				36DB120D29E54716005E0231 /* SPAppThemeManager.m in Sources */,
 				3698A573274F308E0046FD68 /* UIView+mainThread.m in Sources */,
@@ -1559,7 +1485,6 @@
 				36DB120429E51CEA005E0231 /* CYLPlusButton.m in Sources */,
 				3698A56A274F308E0046FD68 /* YYTextTransaction.m in Sources */,
 				36DF00AF29779A450065F21D /* SPCustomLandscapeControlView.m in Sources */,
-				36F02FDC28F961720080D92B /* ZHDownloadCell.m in Sources */,
 				3698A55D274F308E0046FD68 /* YYTextSelectionView.m in Sources */,
 				369385BE279559CD00B4361E /* JSONAPI.m in Sources */,
 				369385BC279559CD00B4361E /* SPJSONModelClassProperty.m in Sources */,
@@ -1575,12 +1500,10 @@
 				3698A547274F308E0046FD68 /* SPBaseController.m in Sources */,
 				3698A56E274F308E0046FD68 /* MBProgressHUD.m in Sources */,
 				36DB11FC29E51CEA005E0231 /* UITabBarItem+CYLTabBarControllerExtention.m in Sources */,
-				36F02FDF28F961840080D92B /* ZHDownloadController.m in Sources */,
 				365A24372769F03100671EBC /* TZGifPhotoPreviewController.m in Sources */,
 				36DB121029E584B1005E0231 /* SPBaseButton.m in Sources */,
 				3698A55C274F308E0046FD68 /* YYTextLine.m in Sources */,
 				365A24362769F03100671EBC /* TZLocationManager.m in Sources */,
-				36DB113C29E3CB8F005E0231 /* SPHWToolBox.m in Sources */,
 				369385BD279559CD00B4361E /* SPJSONHTTPClient.m in Sources */,
 				360739F4295DAC2000C36AE9 /* SPVIPPreviewController.m in Sources */,
 				3620577B27853D0D0010EFA5 /* AppInfoTool.m in Sources */,
@@ -1599,15 +1522,12 @@
 				369385BF279559CD00B4361E /* SPJSONModel+networking.m in Sources */,
 				365A242E2769F03100671EBC /* TZPhotoPreviewController.m in Sources */,
 				3698A563274F308E0046FD68 /* YYTextAttribute.m in Sources */,
-				36DB113D29E3CB8F005E0231 /* SPHWDownloadManager.m in Sources */,
 				3698A569274F308E0046FD68 /* UIPasteboard+YYText.m in Sources */,
 				3698A47F274E2E5C0046FD68 /* main.m in Sources */,
 				3683EE8B27B6309C006A2E6C /* UIView+CornerRadius.m in Sources */,
-				36DB113B29E3CB8F005E0231 /* SPHWDownloadModel.m in Sources */,
 				3698A544274F308E0046FD68 /* SPPopDownMenu.m in Sources */,
 				368D97F3276AE71000D29812 /* GCDWebServerFileRequest.m in Sources */,
 				3698A48C274F307F0046FD68 /* AppDelegate+Service.m in Sources */,
-				36DB113E29E3CB8F005E0231 /* SPHWNetworkReachabilityManager.m in Sources */,
 				3698A556274F308E0046FD68 /* YYTextView.m in Sources */,
 				3698A560274F308E0046FD68 /* YYLabel.m in Sources */,
 				3698A545274F308E0046FD68 /* SPNavigationController.m in Sources */,

@@ -191,27 +191,27 @@
 @property (nonatomic, copy) void (^navLeftBarButtonSettingBlock)(SPBaseButton *leftButton);     ///< 自定义返回按钮样式及其属性
 
 /// 【自定义各页面/组件的样式】在界面初始化/组件setModel完成后调用，允许外界修改样式等
-@property (nonatomic, copy) void (^photoPickerPageUIConfigBlock)(UICollectionView *collectionView, UIView *bottomToolBar, SPBaseButton *previewButton, SPBaseButton *originalPhotoButton, UILabel *originalPhotoLabel, SPBaseButton *doneButton, UIImageView *numberImageView, UILabel *numberLabel, UIView *divideLine);
-@property (nonatomic, copy) void (^photoPreviewPageUIConfigBlock)(UICollectionView *collectionView, UIView *naviBar, SPBaseButton *backButton, SPBaseButton *selectButton, UILabel *indexLabel, UIView *toolBar, SPBaseButton *originalPhotoButton, UILabel *originalPhotoLabel, SPBaseButton *doneButton, UIImageView *numberImageView, UILabel *numberLabel);
+@property (nonatomic, copy) void (^photoPickerPageUIConfigBlock)(UICollectionView *collectionView, UIView *bottomToolBar, SPBaseButton *previewButton, SPBaseButton *originalPhotoButton, SPBaseLabel *originalPhotoLabel, SPBaseButton *doneButton, UIImageView *numberImageView, SPBaseLabel *numberLabel, UIView *divideLine);
+@property (nonatomic, copy) void (^photoPreviewPageUIConfigBlock)(UICollectionView *collectionView, UIView *naviBar, SPBaseButton *backButton, SPBaseButton *selectButton, SPBaseLabel *indexLabel, UIView *toolBar, SPBaseButton *originalPhotoButton, SPBaseLabel *originalPhotoLabel, SPBaseButton *doneButton, UIImageView *numberImageView, SPBaseLabel *numberLabel);
 @property (nonatomic, copy) void (^videoPreviewPageUIConfigBlock)(SPBaseButton *playButton, UIView *toolBar, SPBaseButton *editBtn, SPBaseButton *doneButton);
-@property (nonatomic, copy) void (^videoEditViewPageUIConfigBlock)(SPBaseButton *playButton,UILabel *cropVideoDurationLabel, SPBaseButton *editButton, SPBaseButton *doneButton);
+@property (nonatomic, copy) void (^videoEditViewPageUIConfigBlock)(SPBaseButton *playButton,SPBaseLabel *cropVideoDurationLabel, SPBaseButton *editButton, SPBaseButton *doneButton);
 @property (nonatomic, copy) void (^gifPreviewPageUIConfigBlock)(UIView *toolBar, SPBaseButton *doneButton);
 @property (nonatomic, copy) void (^albumPickerPageUIConfigBlock)(UITableView *tableView);
-@property (nonatomic, copy) void (^assetCellDidSetModelBlock)(TZAssetCell *cell, UIImageView *imageView, UIImageView *selectImageView, UILabel *indexLabel, UIView *bottomView, UILabel *timeLength, UIImageView *videoImgView);
-@property (nonatomic, copy) void (^albumCellDidSetModelBlock)(TZAlbumCell *cell, UIImageView *posterImageView, UILabel *titleLabel);
+@property (nonatomic, copy) void (^assetCellDidSetModelBlock)(TZAssetCell *cell, UIImageView *imageView, UIImageView *selectImageView, SPBaseLabel *indexLabel, UIView *bottomView, SPBaseLabel *timeLength, UIImageView *videoImgView);
+@property (nonatomic, copy) void (^albumCellDidSetModelBlock)(TZAlbumCell *cell, UIImageView *posterImageView, SPBaseLabel *titleLabel);
 /// 【自定义各页面/组件的frame】在界面viewDidLayoutSubviews/组件layoutSubviews后调用，允许外界修改frame等
-@property (nonatomic, copy) void (^photoPickerPageDidLayoutSubviewsBlock)(UICollectionView *collectionView, UIView *bottomToolBar, SPBaseButton *previewButton, SPBaseButton *originalPhotoButton, UILabel *originalPhotoLabel, SPBaseButton *doneButton, UIImageView *numberImageView, UILabel *numberLabel, UIView *divideLine);
-@property (nonatomic, copy) void (^photoPreviewPageDidLayoutSubviewsBlock)(UICollectionView *collectionView, UIView *naviBar, SPBaseButton *backButton, SPBaseButton *selectButton, UILabel *indexLabel, UIView *toolBar, SPBaseButton *originalPhotoButton, UILabel *originalPhotoLabel, SPBaseButton *doneButton, UIImageView *numberImageView, UILabel *numberLabel);
+@property (nonatomic, copy) void (^photoPickerPageDidLayoutSubviewsBlock)(UICollectionView *collectionView, UIView *bottomToolBar, SPBaseButton *previewButton, SPBaseButton *originalPhotoButton, SPBaseLabel *originalPhotoLabel, SPBaseButton *doneButton, UIImageView *numberImageView, SPBaseLabel *numberLabel, UIView *divideLine);
+@property (nonatomic, copy) void (^photoPreviewPageDidLayoutSubviewsBlock)(UICollectionView *collectionView, UIView *naviBar, SPBaseButton *backButton, SPBaseButton *selectButton, SPBaseLabel *indexLabel, UIView *toolBar, SPBaseButton *originalPhotoButton, SPBaseLabel *originalPhotoLabel, SPBaseButton *doneButton, UIImageView *numberImageView, SPBaseLabel *numberLabel);
 @property (nonatomic, copy) void (^videoPreviewPageDidLayoutSubviewsBlock)(SPBaseButton *playButton, UIView *toolBar, SPBaseButton *editButton, SPBaseButton *doneButton);
-@property (nonatomic, copy) void (^videoEditViewPageDidLayoutSubviewsBlock)(SPBaseButton *playButton, UILabel *cropVideoDurationLabel, SPBaseButton *cancelButton, SPBaseButton *doneButton);
+@property (nonatomic, copy) void (^videoEditViewPageDidLayoutSubviewsBlock)(SPBaseButton *playButton, SPBaseLabel *cropVideoDurationLabel, SPBaseButton *cancelButton, SPBaseButton *doneButton);
 @property (nonatomic, copy) void (^gifPreviewPageDidLayoutSubviewsBlock)(UIView *toolBar, SPBaseButton *doneButton);
 @property (nonatomic, copy) void (^albumPickerPageDidLayoutSubviewsBlock)(UITableView *tableView);
-@property (nonatomic, copy) void (^assetCellDidLayoutSubviewsBlock)(TZAssetCell *cell, UIImageView *imageView, UIImageView *selectImageView, UILabel *indexLabel, UIView *bottomView, UILabel *timeLength, UIImageView *videoImgView);
-@property (nonatomic, copy) void (^albumCellDidLayoutSubviewsBlock)(TZAlbumCell *cell, UIImageView *posterImageView, UILabel *titleLabel);
+@property (nonatomic, copy) void (^assetCellDidLayoutSubviewsBlock)(TZAssetCell *cell, UIImageView *imageView, UIImageView *selectImageView, SPBaseLabel *indexLabel, UIView *bottomView, SPBaseLabel *timeLength, UIImageView *videoImgView);
+@property (nonatomic, copy) void (^albumCellDidLayoutSubviewsBlock)(TZAlbumCell *cell, UIImageView *posterImageView, SPBaseLabel *titleLabel);
 /// 自定义各页面/组件的frame】刷新底部状态(refreshNaviBarAndBottomBarState)使用的
-@property (nonatomic, copy) void (^photoPickerPageDidRefreshStateBlock)(UICollectionView *collectionView, UIView *bottomToolBar, SPBaseButton *previewButton, SPBaseButton *originalPhotoButton, UILabel *originalPhotoLabel, SPBaseButton *doneButton, UIImageView *numberImageView, UILabel *numberLabel, UIView *divideLine);
+@property (nonatomic, copy) void (^photoPickerPageDidRefreshStateBlock)(UICollectionView *collectionView, UIView *bottomToolBar, SPBaseButton *previewButton, SPBaseButton *originalPhotoButton, SPBaseLabel *originalPhotoLabel, SPBaseButton *doneButton, UIImageView *numberImageView, SPBaseLabel *numberLabel, UIView *divideLine);
 
-@property (nonatomic, copy) void (^photoPreviewPageDidRefreshStateBlock)(UICollectionView *collectionView, UIView *naviBar, SPBaseButton *backButton, SPBaseButton *selectButton, UILabel *indexLabel, UIView *toolBar, SPBaseButton *originalPhotoButton, UILabel *originalPhotoLabel, SPBaseButton *doneButton, UIImageView *numberImageView, UILabel *numberLabel);
+@property (nonatomic, copy) void (^photoPreviewPageDidRefreshStateBlock)(UICollectionView *collectionView, UIView *naviBar, SPBaseButton *backButton, SPBaseButton *selectButton, SPBaseLabel *indexLabel, UIView *toolBar, SPBaseButton *originalPhotoButton, SPBaseLabel *originalPhotoLabel, SPBaseButton *doneButton, UIImageView *numberImageView, SPBaseLabel *numberLabel);
 
 #pragma mark -
 - (UIAlertController *)showAlertWithTitle:(NSString *)title;

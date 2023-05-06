@@ -12,14 +12,10 @@
 #import "GCDWebUploader.h"
 #import "SPIAPManager.h"
 #import <StoreKit/StoreKit.h>
-#import "SPGoodCommentManager.h"
-#import "SPVersionManager.h"
 //#import "SDImageWebPCoder.h"
 
 #import "ZFLandscapeRotationManager.h"
 //#import "LOTAnimationView.h"
-#import "SPHWNetworkReachabilityManager.h"
-#import "SPHWDownloadManager.h"
 #import "NetHelper.h"
 @interface AppDelegate ()
 
@@ -40,23 +36,7 @@
     
     // 初始化iap
     [[SPIAPManager shareManager] startMagager];
-    [[SPVersionManager sharedMgr] getAppVersionInfo];
-    
-    NSInteger ts = 20;
-#ifdef DEBUG
-    ts = 3;
-#endif
-    
-    ts = arc4random_uniform((uint32_t)ts) + 10;
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(ts * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[SPGoodCommentManager shareManager] startGoodCmt];
-//        if ([SPVersionManager sharedMgr].isNewVersionAvailable) {
-//            [[SPGoodCommentManager shareManager] startGoodCmt];
-//        }
-    });
-
-    
+ 
     /**
      webp支持
      */
@@ -65,13 +45,7 @@
 //    [[SDImageCodersManager sharedMgr] addCoder:webPCoder];
 //    
     [self initWindow];
-    
-    // 开启网络监听
-    [[SPHWNetworkReachabilityManager shareManager] monitorNetworkStatus];
-    
-    // 初始化下载单例，若之前程序杀死时有正在下的任务，会自动恢复下载
-    [SPHWDownloadManager shareManager];
-    
+
     return YES;
 }
 

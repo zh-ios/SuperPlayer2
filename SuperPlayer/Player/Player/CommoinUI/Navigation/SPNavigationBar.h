@@ -11,7 +11,7 @@
 @interface SPNavigationBar : UIView
 @property (nonatomic, strong) SPBaseButton *backBtn;
 @property (nonatomic, copy) void (^backOnClick)(SPBaseButton *btn);
-@property (nonatomic, strong) UILabel *titleL;
+@property (nonatomic, strong) SPBaseLabel *titleL;
 @property (nonatomic, strong) UIView *bottomLine;
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 

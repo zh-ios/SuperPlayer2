@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) SPBaseButton *backBtn;
 
 /// 标题
-@property (nonatomic, strong, readonly) UILabel *titleLabel;
+@property (nonatomic, strong, readonly) SPBaseLabel *titleLabel;
 
 /// 底部工具栏
 @property (nonatomic, strong, readonly) UIView *bottomToolView;
@@ -33,13 +33,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) SPBaseButton *playOrPauseBtn;
 
 /// 播放的当前时间
-@property (nonatomic, strong, readonly) UILabel *currentTimeLabel;
+@property (nonatomic, strong, readonly) SPBaseLabel *currentTimeLabel;
 
 /// 滑杆
 @property (nonatomic, strong, readonly) ZFSliderView *slider;
 
 /// 视频总时间
-@property (nonatomic, strong, readonly) UILabel *totalTimeLabel;
+@property (nonatomic, strong, readonly) SPBaseLabel *totalTimeLabel;
 
 /// 锁定屏幕按钮
 @property (nonatomic, strong, readonly) SPBaseButton *lockBtn;

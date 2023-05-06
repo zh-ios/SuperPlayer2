@@ -37,7 +37,7 @@
 /// 快进快退进度progress
 @property (nonatomic, strong) ZFSliderView *fastProgressView;
 /// 快进快退时间
-@property (nonatomic, strong) UILabel *fastTimeLabel;
+@property (nonatomic, strong) SPBaseLabel *fastTimeLabel;
 /// 快进快退ImageView
 @property (nonatomic, strong) UIImageView *fastImageView;
 /// 加载失败按钮
@@ -706,7 +706,7 @@
 
 - (UIImageView *)bgImgView {
     if (!_bgImgView) {
-        _bgImgView = [[UIImageView alloc] init];
+        _bgImgView = [[SPBaseImageView alloc] init];
         _bgImgView.userInteractionEnabled = YES;
         _bgImgView.hidden = YES;
     }
@@ -811,12 +811,12 @@
 
 - (UIImageView *)fastImageView {
     if (!_fastImageView) {
-        _fastImageView = [[UIImageView alloc] init];
+        _fastImageView = [[SPBaseImageView alloc] init];
     }
     return _fastImageView;
 }
 
-- (UILabel *)fastTimeLabel {
+- (SPBaseLabel *)fastTimeLabel {
     if (!_fastTimeLabel) {
         _fastTimeLabel = [[SPBaseLabel alloc] init];
         _fastTimeLabel.textColor = [UIColor whiteColor];

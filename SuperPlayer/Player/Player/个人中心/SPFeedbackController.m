@@ -19,7 +19,7 @@
     [super viewDidLoad];
     self.title = kZHLocalizedString(@"意 见 反 馈");
     
-    UILabel *label = [[SPBaseLabel alloc] initWithFrame:CGRectMake(15, kNavbarHeight+30, self.view.width-15*2, 200)];
+    SPBaseLabel *label = [[SPBaseLabel alloc] initWithFrame:CGRectMake(15, kNavbarHeight+30, self.view.width-15*2, 200)];
     label.font = [UIFont systemFontOfSize:17];
     label.numberOfLines = 0;
     label.textColor = kThemeMiddleColor;

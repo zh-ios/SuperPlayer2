@@ -11,7 +11,7 @@
 
 
 @implementation SPBaseTableViewCell {
-    UILabel *_lineLabel;
+    SPBaseLabel *_lineLabel;
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {

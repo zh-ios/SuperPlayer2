@@ -128,13 +128,13 @@
         _imageContainerView.contentMode = UIViewContentModeScaleAspectFill;
         [_scrollView addSubview:_imageContainerView];
         
-        _imageView = [[UIImageView alloc] init];
+        _imageView = [[SPBaseImageView alloc] init];
         _imageView.backgroundColor = [UIColor colorWithWhite:1.000 alpha:0.500];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         _imageView.clipsToBounds = YES;
         [_imageContainerView addSubview:_imageView];
 
-        _iCloudErrorIcon = [[UIImageView alloc] init];
+        _iCloudErrorIcon = [[SPBaseImageView alloc] init];
         _iCloudErrorIcon.image = [UIImage tz_imageNamedFromMyBundle:@"iCloudError"];
         _iCloudErrorIcon.hidden = YES;
         [self addSubview:_iCloudErrorIcon];
@@ -406,7 +406,7 @@
 
 - (void)configSubviews {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActiveNotification) name:UIApplicationWillResignActiveNotification object:nil];
-    _iCloudErrorIcon = [[UIImageView alloc] init];
+    _iCloudErrorIcon = [[SPBaseImageView alloc] init];
     _iCloudErrorIcon.image = [UIImage tz_imageNamedFromMyBundle:@"iCloudError"];
     _iCloudErrorIcon.hidden = YES;
     _iCloudErrorLabel = [[SPBaseLabel alloc] init];

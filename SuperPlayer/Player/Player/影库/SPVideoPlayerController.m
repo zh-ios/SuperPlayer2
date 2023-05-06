@@ -14,9 +14,7 @@
 #import "SPCustomControlView.h"
 #import "YYCache.h"
 #import "SPVideoPlayerController.h"
-#import "SPHWDownloadModel.h"
 #import "SPLocalFileManager.h"
-#import "SPHWDownloadManager.h"
 
 static NSString *kVideoProgressCache = @"videoProgressCache";
 

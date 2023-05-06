@@ -39,7 +39,7 @@
 @property (nonatomic, strong) UIView *imageContainerView;
 @property (nonatomic, strong) TZProgressView *progressView;
 @property (nonatomic, strong) UIImageView *iCloudErrorIcon;
-@property (nonatomic, strong) UILabel *iCloudErrorLabel;
+@property (nonatomic, strong) SPBaseLabel *iCloudErrorLabel;
 @property (nonatomic, copy) void (^iCloudSyncFailedHandle)(id asset, BOOL isSyncFailed);
 
 
@@ -65,7 +65,7 @@
 @property (strong, nonatomic) UIImage *cover;
 @property (nonatomic, strong) NSURL *videoURL;
 @property (nonatomic, strong) UIImageView *iCloudErrorIcon;
-@property (nonatomic, strong) UILabel *iCloudErrorLabel;
+@property (nonatomic, strong) SPBaseLabel *iCloudErrorLabel;
 @property (nonatomic, copy) void (^iCloudSyncFailedHandle)(id asset, BOOL isSyncFailed);
 - (void)pausePlayerAndShowNaviBar;
 @end

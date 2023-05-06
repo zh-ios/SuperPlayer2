@@ -26,9 +26,9 @@
     SPBaseButton *_previewButton;
     SPBaseButton *_doneButton;
     UIImageView *_numberImageView;
-    UILabel *_numberLabel;
+    SPBaseLabel *_numberLabel;
     SPBaseButton *_originalPhotoButton;
-    UILabel *_originalPhotoLabel;
+    SPBaseLabel *_originalPhotoLabel;
     UIView *_divideLine;
     
     BOOL _shouldScrollToBottom;
@@ -39,7 +39,7 @@
 @property CGRect previousPreheatRect;
 @property (nonatomic, assign) BOOL isSelectOriginalPhoto;
 @property (nonatomic, strong) TZCollectionView *collectionView;
-@property (nonatomic, strong) UILabel *noDataLabel;
+@property (nonatomic, strong) SPBaseLabel *noDataLabel;
 @property (strong, nonatomic) UICollectionViewFlowLayout *layout;
 @property (nonatomic, strong) UIImagePickerController *imagePickerVc;
 @property (strong, nonatomic) CLLocation *location;
@@ -297,7 +297,7 @@ static CGFloat itemMargin = 5;
     [_doneButton setTitleColor:tzImagePickerVc.oKButtonTitleColorDisabled forState:UIControlStateDisabled];
     _doneButton.enabled = tzImagePickerVc.selectedModels.count || tzImagePickerVc.alwaysEnableDoneBtn;
     
-    _numberImageView = [[UIImageView alloc] initWithImage:tzImagePickerVc.photoNumberIconImage];
+    _numberImageView = [[SPBaseImageView alloc] initWithImage:tzImagePickerVc.photoNumberIconImage];
     _numberImageView.hidden = tzImagePickerVc.selectedModels.count <= 0;
     _numberImageView.clipsToBounds = YES;
     _numberImageView.contentMode = UIViewContentModeScaleAspectFit;

@@ -16,9 +16,9 @@
 @interface TZAssetCell ()
 @property (weak, nonatomic) UIImageView *imageView;       // The photo / 照片
 @property (weak, nonatomic) UIImageView *selectImageView;
-@property (weak, nonatomic) UILabel *indexLabel;
+@property (weak, nonatomic) SPBaseLabel *indexLabel;
 @property (weak, nonatomic) UIView *bottomView;
-@property (weak, nonatomic) UILabel *timeLength;
+@property (weak, nonatomic) SPBaseLabel *timeLength;
 @property (strong, nonatomic) UITapGestureRecognizer *tapGesture;
 
 @property (nonatomic, weak) UIImageView *videoImgView;
@@ -259,7 +259,7 @@
 
 - (UIImageView *)imageView {
     if (_imageView == nil) {
-        UIImageView *imageView = [[UIImageView alloc] init];
+        UIImageView *imageView = [[SPBaseImageView alloc] init];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
         [self.contentView addSubview:imageView];
@@ -274,7 +274,7 @@
 
 - (UIImageView *)selectImageView {
     if (_selectImageView == nil) {
-        UIImageView *selectImageView = [[UIImageView alloc] init];
+        UIImageView *selectImageView = [[SPBaseImageView alloc] init];
         selectImageView.contentMode = UIViewContentModeCenter;
         selectImageView.clipsToBounds = YES;
         [self.contentView addSubview:selectImageView];
@@ -306,7 +306,7 @@
 
 - (UIImageView *)videoImgView {
     if (_videoImgView == nil) {
-        UIImageView *videoImgView = [[UIImageView alloc] init];
+        UIImageView *videoImgView = [[SPBaseImageView alloc] init];
         [videoImgView setImage:[UIImage tz_imageNamedFromMyBundle:@"VideoSendIcon"]];
         [self.bottomView addSubview:videoImgView];
         _videoImgView = videoImgView;
@@ -314,9 +314,9 @@
     return _videoImgView;
 }
 
-- (UILabel *)timeLength {
+- (SPBaseLabel *)timeLength {
     if (_timeLength == nil) {
-        UILabel *timeLength = [[SPBaseLabel alloc] init];
+        SPBaseLabel *timeLength = [[SPBaseLabel alloc] init];
         timeLength.font = [UIFont boldSystemFontOfSize:11];
         timeLength.textColor = [UIColor whiteColor];
         timeLength.textAlignment = NSTextAlignmentRight;
@@ -326,9 +326,9 @@
     return _timeLength;
 }
 
-- (UILabel *)indexLabel {
+- (SPBaseLabel *)indexLabel {
     if (_indexLabel == nil) {
-        UILabel *indexLabel = [[SPBaseLabel alloc] init];
+        SPBaseLabel *indexLabel = [[SPBaseLabel alloc] init];
         indexLabel.font = [UIFont systemFontOfSize:14];
         indexLabel.adjustsFontSizeToFitWidth = YES;
         indexLabel.textColor = [UIColor whiteColor];
@@ -395,7 +395,7 @@
 
 @interface TZAlbumCell ()
 @property (weak, nonatomic) UIImageView *posterImageView;
-@property (weak, nonatomic) UILabel *titleLabel;
+@property (weak, nonatomic) SPBaseLabel *titleLabel;
 @end
 
 @implementation TZAlbumCell
@@ -454,7 +454,7 @@
 
 - (UIImageView *)posterImageView {
     if (_posterImageView == nil) {
-        UIImageView *posterImageView = [[UIImageView alloc] init];
+        UIImageView *posterImageView = [[SPBaseImageView alloc] init];
         posterImageView.contentMode = UIViewContentModeScaleAspectFill;
         posterImageView.clipsToBounds = YES;
         [self.contentView addSubview:posterImageView];
@@ -463,9 +463,9 @@
     return _posterImageView;
 }
 
-- (UILabel *)titleLabel {
+- (SPBaseLabel *)titleLabel {
     if (_titleLabel == nil) {
-        UILabel *titleLabel = [[SPBaseLabel alloc] init];
+        SPBaseLabel *titleLabel = [[SPBaseLabel alloc] init];
         titleLabel.font = [UIFont boldSystemFontOfSize:17];
         if (@available(iOS 13.0, *)) {
             titleLabel.textColor = UIColor.labelColor;
@@ -504,7 +504,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        _imageView = [[UIImageView alloc] init];
+        _imageView = [[SPBaseImageView alloc] init];
         _imageView.backgroundColor = [UIColor colorWithWhite:1.000 alpha:0.500];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         [self.contentView addSubview:_imageView];

@@ -141,7 +141,7 @@
     [cancelBtn addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
     [_containerView addSubview:cancelBtn];
     
-    UILabel *cancelLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, btnH)];
+    SPBaseLabel *cancelLabel = [[SPBaseLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, btnH)];
     cancelLabel.textColor = TEXT_COLOR;
     cancelLabel.font = [UIFont systemFontOfSize:TEXT_FONT_SIZE];
     cancelLabel.textAlignment = NSTextAlignmentCenter;

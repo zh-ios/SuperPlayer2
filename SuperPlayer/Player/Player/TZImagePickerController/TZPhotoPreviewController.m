@@ -23,14 +23,14 @@
     UIView *_naviBar;
     SPBaseButton *_backButton;
     SPBaseButton *_selectButton;
-    UILabel *_indexLabel;
+    SPBaseLabel *_indexLabel;
     
     UIView *_toolBar;
     SPBaseButton *_doneButton;
     UIImageView *_numberImageView;
-    UILabel *_numberLabel;
+    SPBaseLabel *_numberLabel;
     SPBaseButton *_originalPhotoButton;
-    UILabel *_originalPhotoLabel;
+    SPBaseLabel *_originalPhotoLabel;
     
     CGFloat _offsetItemCount;
     
@@ -164,7 +164,7 @@
     [_doneButton setTitle:_tzImagePickerVc.doneBtnTitleStr forState:UIControlStateNormal];
     [_doneButton setTitleColor:_tzImagePickerVc.oKButtonTitleColorNormal forState:UIControlStateNormal];
     
-    _numberImageView = [[UIImageView alloc] initWithImage:_tzImagePickerVc.photoNumberIconImage];
+    _numberImageView = [[SPBaseImageView alloc] initWithImage:_tzImagePickerVc.photoNumberIconImage];
     _numberImageView.backgroundColor = [UIColor clearColor];
     _numberImageView.clipsToBounds = YES;
     _numberImageView.contentMode = UIViewContentModeScaleAspectFit;

@@ -29,20 +29,20 @@
 @interface SPSettingCellContainerView ()
 
 @property (nonatomic, strong) UIImageView *img;
-@property (nonatomic, strong) UILabel *titleL;
-@property (nonatomic, strong) UILabel *subTitleL;
+@property (nonatomic, strong) SPBaseLabel *titleL;
+@property (nonatomic, strong) SPBaseLabel *subTitleL;
 
 /**
  右侧的label
  */
-@property (nonatomic, strong) UILabel *accessoryL;
+@property (nonatomic, strong) SPBaseLabel *accessoryL;
 @property (nonatomic, strong) UIImageView *arrowImage;
 @property (nonatomic, strong) UISwitch *switchView;
 
 /**
   新消息提示
  */
-@property (nonatomic, strong) UILabel *updateMsgL;
+@property (nonatomic, strong) SPBaseLabel *updateMsgL;
 
 @end
 
@@ -57,7 +57,7 @@
 }
 
 - (void)setupSubviews {
-    self.img = [[UIImageView alloc] init];
+    self.img = [[SPBaseImageView alloc] init];
     [self addSubview:self.img];
     self.img.hidden = YES;
     self.img.contentMode = UIViewContentModeScaleAspectFit;
@@ -92,7 +92,7 @@
     self.updateMsgL.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.updateMsgL];
     
-    self.arrowImage = [[UIImageView alloc] init];
+    self.arrowImage = [[SPBaseImageView alloc] init];
     self.arrowImage.hidden = YES;
     self.arrowImage.image = [UIImage imageNamed:@"sp_icon_right_arrow"];
     [self addSubview:self.arrowImage];
